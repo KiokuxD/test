@@ -156,6 +156,51 @@
 
   .footer-note { text-align: center; color: var(--muted); font-size: 13px; margin-top: 34px; padding-top: 12px; border-top: 1px solid #ddd; }
 
+  /* ===== Mẹo ôn nhanh ===== */
+  .tips-banner {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 2px solid #d69e2e; border-radius: 12px;
+    padding: 18px 20px; margin: 22px 0 24px;
+  }
+  .tips-banner h2 {
+    margin: 0 0 6px; font-size: 20px; color: #744210;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tips-banner p { margin: 0 0 12px; color: #7b341e; font-size: 14px; }
+  .tips-toggle {
+    background: #d69e2e; color: #fff; border: none;
+    padding: 8px 16px; border-radius: 8px; font-weight: 700;
+    font-size: 14px; cursor: pointer; font-family: inherit;
+  }
+  .tips-toggle:hover { background: #b7791f; }
+
+  .tips-body { display: none; margin-top: 16px; }
+  .tips-body.show { display: block; }
+
+  .tip-card {
+    background: #fff; border: 1px solid #e2c97e; border-radius: 10px;
+    padding: 13px 16px; margin-bottom: 11px;
+  }
+  .tip-card .tip-title { font-weight: 800; color: #744210; font-size: 15px; margin-bottom: 5px; }
+  .tip-card .tip-desc { font-size: 14px; color: #2d3748; }
+  .tip-card .tip-power {
+    display: inline-block; background: #c6f6d5; color: #22543d;
+    padding: 1px 8px; border-radius: 5px; font-size: 12px; font-weight: 700; margin-left: 6px;
+  }
+  .tip-card .tip-power.med { background: #fefcbf; color: #744210; }
+  .tip-card ul { margin: 6px 0 0 18px; padding: 0; font-size: 14px; }
+  .tip-card li { margin-bottom: 3px; }
+  .tip-warn {
+    background: #fff5f5; border: 1px solid #fc8181; border-radius: 10px;
+    padding: 13px 16px; margin-bottom: 11px;
+  }
+  .tip-warn .tip-title { color: #c53030; font-weight: 800; margin-bottom: 5px; }
+  .tips-table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+  .tips-table th, .tips-table td { border: 1px solid #e2c97e; padding: 6px 10px; }
+  .tips-table th { background: #fef3c7; font-weight: 700; text-align: left; }
+  .tips-table td.c { text-align: center; }
+  .tips-cta { margin-top: 12px; font-size: 13.5px; color: #744210; font-style: italic; }
+
   @media (max-width: 600px) {
     header.doc-cover h1 { font-size: 19px; }
     .result-score { font-size: 34px; }
@@ -179,6 +224,95 @@
   <div class="info-box">
     <b>Cấu trúc:</b> Phần A gồm các câu trắc nghiệm nhiều lựa chọn (4 phương án A–D); Phần B gồm các câu trắc nghiệm Đúng/Sai với 4 ý a, b, c, d.
     Đáp án đúng in màu xanh (bấm <b>“Hiện đáp án”</b> để xem tất cả, hoặc chọn phương án để tự kiểm tra).
+  </div>
+
+  <div class="tips-banner">
+    <h2>🎯 MẸO ÔN NHANH (phân tích từ chính ngân hàng đề)</h2>
+    <p>Các quy luật thống kê rút ra từ 30 câu trắc nghiệm + 15 câu Đúng/Sai. Dùng để ôn nhanh / chống trượt — hiểu kiến thức vẫn bền hơn.</p>
+    <button class="tips-toggle" id="btn-tips">Xem mẹo ▾</button>
+
+    <div class="tips-body" id="tips-body">
+
+      <div class="tip-card">
+        <div class="tip-title">1. Chọn câu DÀI NHẤT <span class="tip-power">Rất mạnh · 83%</span></div>
+        <div class="tip-desc">
+          <b>25/30 câu</b> trắc nghiệm có đáp án là phương án <b>dài nhất / diễn giải đầy đủ nhất</b>.
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">2. Đáp án KHÔNG BAO GIỜ là D <span class="tip-power">Cực mạnh · 0/30</span></div>
+        <div class="tip-desc">
+          Nếu bí, <b>khoanh B (70%)</b>. Tuyệt đối <b>đừng chọn D</b> (0 lần là đáp án).
+          <table class="tips-table">
+            <tr><th>Vị trí</th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+            <tr><td>Số lần là đáp án</td><td class="c">5</td><td class="c"><b>21</b></td><td class="c">4</td><td class="c"><b>0</b></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">3. Loại phương án có từ CỰC ĐOAN <span class="tip-power">Mạnh</span></div>
+        <div class="tip-desc">
+          Phương án chứa <i>“hoàn toàn”, “tuyệt đối”, “không bao giờ”, “duy nhất”, “100%”, “thay thế hoàn toàn”</i> → gần như chắc chắn <b>SAI</b>, loại ngay.
+          Ngược lại, đáp án thường chứa từ tích cực: <i>hỗ trợ, giúp, hiệu quả, an toàn, minh bạch, thông minh, cá nhân hóa</i>.
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">4. Câu Đúng/Sai: mặc định ĐÚNG <span class="tip-power">Mạnh · 72%</span></div>
+        <div class="tip-desc">
+          <b>43/60 ý là ĐÚNG</b>, chỉ 17/60 là SAI. Nếu bí → đánh <b>ĐÚNG</b> cho tất cả.
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">5. Mỗi câu Đúng/Sai có 2–3 ý ĐÚNG <span class="tip-power">Cực mạnh</span></div>
+        <div class="tip-desc">
+          <b>KHÔNG bao giờ</b> có câu “cả 4 đúng” hay “cả 4 sai”.
+          <ul>
+            <li><b>13/15 câu</b>: đúng 3 ý, sai 1 ý</li>
+            <li><b>2/15 câu</b> (câu 1 &amp; 3): đúng 2 ý, sai 2 ý</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">6. Vị trí ý trong câu Đúng/Sai</div>
+        <div class="tip-desc">
+          <ul>
+            <li>Ý <b>a</b>: <b>14/15 ĐÚNG</b> (93%) → mặc định đánh ĐÚNG (ngoại lệ: câu 3)</li>
+            <li>Ý <b>d</b>: hay SAI nhất — nếu bí, đánh SAI an toàn hơn</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-warn">
+        <div class="tip-title">⚠️ 2 câu Đúng/Sai “phá mẹo” — phải học kỹ</div>
+        <div class="tip-desc">
+          <ul>
+            <li><b>Câu 1</b> (Khái niệm AI): mẫu <code>T F T F</code> → ý <b>a Đúng, b Sai, c Đúng, d Sai</b></li>
+            <li><b>Câu 3</b> (Mốc lịch sử AI): mẫu <code>F T T F</code> → ý <b>a Sai, b Đúng, c Đúng, d Sai</b></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">📋 Bảng ăn điểm nhanh</div>
+        <div class="tip-desc">
+          <table class="tips-table">
+            <tr><th>Tình huống</th><th>Hành động</th></tr>
+            <tr><td>Trắc nghiệm, phân vân</td><td>Chọn <b>câu dài nhất</b></td></tr>
+            <tr><td>Trắc nghiệm, bí hẳn</td><td>Khoanh <b>B</b> (đừng chọn D)</td></tr>
+            <tr><td>Thấy “hoàn toàn/tuyệt đối/không bao giờ”</td><td><b>Loại</b> phương án đó</td></tr>
+            <tr><td>Câu Đúng/Sai</td><td>Mặc định <b>ĐÚNG</b>, tìm ý cực đoan để đánh SAI</td></tr>
+            <tr><td>Ý “a” câu Đúng/Sai</td><td>Gần như luôn <b>ĐÚNG</b> (trừ câu 3)</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="tips-cta">Với các mẹo này, người chưa học kỹ vẫn có thể đạt ~70–80% điểm. Nhưng để chắc chắn, hãy học các câu đáp án KHÔNG phải dài nhất (Câu 2, 5, 8, 19, 26) và 2 câu Đúng/Sai đặc biệt (Câu 1, 3).</div>
+    </div>
   </div>
 
   <div class="sticky-bar">
@@ -525,6 +659,14 @@
   btnSubmit.addEventListener('click', submit);
   btnReset.addEventListener('click', reset);
   btnToggle.addEventListener('click', toggleReveal);
+
+  // Tips toggle
+  const btnTips = document.getElementById('btn-tips');
+  const tipsBody = document.getElementById('tips-body');
+  btnTips.addEventListener('click', function () {
+    const show = tipsBody.classList.toggle('show');
+    btnTips.textContent = show ? 'Ẩn mẹo ▴' : 'Xem mẹo ▾';
+  });
 
   document.getElementById('watermark').textContent =
     'Tổng ' + MCQ.length + ' câu trắc nghiệm + ' + TF.length + ' câu Đúng/Sai.';

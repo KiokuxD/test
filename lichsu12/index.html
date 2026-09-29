@@ -162,6 +162,57 @@
   .option .k { color: var(--red); font-weight: 700; }
 
   .footer-note { text-align: center; color: var(--muted); font-size: 13px; margin-top: 34px; padding-top: 12px; border-top: 1px solid #ddd; }
+
+  /* ===== Tabs ===== */
+  .tabbar { display: flex; gap: 8px; margin: 20px 0 18px; flex-wrap: wrap; }
+  .tab {
+    padding: 11px 22px; border: 2px solid var(--red); background: #fff;
+    color: var(--red-dark); border-radius: 10px; font-size: 15px; font-weight: 700;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+  }
+  .tab:hover { background: #fff5f5; }
+  .tab.active { background: linear-gradient(135deg,#9b2c2c,#b7791f); color: #fff; box-shadow: 0 4px 14px rgba(155,44,44,.3); }
+
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ===== Lý thuyết ===== */
+  .lesson-tabs { display: flex; gap: 8px; margin: 6px 0 18px; flex-wrap: wrap; }
+  .lesson-pill {
+    padding: 8px 16px; border: 2px solid var(--gold); background: #fff;
+    color: #744210; border-radius: 20px; font-size: 13.5px; font-weight: 700;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+  }
+  .lesson-pill:hover { background: #fffaf0; }
+  .lesson-pill.active { background: var(--gold); color: #fff; }
+
+  .theory-lesson { display: none; }
+  .theory-lesson.active { display: block; }
+
+  .theory-block { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 6px 20px 18px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(0,0,0,.04); }
+  .theory-block > h2 { font-size: 17px; color: #fff; background: linear-gradient(135deg,#9b2c2c,#b7791f); padding: 11px 16px; border-radius: 8px; margin: 14px -6px 16px; }
+  .theory-sec > h3 { font-size: 15px; color: var(--red-dark); border-bottom: 2px solid #fbd38d; padding-bottom: 5px; margin: 22px 0 12px; text-transform: uppercase; }
+  .theory-sub { margin-bottom: 18px; }
+  .theory-sub > h4 { font-size: 14.5px; color: #744210; margin: 14px 0 8px; }
+  .theory-sub p { margin: 6px 0; text-align: justify; font-size: 14.5px; }
+  .theory-sub ul, .theory-sub ol { margin: 6px 0 6px 22px; padding: 0; font-size: 14.5px; }
+  .theory-sub li { margin-bottom: 4px; text-align: justify; }
+  .theory-sub b { color: var(--red-dark); }
+
+  table.tbl { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px; }
+  table.tbl th, table.tbl td { border: 1px solid #e2c97e; padding: 7px 11px; vertical-align: top; }
+  table.tbl th { background: #fef3c7; font-weight: 700; text-align: left; color: #744210; }
+  table.tbl td b { color: var(--red-dark); }
+
+  .quick { background: #f0fff4; border-left: 4px solid #48bb78; padding: 8px 14px; border-radius: 6px; font-size: 14px; margin-top: 10px; }
+
+  .tipmemo { background: #fffbeb; border: 1px solid #f6e05e; border-radius: 10px; padding: 14px 18px; }
+  .tipmemo p { margin: 6px 0; font-size: 14.5px; }
+  .tipmemo ul, .tipmemo ol { margin: 6px 0 6px 22px; }
+  .tipmemo li { margin-bottom: 4px; font-size: 14.5px; }
+  .tipmemo .verse { font-style: italic; color: #744210; background: #fff; border-radius: 6px; padding: 8px 12px; line-height: 1.7; display: inline-block; }
+  .tipmemo b { color: var(--red-dark); }
+
   @media (max-width: 600px) { header.topbar h1 { font-size: 19px; } .result-score { font-size: 34px; } }
 </style>
 </head>
@@ -173,6 +224,14 @@
 </header>
 
 <div class="wrap">
+
+  <div class="tabbar" id="tabbar">
+    <button class="tab active" data-tab="quiz">📝 Làm bài trắc nghiệm</button>
+    <button class="tab" data-tab="theory">📚 Lý thuyết & Mẹo ghi nhớ</button>
+  </div>
+
+  <!-- ================= TAB: QUIZ ================= -->
+  <div class="tab-panel active" id="panel-quiz">
 
   <div class="lesson-select" id="lesson-select">
     <button class="lesson-btn active" data-lesson="0">📘 Bài 1 — Liên hợp quốc
@@ -209,6 +268,13 @@
   </div>
 
   <div id="exam-container"></div>
+  </div><!-- /panel-quiz -->
+
+  <!-- ================= TAB: LÝ THUYẾT ================= -->
+  <div class="tab-panel" id="panel-theory">
+    <div class="lesson-tabs" id="theory-lesson-tabs"></div>
+    <div id="theory-container"></div>
+  </div>
 
   <div class="footer-note">
     Ngân hàng trắc nghiệm Lịch sử 12 (KNTT) — Bài 1, 2, 3.<br>
@@ -217,6 +283,7 @@
 </div>
 
 <script src="data.js"></script>
+<script src="theory.js"></script>
 <script>
 (function () {
   const DATA = window.QUESTION_DATA;           // [ [bai1...], [bai2...], [bai3...] ]
@@ -409,6 +476,63 @@
   document.getElementById('watermark').textContent = 'Tổng ' + total + ' câu trong ngân hàng.';
 
   render();
+
+  /* ================= TAB ĐIỀU KHIỂN ================= */
+  document.getElementById('tabbar').addEventListener('click', function (e) {
+    const t = e.target.closest('.tab');
+    if (!t) return;
+    const name = t.dataset.tab;
+    document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b === t));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ================= LÝ THUYẾT ================= */
+  (function renderTheory() {
+    const THEORY = window.THEORY_DATA || [];
+    const tabsBox = document.getElementById('theory-lesson-tabs');
+    const cont = document.getElementById('theory-container');
+
+    THEORY.forEach((lesson, i) => {
+      const pill = document.createElement('button');
+      pill.className = 'lesson-pill' + (i === 0 ? ' active' : '');
+      pill.dataset.idx = i;
+      pill.textContent = '📘 ' + lesson.title.split(':')[0];
+      tabsBox.appendChild(pill);
+
+      const box = document.createElement('div');
+      box.className = 'theory-lesson' + (i === 0 ? ' active' : '');
+
+      const block = document.createElement('div');
+      block.className = 'theory-block';
+      block.innerHTML = '<h2>' + escapeHtml(lesson.title) + '</h2>';
+
+      lesson.sections.forEach(sec => {
+        const secEl = document.createElement('div');
+        secEl.className = 'theory-sec';
+        secEl.innerHTML = '<h3>' + escapeHtml(sec.h) + '</h3>';
+        sec.subs.forEach(sub => {
+          const subEl = document.createElement('div');
+          subEl.className = 'theory-sub';
+          subEl.innerHTML = '<h4>' + escapeHtml(sub.h) + '</h4>' + sub.html;
+          secEl.appendChild(subEl);
+        });
+        block.appendChild(secEl);
+      });
+      box.appendChild(block);
+      cont.appendChild(box);
+    });
+
+    tabsBox.addEventListener('click', function (e) {
+      const p = e.target.closest('.lesson-pill');
+      if (!p) return;
+      const idx = parseInt(p.dataset.idx, 10);
+      tabsBox.querySelectorAll('.lesson-pill').forEach(b => b.classList.toggle('active', b === p));
+      cont.querySelectorAll('.theory-lesson').forEach((b, i) => b.classList.toggle('active', i === idx));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
 })();
 </script>
 </body>

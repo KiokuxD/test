@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ôn tập trắc nghiệm Lịch sử 12 — Bài 1, 2, 3</title>
+<style>
+  :root {
+    --red: #9b2c2c;
+    --red-dark: #742a2a;
+    --gold: #b7791f;
+    --green: #1a7f37;
+    --bg: #f7fafc;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --muted: #718096;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', 'Times New Roman', system-ui, serif;
+    background: var(--bg);
+    color: #1a202c;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* Header */
+  header.topbar {
+    background: linear-gradient(135deg, #742a2a 0%, #9b2c2c 50%, #b7791f 100%);
+    color: #fff;
+    padding: 24px 20px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  }
+  header.topbar h1 { margin: 0 0 5px; font-size: 23px; }
+  header.topbar p { margin: 0; opacity: 0.92; font-size: 14px; }
+
+  .wrap { max-width: 940px; margin: 0 auto; padding: 18px 16px 90px; }
+
+  /* Bài selector */
+  .lesson-select {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 20px 0 18px;
+  }
+  .lesson-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 16px 18px;
+    border: 2px solid var(--red);
+    background: #fff;
+    color: var(--red-dark);
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .15s;
+    text-align: left;
+    font-family: inherit;
+  }
+  .lesson-btn:hover { background: #fff5f5; transform: translateY(-1px); }
+  .lesson-btn.active {
+    background: linear-gradient(135deg,#9b2c2c,#b7791f);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(155,44,44,0.35);
+  }
+  .lesson-btn small { display: block; font-weight: 400; font-size: 12.5px; opacity: .9; margin-top: 4px; }
+  .lesson-btn.active small { opacity: .95; }
+
+  /* Info */
+  .info-box {
+    background: #fffaf0; border: 1px solid #fbd38d; border-radius: 8px;
+    padding: 12px 16px; margin: 14px 0 18px; font-size: 14px; color: #744210;
+  }
+  .info-box b { color: var(--red-dark); }
+
+  /* Sticky bar */
+  .sticky-bar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(6px);
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 16px; margin-bottom: 18px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+    justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .progress-wrap { flex: 1; min-width: 150px; }
+  .progress-label { font-size: 13px; color: var(--muted); margin-bottom: 5px; }
+  .progress-track { height: 9px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+  .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg,#9b2c2c,#b7791f); transition: width .3s; }
+  .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn {
+    padding: 9px 18px; border: none; border-radius: 8px;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all .15s; font-family: inherit;
+  }
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-primary:disabled { background: #a0aec0; cursor: not-allowed; }
+  .btn-ghost { background: #fff; color: var(--red); border: 2px solid var(--red); }
+  .btn-ghost:hover { background: #fff5f5; }
+  .btn-toggle { background: #fff; color: var(--green); border: 2px solid var(--green); }
+  .btn-toggle:hover { background: #f0fff4; }
+
+  /* Result */
+  .result-panel {
+    display: none; background: #fff; border: 2px solid var(--gold);
+    border-radius: 12px; padding: 20px; margin-bottom: 20px;
+    text-align: center; box-shadow: 0 6px 20px rgba(183,121,31,0.18);
+  }
+  .result-panel.show { display: block; }
+  .result-score { font-size: 44px; font-weight: 800; color: var(--red-dark); margin: 4px 0; }
+  .result-score .denom { font-size: 22px; color: var(--muted); font-weight: 600; }
+  .result-sub { color: var(--muted); font-size: 14px; }
+  .result-grid { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+  .result-cell { background: #fffaf0; border-radius: 8px; padding: 10px 22px; min-width: 130px; }
+  .result-cell b { display: block; font-size: 22px; color: var(--red); }
+  .result-cell span { font-size: 12.5px; color: var(--muted); }
+
+  /* Section titles */
+  h2.part {
+    font-size: 15px; color: #fff; background: var(--red);
+    padding: 10px 14px; border-radius: 8px; margin: 26px 0 14px;
+    text-transform: uppercase; letter-spacing: .3px;
+  }
+  h3.sec {
+    font-size: 14px; color: var(--red-dark);
+    border-bottom: 2px solid #fbd38d; padding-bottom: 4px;
+    margin: 18px 0 12px; text-transform: uppercase; letter-spacing: .3px;
+  }
+
+  /* Question */
+  .q-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 15px 18px; margin-bottom: 13px;
+    transition: box-shadow .15s, border-color .15s;
+  }
+  .q-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
+  .q-card.correct { border-color: #48bb78; background: #f0fff4; }
+  .q-card.wrong { border-color: #fc8181; background: #fff5f5; }
+  .q-title { font-weight: 700; color: var(--red-dark); margin-bottom: 11px; text-align: justify; }
+  .q-title .qnum { color: var(--red); }
+  .badge {
+    display: inline-block; padding: 2px 9px; font-size: 11.5px; font-weight: 700;
+    border-radius: 5px; margin-right: 7px; vertical-align: middle;
+  }
+  .badge.mc { background: #fefcbf; color: #744210; }
+  .badge.tg { background: #bee3f8; color: #2a4365; }
+  .badge.re { background: #e9d8fd; color: #553c9e; }
+
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 12px; }
+  @media (max-width: 620px) { .opts { grid-template-columns: 1fr; } }
+  .option {
+    padding: 9px 13px; border: 2px solid var(--border); border-radius: 8px;
+    cursor: pointer; transition: all .12s; background: #fff; font-size: 14.5px;
+  }
+  .option:hover { border-color: #f6ad55; background: #fffaf0; }
+  .option.selected { border-color: var(--red); background: #fff5f5; }
+  .option.answer-key { border-color: #48bb78; background: #f0fff4; }
+  .option.answer-key::after { content: '✓ Đáp án'; float: right; color: var(--green); font-weight: 700; font-size: 12px; }
+  .option.user-wrong { border-color: #fc8181; background: #fff5f5; }
+  .option.user-wrong::after { content: '✗ Bạn chọn'; float: right; color: #c53030; font-weight: 700; font-size: 12px; }
+  .option .k { color: var(--red); font-weight: 700; }
+
+  .footer-note { text-align: center; color: var(--muted); font-size: 13px; margin-top: 34px; padding-top: 12px; border-top: 1px solid #ddd; }
+  @media (max-width: 600px) { header.topbar h1 { font-size: 19px; } .result-score { font-size: 34px; } }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Ôn tập trắc nghiệm Lịch sử 12</h1>
+  <p>Bài 1: Liên hợp quốc · Bài 2: Trật tự thế giới trong Chiến tranh lạnh · Bài 3: Trật tự thế giới sau Chiến tranh lạnh</p>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-select" id="lesson-select">
+    <button class="lesson-btn active" data-lesson="0">📘 Bài 1 — Liên hợp quốc
+      <small id="cnt-0">— câu</small>
+    </button>
+    <button class="lesson-btn" data-lesson="1">📗 Bài 2 — Trật tự TG trong Chiến tranh lạnh
+      <small id="cnt-1">— câu</small>
+    </button>
+    <button class="lesson-btn" data-lesson="2">📙 Bài 3 — Trật tự TG sau Chiến tranh lạnh
+      <small id="cnt-2">— câu</small>
+    </button>
+  </div>
+
+  <div class="info-box">
+    <b>Cách dùng:</b> Chọn bài cần ôn ở trên → chọn đáp án cho từng câu → bấm <b>“Nộp bài”</b> để chấm điểm (thang 10).
+    Bấm <b>“Hiện đáp án”</b> để xem đáp án đúng mà không cần làm. Đáp án đúng tô màu xanh.
+  </div>
+
+  <div class="sticky-bar">
+    <div class="progress-wrap">
+      <div class="progress-label" id="progress-label">Đã trả lời 0 / 0</div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+    <div class="actions">
+      <button class="btn btn-toggle" id="btn-toggle">Hiện đáp án</button>
+      <button class="btn btn-ghost" id="btn-reset">Làm lại</button>
+      <button class="btn btn-primary" id="btn-submit">Nộp bài</button>
+    </div>
+  </div>
+
+  <div class="result-panel" id="result-panel">
+    <div class="result-score"><span id="score-value">0.00</span><span class="denom"> / 10.0</span></div>
+    <div class="result-sub" id="score-detail"></div>
+  </div>
+
+  <div id="exam-container"></div>
+
+  <div class="footer-note">
+    Ngân hàng trắc nghiệm Lịch sử 12 (KNTT) — Bài 1, 2, 3.<br>
+    <span id="watermark"></span>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  const DATA = window.QUESTION_DATA;           // [ [bai1...], [bai2...], [bai3...] ]
+  const LESSONS = [
+    'BÀI 1: LIÊN HỢP QUỐC',
+    'BÀI 2: TRẬT TỰ THẾ GIỚI TRONG CHIẾN TRANH LẠNH',
+    'BÀI 3: TRẬT TỰ THẾ GIỚI SAU CHIẾN TRANH LẠNH'
+  ];
+  const PART_LABELS = { A: 'Phần A — Câu giữ lại (khử trùng)', B: 'Phần B — Câu soạn thêm', C: 'Phần C — Mốc thời gian' };
+  const PART_BADGE = { A: 'Giữ lại', B: 'Soạn thêm', C: 'Mốc thời gian' };
+  const PART_CLASS = { A: 'mc', B: 're', C: 'tg' };
+
+  const state = { lesson: 0, answers: {}, submitted: false, revealAll: false };
+
+  const container = document.getElementById('exam-container');
+  const progressLabel = document.getElementById('progress-label');
+  const progressFill = document.getElementById('progress-fill');
+  const resultPanel = document.getElementById('result-panel');
+  const btnSubmit = document.getElementById('btn-submit');
+  const btnReset = document.getElementById('btn-reset');
+  const btnToggle = document.getElementById('btn-toggle');
+
+  // hiển thị số câu mỗi bài
+  DATA.forEach((b, i) => {
+    const el = document.getElementById('cnt-' + i);
+    if (el) el.textContent = b.length + ' câu trắc nghiệm';
+  });
+
+  function currentQuestions() { return DATA[state.lesson]; }
+  function qKey(q) { return state.lesson + '_' + q.id; }
+
+  function escapeHtml(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function render() {
+    container.innerHTML = '';
+    const qs = currentQuestions();
+
+    // nhóm theo part
+    ['A', 'B', 'C'].forEach(part => {
+      const list = qs.filter(q => q.part === part);
+      if (!list.length) return;
+      const h = document.createElement('h3');
+      h.className = 'sec';
+      h.textContent = PART_LABELS[part] + ' (' + list.length + ' câu)';
+      container.appendChild(h);
+      list.forEach(q => container.appendChild(renderQuestion(q)));
+    });
+
+    updateProgress();
+  }
+
+  function renderQuestion(q) {
+    const key = qKey(q);
+    const chosen = state.answers[key];
+    const reveal = state.submitted || state.revealAll || chosen != null;
+
+    const card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'q-' + key;
+
+    const title = document.createElement('div');
+    title.className = 'q-title';
+    title.innerHTML = '<span class="badge ' + PART_CLASS[q.part] + '">' + PART_BADGE[q.part] + '</span>' +
+      '<span class="qnum">Câu ' + q.id + '.</span> ' + escapeHtml(q.question);
+    card.appendChild(title);
+
+    const opts = document.createElement('div');
+    opts.className = 'opts';
+
+    q.options.forEach(o => {
+      const d = document.createElement('div');
+      d.className = 'option';
+      if (chosen === o.letter) d.classList.add('selected');
+      d.innerHTML = '<span class="k">' + o.letter + '.</span> ' + escapeHtml(o.text);
+
+      if (reveal) {
+        if (o.letter === q.answer) d.classList.add('answer-key');
+        if (chosen === o.letter && o.letter !== q.answer) d.classList.add('user-wrong');
+        d.style.cursor = 'default';
+      } else {
+        d.addEventListener('click', function () { selectAnswer(q, o.letter); });
+      }
+      opts.appendChild(d);
+    });
+    card.appendChild(opts);
+
+    if (state.submitted || state.revealAll || chosen != null) {
+      if (chosen === q.answer) card.classList.add('correct');
+      else if (chosen != null) card.classList.add('wrong');
+    }
+    return card;
+  }
+
+  function selectAnswer(q, letter) {
+    if (state.submitted || state.revealAll) return;
+    const key = qKey(q);
+    if (state.answers[key] != null) return; // khóa sau khi chọn lần đầu
+    state.answers[key] = letter;
+    const old = document.getElementById('q-' + key);
+    if (old) old.replaceWith(renderQuestion(q));
+    updateProgress();
+  }
+
+  function countAnswered() {
+    let n = 0;
+    currentQuestions().forEach(q => { if (state.answers[qKey(q)] != null) n++; });
+    return n;
+  }
+
+  function updateProgress() {
+    const qs = currentQuestions();
+    const total = qs.length;
+    let ans = countAnswered();
+    if (ans > total) ans = total;
+    progressLabel.textContent = 'Đã trả lời ' + ans + ' / ' + total;
+    progressFill.style.width = total ? (ans / total * 100) + '%' : '0%';
+  }
+
+  function submit() {
+    const qs = currentQuestions();
+    const total = qs.length;
+    const answered = countAnswered();
+    if (answered < total) {
+      if (!confirm('Bạn còn ' + (total - answered) + ' câu chưa trả lời. Vẫn nộp bài?')) return;
+    }
+    state.submitted = true;
+
+    let correct = 0;
+    qs.forEach(q => { if (state.answers[qKey(q)] === q.answer) correct++; });
+
+    const score = (correct / total) * 10;
+    document.getElementById('score-value').textContent = score.toFixed(2);
+    document.getElementById('score-detail').textContent =
+      LESSONS[state.lesson] + ' — Đúng ' + correct + '/' + total + ' câu · Sai ' + (total - correct) + ' câu';
+
+    resultPanel.classList.add('show');
+    btnSubmit.disabled = true;
+    btnSubmit.textContent = 'Đã nộp bài';
+
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function reset() {
+    // xóa đáp án của bài hiện tại
+    currentQuestions().forEach(q => { delete state.answers[qKey(q)]; });
+    state.submitted = false;
+    state.revealAll = false;
+    resultPanel.classList.remove('show');
+    btnSubmit.disabled = false;
+    btnSubmit.textContent = 'Nộp bài';
+    btnToggle.textContent = 'Hiện đáp án';
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleReveal() {
+    state.revealAll = !state.revealAll;
+    btnToggle.textContent = state.revealAll ? 'Ẩn đáp án' : 'Hiện đáp án';
+    render();
+  }
+
+  // chọn bài
+  document.getElementById('lesson-select').addEventListener('click', function (e) {
+    const btn = e.target.closest('.lesson-btn');
+    if (!btn) return;
+    const idx = parseInt(btn.dataset.lesson, 10);
+    if (idx === state.lesson) return;
+    if (state.submitted && !confirm('Đổi bài sẽ kết thúc lượt làm hiện tại. Tiếp tục?')) return;
+    state.lesson = idx;
+    document.querySelectorAll('.lesson-btn').forEach(b => b.classList.toggle('active', b === btn));
+    // reset trạng thái hiển thị cho bài mới
+    state.submitted = false;
+    state.revealAll = false;
+    resultPanel.classList.remove('show');
+    btnSubmit.disabled = false;
+    btnSubmit.textContent = 'Nộp bài';
+    btnToggle.textContent = 'Hiện đáp án';
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  btnSubmit.addEventListener('click', submit);
+  btnReset.addEventListener('click', reset);
+  btnToggle.addEventListener('click', toggleReveal);
+
+  const total = DATA.reduce((s, b) => s + b.length, 0);
+  document.getElementById('watermark').textContent = 'Tổng ' + total + ' câu trong ngân hàng.';
+
+  render();
+})();
+</script>
+</body>
+</html>

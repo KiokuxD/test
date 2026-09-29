@@ -49,11 +49,28 @@ Rồi truy cập `http://localhost:8000`.
 
 ```
 .
-├── index.html      # Trang web quiz tương tác (UI + logic)
-├── questions.js    # Ngân hàng 45 câu hỏi (dữ liệu)
+├── index.html        # Trang quiz Tin học 12 (UI + logic)
+├── questions.js      # Ngân hàng 45 câu hỏi Tin học
+├── lichsu12/         # Trang quiz Lịch sử 12 (Bài 1, 2, 3)
+│   ├── index.html    # UI + logic chọn bài, chấm điểm
+│   └── data.js       # Ngân hàng 114 câu trắc nghiệm Lịch sử
 └── README.md
 ```
 
+## Ôn tập Lịch sử 12 (Bài 1, 2, 3)
+
+Trang `lichsu12/` là bộ **114 câu trắc nghiệm** Lịch sử 12 (Kết nối tri thức):
+
+| Bài | Số câu |
+|-----|:-:|
+| Bài 1 — Liên hợp quốc | 34 |
+| Bài 2 — Trật tự thế giới trong Chiến tranh lạnh | 45 |
+| Bài 3 — Trật tự thế giới sau Chiến tranh lạnh | 35 |
+
+**Tính năng:** chọn bài để ôn · chọn đáp án A–D · nộp bài chấm điểm thang 10 · hiện/ẩn đáp án · có phần câu hỏi riêng về **mốc thời gian**.
+
+Truy cập: `https://kiokuxd.github.io/test/lichsu12/`
+
 ## Ghi chú
 
-Dữ liệu câu hỏi được trích xuất từ ngân hàng đề trực tuyến, phục vụ mục đích học tập.
+Dữ liệu câu hỏi được trích xuất và tổng hợp từ ngân hàng đề trực tuyến, phục vụ mục đích học tập.

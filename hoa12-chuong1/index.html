@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ôn tập Hóa 12 — Chương 1: Ester – Lipid (KNTT)</title>
+<style>
+  :root{--green:#1a7f37;--green-d:#22543d;--teal:#2c7a7b;--teal-d:#234e52;--bg:#f7fafc;--card:#fff;--border:#e2e8f0;--muted:#718096;--red:#c53030;}
+  *{box-sizing:border-box}
+  body{font-family:'Segoe UI','Times New Roman',system-ui,serif;background:var(--bg);color:#1a202c;margin:0;line-height:1.55}
+  header.topbar{background:linear-gradient(135deg,#22543d 0%,#2c7a7b 55%,#276749 100%);color:#fff;padding:24px 20px;box-shadow:0 2px 12px rgba(0,0,0,.18)}
+  header.topbar h1{margin:0 0 5px;font-size:23px}
+  header.topbar p{margin:0;opacity:.92;font-size:14px}
+  .wrap{max-width:980px;margin:0 auto;padding:18px 16px 90px}
+  .tabbar{display:flex;gap:8px;margin:20px 0 18px;flex-wrap:wrap}
+  .tab{padding:11px 20px;border:2px solid var(--teal);background:#fff;color:var(--teal-d);border-radius:10px;font-size:14.5px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+  .tab:hover{background:#e6fffa}
+  .tab.active{background:linear-gradient(135deg,#2c7a7b,#276749);color:#fff;box-shadow:0 4px 14px rgba(44,122,123,.3)}
+  .panel{display:none}
+  .panel.active{display:block}
+  .note{background:#f0fff4;border:1px solid #9ae6b4;border-radius:10px;padding:12px 16px;margin:0 0 16px;font-size:14px;color:#22543d}
+  .note b{color:var(--green-d)}
+
+  /* Lý thuyết */
+  .lesson-tabs{display:flex;gap:8px;margin:8px 0 18px;flex-wrap:wrap}
+  .pill{padding:8px 16px;border:2px solid var(--green);background:#fff;color:var(--green-d);border-radius:20px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit}
+  .pill.active{background:var(--green);color:#fff}
+  .lesson{display:none}.lesson.active{display:block}
+  .block{background:#fff;border:1px solid var(--border);border-radius:12px;padding:4px 20px 20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .block>h2{font-size:17px;color:#fff;background:linear-gradient(135deg,#2c7a7b,#276749);padding:11px 16px;border-radius:8px;margin:14px -6px 16px}
+  .part{border-top:1px dashed #cbd5e0;padding-top:14px;margin-top:16px}
+  .part:first-child{border-top:none;margin-top:0}
+  .part>h3{font-size:15.5px;color:var(--green-d);margin:0 0 10px}
+  .theory{font-size:14.5px}
+  .theory p{margin:7px 0;text-align:justify}
+  .theory ul,.theory ol{margin:6px 0 6px 22px}
+  .theory li{margin-bottom:4px}
+  .theory b{color:var(--green-d)}
+  .tip-inline{background:#fffbeb;border-left:4px solid #f6ad55;padding:8px 12px;border-radius:6px;font-size:13.5px}
+  table.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+  table.tbl th,table.tbl td{border:1px solid #9ae6b4;padding:6px 10px;vertical-align:top}
+  table.tbl th{background:#f0fff4;font-weight:700;color:var(--green-d)}
+  .box-ex{background:#ebf8ff;border:1px solid #90cdf4;border-radius:8px;padding:10px 14px;margin:10px 0}
+  .box-ex .lbl{font-weight:800;color:#2b6cb0;font-size:13px;text-transform:uppercase}
+  .box-ex .sol{background:#fff;border-radius:6px;padding:8px 12px;margin-top:6px;font-size:14px}
+  .box-pr{background:#fffaf0;border:1px solid #f6ad55;border-radius:8px;padding:10px 14px;margin:10px 0}
+  .box-pr .lbl{font-weight:800;color:#c05621;font-size:13px;text-transform:uppercase}
+  .pr-item{padding:6px 0;border-bottom:1px dashed #fbd38d;font-size:14px}
+  .pr-item:last-child{border-bottom:none}
+  .pr-a{color:var(--green);font-weight:800;cursor:pointer}
+  .pr-ans{display:none;color:var(--green);font-weight:700;margin-left:6px}
+  .pr-ans.show{display:inline}
+
+  /* Mẹo */
+  .memo-block{background:#fff;border:1px solid #f6e05e;border-radius:12px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .memo-block h2{font-size:16px;color:#744210;margin:0 0 12px;border-bottom:2px solid #f6e05e;padding-bottom:6px}
+  .memo-item{margin-bottom:11px}
+  .memo-item .t{font-weight:800;color:var(--green-d);font-size:14.5px}
+  .memo-item .c{font-size:14px;margin-top:3px}
+  .memo-item .v{font-style:italic;color:#744210;background:#fffbeb;border-radius:6px;padding:6px 12px;margin-top:5px;display:inline-block;line-height:1.7}
+  .memo-item b{color:var(--red)}
+
+  /* Trắc nghiệm */
+  .bar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:10px;padding:11px 15px;margin-bottom:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .bar .stat{font-size:13.5px;color:var(--muted)}.bar .stat b{color:var(--green)}
+  .btns{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{padding:8px 16px;border:none;border-radius:8px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;transition:.15s}
+  .btn-p{background:var(--green);color:#fff}.btn-p:hover{background:var(--green-d)}
+  .btn-p:disabled{background:#a0aec0;cursor:not-allowed}
+  .btn-g{background:#fff;color:var(--green);border:2px solid var(--green)}.btn-g:hover{background:#f0fff4}
+  .fill{height:8px;background:#e2e8f0;border-radius:5px;overflow:hidden;flex:1;min-width:130px}
+  .fill i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2c7a7b,#48bb78);transition:width .3s}
+  .res{display:none;background:#fff;border:2px solid var(--teal);border-radius:12px;padding:18px;margin-bottom:18px;text-align:center;box-shadow:0 6px 20px rgba(44,122,123,.15)}
+  .res.show{display:block}
+  .res .score{font-size:42px;font-weight:800;color:var(--teal-d)}
+  .res .score .d{font-size:22px;color:var(--muted)}
+  .res .sub{color:var(--muted);font-size:14px}
+  .sec-h{font-size:14px;color:var(--green-d);border-bottom:2px solid #9ae6b4;padding-bottom:4px;margin:20px 0 12px;text-transform:uppercase;letter-spacing:.3px}
+  .q{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .q.correct{border-color:#48bb78;background:#f0fff4}.q.wrong{border-color:#fc8181;background:#fff5f5}
+  .q .qt{font-weight:700;color:var(--green-d);margin-bottom:9px;text-align:justify}
+  .q .qt .num{color:var(--teal)}
+  .lv{display:inline-block;padding:1px 8px;font-size:11px;font-weight:800;border-radius:5px;margin-right:7px;vertical-align:middle}
+  .lv.NB{background:#c6f6d5;color:#22543d}.lv.TH{background:#bee3f8;color:#2a4365}.lv.VD{background:#fefcbf;color:#744210}.lv.VDC{background:#fed7d7;color:#742a2a}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:7px 12px}
+  @media(max-width:640px){.opts{grid-template-columns:1fr}}
+  .opt{padding:8px 12px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:14px;background:#fff;transition:.12s}
+  .opt:hover{border-color:#68d391;background:#f0fff4}
+  .opt.selected{border-color:var(--teal);background:#e6fffa}
+  .opt.key{border-color:#48bb78;background:#f0fff4}.opt.key::after{content:'✓';float:right;color:var(--green);font-weight:800}
+  .opt.bad{border-color:#fc8181;background:#fff5f5}.opt.bad::after{content:'✗';float:right;color:var(--red);font-weight:800}
+  .opt .k{color:var(--teal);font-weight:700}
+
+  /* Đúng/Sai */
+  .tf{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:12px}
+  .tf .tq{font-weight:700;color:var(--green-d);margin-bottom:9px;text-align:justify}
+  .tf .tq .num{color:var(--teal)}
+  table.tft{width:100%;border-collapse:collapse;font-size:14px}
+  table.tft th,table.tft td{border:1px solid #cbd5e0;padding:8px 10px;vertical-align:middle}
+  table.tft th{background:#edf2f7;font-weight:700;text-align:center;font-size:12.5px}
+  table.tft td.c{text-align:center;white-space:nowrap}
+  .tf-pick{display:inline-flex;gap:4px}
+  .tf-pick button{padding:4px 12px;border:2px solid var(--border);border-radius:6px;background:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;color:#4a5568}
+  .tf-pick button.on-T{border-color:#48bb78;background:#f0fff4;color:var(--green-d)}
+  .tf-pick button.on-F{border-color:#fc8181;background:#fff5f5;color:#742a2a}
+  .tf-key{font-weight:800}
+  .tf-key.t{color:var(--green)}.tf-key.f{color:var(--red)}
+  .tf-you{font-size:12px;font-weight:700;display:block;margin-top:2px}
+  .tf-you.ok{color:var(--green)}.tf-you.no{color:var(--red)}
+  .tf.note{background:#fffbeb;border:1px solid #f6e05e;border-radius:8px;padding:9px 14px;margin-top:-6px;font-size:13px;color:#744210}
+  .tf-img{margin:8px 0;text-align:center}
+  .tf-tag{display:inline-block;background:#e2e8f0;color:#4a5568;font-size:11.5px;font-weight:700;padding:2px 10px;border-radius:5px;margin-bottom:8px}
+  .tf-tag.dif{background:#fed7d7;color:#742a2a}
+  .tf-img img{max-width:100%;border:1px solid #cbd5e0;border-radius:8px;background:#fff;padding:6px}
+  .memo-inline{background:#fff5f5;border-left:4px solid #fc8181;border-radius:6px;padding:9px 14px;margin:10px 0;font-size:13.5px;color:#742a2a}
+  .memo-inline .mi-ico{font-size:15px}
+  .memo-inline b{color:var(--red)}
+
+  /* Dạng bài tập */
+  .dang{background:#fff;border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:14px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+  .dang h2{font-size:15.5px;color:#fff;background:linear-gradient(135deg,#2c7a7b,#276749);padding:9px 14px;border-radius:8px;margin:0 0 12px}
+  .dang .method{font-size:14px;margin-bottom:10px}
+  .dang .method b{color:var(--green-d)}
+  .dang ul{margin:6px 0 6px 22px}
+  .formula-box{background:#f0fff4;border:1px solid #9ae6b4;border-radius:8px;padding:12px 16px}
+  .formula-box p{margin:6px 0;font-size:14px}
+  .formula-box b{color:var(--red)}
+  .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px;padding-top:12px;border-top:1px solid #ddd}
+  @media(max-width:600px){header.topbar h1{font-size:19px}.res .score{font-size:34px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <h1>Ôn tập Hóa học 12 — Chương 1: ESTER – LIPID</h1>
+  <p>Kết nối tri thức · Bài 1: Ester–Lipid · Bài 2: Xà phòng & chất giặt rửa · Lý thuyết chi tiết + bài tập + mẹo + trắc nghiệm</p>
+</header>
+
+<div class="wrap">
+  <div class="tabbar" id="tabbar">
+    <button class="tab active" data-tab="theory">📚 Lý thuyết + Bài tập</button>
+    <button class="tab" data-tab="memo">🧠 Mẹo ghi nhớ</button>
+    <button class="tab" data-tab="quiz">📝 Trắc nghiệm</button>
+    <button class="tab" data-tab="tfs">✅ Đúng / Sai</button>
+    <button class="tab" data-tab="dang">🧮 Dạng bài tập</button>
+  </div>
+
+  <!-- ===== TAB LÝ THUYẾT ===== -->
+  <div class="panel active" id="panel-theory">
+    <div class="note">Mỗi mục lý thuyết đi kèm <b>ví dụ mẫu (lời giải chi tiết)</b> và <b>bài tập tự luyện (có đáp án ẩn/hiện)</b>. Chọn bài ở dưới.</div>
+    <div class="lesson-tabs" id="lesson-tabs"></div>
+    <div id="theory-container"></div>
+  </div>
+
+  <!-- ===== TAB MẸO ===== -->
+  <div class="panel" id="panel-memo">
+    <div class="note">Các mẹo ghi nhớ giúp nhớ nhanh công thức, phản ứng, mùi đặc trưng và công thức tính toán.</div>
+    <div id="memo-container"></div>
+  </div>
+
+  <!-- ===== TAB TRẮC NGHIỆM ===== -->
+  <div class="panel" id="panel-quiz">
+    <div class="note">Bấm chọn đáp án A–D. Bấm <b>“Nộp bài”</b> để chấm điểm (thang 10) hoặc <b>“Hiện đáp án”</b> để xem đáp án đúng.</div>
+    <div class="bar">
+      <div class="stat">Đã trả lời <b id="q-done">0</b> / <span id="q-total">0</span></div>
+      <div class="fill"><i id="q-fill"></i></div>
+      <div class="btns">
+        <button class="btn btn-g" id="q-toggle">Hiện đáp án</button>
+        <button class="btn btn-g" id="q-reset">Làm lại</button>
+        <button class="btn btn-p" id="q-submit">Nộp bài</button>
+      </div>
+    </div>
+    <div class="res" id="q-res">
+      <div class="score"><span id="q-score">0.00</span><span class="d"> / 10.0</span></div>
+      <div class="sub" id="q-detail"></div>
+    </div>
+    <div id="quiz-container"></div>
+  </div>
+
+  <!-- ===== TAB ĐÚNG / SAI ===== -->
+  <div class="panel" id="panel-tfs">
+    <div class="note">Dạng <b>trắc nghiệm Đúng/Sai</b> (chương trình mới): mỗi câu có 4 ý a–d, chọn <b>Đúng</b> hoặc <b>Sai</b> cho từng ý. Chấm theo chuẩn: đúng 1 ý = 0,1đ · 2 ý = 0,25đ · 3 ý = 0,5đ · 4 ý = 1,0đ.</div>
+    <div class="bar">
+      <div class="stat">Đã trả lời <b id="t-done">0</b> / <span id="t-total">0</span> ý</div>
+      <div class="fill"><i id="t-fill"></i></div>
+      <div class="btns">
+        <button class="btn btn-g" id="t-toggle">Hiện đáp án</button>
+        <button class="btn btn-g" id="t-reset">Làm lại</button>
+        <button class="btn btn-p" id="t-submit">Nộp bài</button>
+      </div>
+    </div>
+    <div class="res" id="t-res">
+      <div class="score"><span id="t-score">0.00</span><span class="d"> / 10.0</span></div>
+      <div class="sub" id="t-detail"></div>
+    </div>
+    <div id="tfs-container"></div>
+  </div>
+
+  <!-- ===== TAB DẠNG BÀI TẬP ===== -->
+  <div class="panel" id="panel-dang">    <div class="note">Tổng hợp các <b>dạng bài tập</b> thường gặp kèm <b>phương pháp giải</b> và <b>ví dụ mẫu</b>.</div>
+    <div id="dang-container"></div>
+  </div>
+
+  <div class="foot">
+    Hóa học 12 KNTT — Chương 1: Ester – Lipid · Nguồn đối chứng: SGK KNTT, SBT, vietjack, loigiaihay<br>
+    <span id="wm"></span>
+  </div>
+</div>
+
+<script src="theory.js"></script>
+<script src="memo.js"></script>
+<script src="quiz.js"></script>
+<script src="tfs.js"></script>
+<script src="dang.js"></script>
+<script>
+(function(){
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  // ===== TABS =====
+  document.getElementById('tabbar').addEventListener('click',function(e){
+    const t=e.target.closest('.tab');if(!t)return;
+    document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b===t));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    document.getElementById('panel-'+t.dataset.tab).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // ===== LÝ THUYẾT =====
+  (function(){
+    const T=window.THEORY_HOA||[];
+    const tabs=document.getElementById('lesson-tabs');
+    const cont=document.getElementById('theory-container');
+    let prCount=0;
+    T.forEach((lesson,i)=>{
+      const pill=document.createElement('button');
+      pill.className='pill'+(i===0?' active':'');pill.dataset.i=i;
+      pill.textContent='📘 '+lesson.title;
+      tabs.appendChild(pill);
+      const box=document.createElement('div');
+      box.className='lesson'+(i===0?' active':'');
+
+      // Một khối duy nhất cho cả bài, tiêu đề bài chỉ xuất hiện 1 lần
+      const block=document.createElement('div');
+      block.className='block';
+      let blockHtml='<h2>'+esc(lesson.title)+'</h2>';
+
+      lesson.parts.forEach(part=>{
+        blockHtml+='<div class="part"><h3>'+esc(part.h)+'</h3>';
+        blockHtml+='<div class="theory">'+part.theory+'</div>';
+        // MẸO NHỚ ngay cạnh lý thuyết
+        if(part.memo){
+          blockHtml+='<div class="memo-inline"><span class="mi-ico">💡</span> <b>Mẹo nhớ:</b> '+part.memo+'</div>';
+        }
+        // ví dụ
+        if(part.examples&&part.examples.length){
+          part.examples.forEach(ex=>{
+            blockHtml+='<div class="box-ex"><div>'+esc(ex.q)+'</div><div class="sol">'+ex.sol+'</div></div>';
+          });
+        }
+        // bài tự luyện
+        if(part.practice&&part.practice.length){
+          blockHtml+='<div class="box-pr"><div class="lbl">📝 Luyện tập</div>';
+          part.practice.forEach(pr=>{
+            prCount++;
+            const id='pr-'+prCount;
+            blockHtml+='<div class="pr-item"><b>'+prCount+'.</b> '+esc(pr.q)+
+                  ' <span class="pr-a" data-target="'+id+'">▸ Đáp án</span>'+
+                  '<span class="pr-ans" id="'+id+'">'+esc(pr.a)+'</span></div>';
+          });
+          blockHtml+='</div>';
+        }
+        blockHtml+='</div>';
+      });
+      block.innerHTML=blockHtml;
+      box.appendChild(block);
+      cont.appendChild(box);
+    });
+    cont.addEventListener('click',function(e){
+      const t=e.target.closest('.pr-a');if(!t)return;
+      const el=document.getElementById(t.dataset.target);
+      if(!el)return;
+      const show=el.classList.toggle('show');
+      t.textContent=show?'[Ẩn]':'[Xem đáp án]';
+    });
+    tabs.addEventListener('click',function(e){
+      const p=e.target.closest('.pill');if(!p)return;
+      tabs.querySelectorAll('.pill').forEach(b=>b.classList.toggle('active',b===p));
+      cont.querySelectorAll('.lesson').forEach((b,i)=>b.classList.toggle('active',i==+p.dataset.i));
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  })();
+
+  // ===== MẸO =====
+  (function(){
+    const c=document.getElementById('memo-container');
+    (window.MEMO_HOA||[]).forEach(block=>{
+      const d=document.createElement('div');d.className='memo-block';
+      let h='<h2>'+esc(block.title)+'</h2>';
+      block.items.forEach(it=>{
+        h+='<div class="memo-item"><div class="t">'+esc(it.t)+'</div><div class="c">'+it.c+'</div>'+
+           (it.v?'<div class="v">'+it.v+'</div>':'')+'</div>';
+      });
+      d.innerHTML=h;c.appendChild(d);
+    });
+  })();
+
+  // ===== TRẮC NGHIỆM =====
+  (function(){
+    const Q=window.QUIZ_HOA||[];
+    const LV={NB:'Nhận biết',TH:'Thông hiểu',VD:'Vận dụng',VDC:'Vận dụng cao'};
+    const st={ans:{},submitted:false,reveal:false};
+    const cont=document.getElementById('quiz-container');
+    document.getElementById('q-total').textContent=Q.length;
+    function key(i){return i;}
+    function render(){
+      cont.innerHTML='';
+      ['NB','TH','VD','VDC'].forEach(lv=>{
+        const list=Q.map((q,i)=>({q,i})).filter(x=>x.q.lv===lv);
+        if(!list.length)return;
+        const h=document.createElement('div');h.className='sec-h';h.textContent=LV[lv]+' ('+list.length+' câu)';cont.appendChild(h);
+        list.forEach(({q,i})=>cont.appendChild(renderQ(q,i)));
+      });
+      upd();
+    }
+    function renderQ(q,i){
+      const chosen=st.ans[i];
+      const reveal=st.submitted||st.reveal||chosen!=null;
+      const card=document.createElement('div');card.className='q';card.id='q-'+i;
+      const qt=document.createElement('div');qt.className='qt';
+      qt.innerHTML='<span class="lv '+q.lv+'">'+LV[q.lv]+'</span><span class="num">Câu '+(i+1)+'.</span> '+esc(q.q);
+      card.appendChild(qt);
+      const opts=document.createElement('div');opts.className='opts';
+      q.o.forEach((op,oi)=>{
+        const L='ABCD'[oi];
+        const d=document.createElement('div');d.className='opt';
+        if(chosen===L)d.classList.add('selected');
+        d.innerHTML='<span class="k">'+L+'.</span> '+esc(op);
+        if(reveal){
+          if(L===q.a)d.classList.add('key');
+          if(chosen===L&&L!==q.a)d.classList.add('bad');
+        }else{
+          d.addEventListener('click',()=>{st.ans[i]=L;replaceQ(q,i);upd();});
+        }
+        opts.appendChild(d);
+      });
+      card.appendChild(opts);
+      if(st.submitted||st.reveal||chosen!=null){
+        if(chosen===q.a)card.classList.add('correct');
+        else if(chosen!=null)card.classList.add('wrong');
+      }
+      return card;
+    }
+    function replaceQ(q,i){const old=document.getElementById('q-'+i);if(old)old.replaceWith(renderQ(q,i));}
+    function done(){let n=0;Q.forEach((_,i)=>{if(st.ans[i]!=null)n++;});return n;}
+    function upd(){const n=done();document.getElementById('q-done').textContent=n;document.getElementById('q-fill').style.width=(n/Q.length*100)+'%';}
+    document.getElementById('q-submit').addEventListener('click',function(){
+      const n=done();
+      if(n<Q.length&&!confirm('Bạn còn '+(Q.length-n)+' câu chưa trả lời. Vẫn nộp bài?'))return;
+      st.submitted=true;let c=0;Q.forEach((q,i)=>{if(st.ans[i]===q.a)c++;});
+      const score=(c/Q.length)*10;
+      document.getElementById('q-score').textContent=score.toFixed(2);
+      document.getElementById('q-detail').textContent='Đúng '+c+'/'+Q.length+' câu · Sai '+(Q.length-c)+' câu';
+      document.getElementById('q-res').classList.add('show');
+      this.disabled=true;this.textContent='Đã nộp';
+      render();window.scrollTo({top:0,behavior:'smooth'});
+    });
+    document.getElementById('q-toggle').addEventListener('click',function(){
+      st.reveal=!st.reveal;this.textContent=st.reveal?'Ẩn đáp án':'Hiện đáp án';render();
+    });
+    document.getElementById('q-reset').addEventListener('click',function(){
+      st.ans={};st.submitted=false;st.reveal=false;
+      document.getElementById('q-res').classList.remove('show');
+      const b=document.getElementById('q-submit');b.disabled=false;b.textContent='Nộp bài';
+      document.getElementById('q-toggle').textContent='Hiện đáp án';
+      render();window.scrollTo({top:0,behavior:'smooth'});
+    });
+    render();
+  })();
+
+  // ===== ĐÚNG / SAI =====
+  (function(){
+    const Q=window.TFS_HOA||[];
+    const st={ans:{},submitted:false,reveal:false};
+    const cont=document.getElementById('tfs-container');
+    const totalY=Q.reduce((s,q)=>s+q.items.length,0);
+    document.getElementById('t-total').textContent=totalY;
+    function render(){
+      cont.innerHTML='';
+      Q.forEach((q,qi)=>cont.appendChild(renderQ(q,qi)));
+      upd();
+    }
+    function renderQ(q,qi){
+      const card=document.createElement('div');card.className='tf';card.id='tf-'+qi;
+      const tq=document.createElement('div');tq.className='tq';
+      tq.innerHTML='<span class="num">Câu '+(qi+1)+'.</span> '+esc(q.q);
+      card.appendChild(tq);
+      if(q.title){
+        const tb=document.createElement('div');tb.className='tf-tag';
+        tb.textContent=q.title;
+        if(q.title.includes('Khó'))tb.classList.add('dif');
+        card.appendChild(tb);
+      }
+      if(q.img){
+        const im=document.createElement('div');im.className='tf-img';
+        im.innerHTML='<img src="'+q.img+'" alt="Hình minh họa" loading="lazy">';
+        card.appendChild(im);
+      }
+      const tbl=document.createElement('table');tbl.className='tft';
+      tbl.innerHTML='<thead><tr><th style="width:5%">Ý</th><th style="width:65%">Nội dung</th><th style="width:30%">Đúng / Sai</th></tr></thead>';
+      const tbody=document.createElement('tbody');
+      q.items.forEach((it,ii)=>{
+        const key=qi+'_'+ii;
+        const chosen=st.ans[key];
+        const reveal=st.submitted||st.reveal||chosen!=null;
+        const tr=document.createElement('tr');
+        const td0=document.createElement('td');td0.className='c';td0.innerHTML='<b>'+'abcd'[ii]+')</b>';
+        const td1=document.createElement('td');td1.textContent=it.t;
+        const td2=document.createElement('td');td2.className='c';
+        if(reveal){
+          const keyTxt=it.a?'Đúng':'Sai';
+          let h='<span class="tf-key '+(it.a?'t':'f')+'">'+keyTxt+'</span>';
+          if(chosen!=null){
+            const ok=chosen===it.a;
+            h+='<span class="tf-you '+(ok?'ok':'no')+'">'+(ok?'✓':'✗ bạn chọn '+(chosen?'Đúng':'Sai'))+'</span>';
+          }
+          td2.innerHTML=h;
+          if(chosen!=null)td1.style.background=chosen===it.a?'#f0fff4':'#fff5f5';
+        }else{
+          const wrap=document.createElement('span');wrap.className='tf-pick';
+          [true,false].forEach(v=>{
+            const b=document.createElement('button');
+            b.textContent=v?'Đúng':'Sai';
+            if(chosen===v)b.classList.add(v?'on-T':'on-F');
+            b.addEventListener('click',()=>{st.ans[key]=v;replaceQ(q,qi);upd();});
+            wrap.appendChild(b);
+          });
+          td2.appendChild(wrap);
+        }
+        tr.appendChild(td0);tr.appendChild(td1);tr.appendChild(td2);
+        tbody.appendChild(tr);
+      });
+      tbl.appendChild(tbody);card.appendChild(tbl);
+      if(st.submitted||st.reveal){
+        const nt=document.createElement('div');nt.className='tf note';
+        nt.innerHTML='💡 <b>Giải thích:</b> '+(q.note||'—');
+        card.appendChild(nt);
+      }
+      return card;
+    }
+    function replaceQ(q,qi){const old=document.getElementById('tf-'+qi);if(old)old.replaceWith(renderQ(q,qi));}
+    function done(){let n=0;Q.forEach((q,qi)=>q.items.forEach((_,ii)=>{if(st.ans[qi+'_'+ii]!=null)n++;}));return n;}
+    function upd(){const n=done();document.getElementById('t-done').textContent=n;document.getElementById('t-fill').style.width=(n/totalY*100)+'%';}
+    function scoreQ(sub){if(sub===4)return 1;if(sub===3)return 0.5;if(sub===2)return 0.25;if(sub===1)return 0.1;return 0;}
+    document.getElementById('t-submit').addEventListener('click',function(){
+      const n=done();
+      if(n<totalY&&!confirm('Bạn còn '+(totalY-n)+' ý chưa trả lời. Vẫn nộp bài?'))return;
+      st.submitted=true;
+      let sum=0;Q.forEach((q,qi)=>{let c=0;q.items.forEach((it,ii)=>{if(st.ans[qi+'_'+ii]===it.a)c++;});sum+=scoreQ(c);});
+      const score=(sum/Q.length)*10;
+      document.getElementById('t-score').textContent=score.toFixed(2);
+      document.getElementById('t-detail').textContent='Đúng '+sum.toFixed(2)+'/'+Q.length+' câu (mỗi câu 1đ theo chuẩn)';
+      document.getElementById('t-res').classList.add('show');
+      this.disabled=true;this.textContent='Đã nộp';
+      render();window.scrollTo({top:0,behavior:'smooth'});
+    });
+    document.getElementById('t-toggle').addEventListener('click',function(){st.reveal=!st.reveal;this.textContent=st.reveal?'Ẩn đáp án':'Hiện đáp án';render();});
+    document.getElementById('t-reset').addEventListener('click',function(){
+      st.ans={};st.submitted=false;st.reveal=false;
+      document.getElementById('t-res').classList.remove('show');
+      const b=document.getElementById('t-submit');b.disabled=false;b.textContent='Nộp bài';
+      document.getElementById('t-toggle').textContent='Hiện đáp án';render();window.scrollTo({top:0,behavior:'smooth'});
+    });
+    render();
+  })();
+
+  // ===== DẠNG BÀI TẬP =====
+  (function(){
+    const c=document.getElementById('dang-container');
+    (window.DANG_HOA||[]).forEach(d=>{
+      const box=document.createElement('div');box.className='dang';
+      let h='<h2>'+esc(d.title)+'</h2><div class="method">'+d.method+'</div>';
+      if(d.examples&&d.examples.length){
+        d.examples.forEach((ex,i)=>{
+          h+='<div class="box-ex"><div class="lbl">✏️ Ví dụ '+(i+1)+'</div><div>'+esc(ex.q)+'</div><div class="sol">'+ex.sol+'</div></div>';
+        });
+      }
+      box.innerHTML=h;c.appendChild(box);
+    });
+  })();
+
+  document.getElementById('wm').textContent='Tổng '+((window.QUIZ_HOA||[]).length)+' câu trắc nghiệm.';
+})();
+</script>
+</body>
+</html>

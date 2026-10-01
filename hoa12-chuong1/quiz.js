@@ -1,152 +1,1641 @@
-// NGÂN HÀNG TRẮC NGHIỆM — HÓA 12 KNTT CHƯƠNG 1: ESTER – LIPID (4 mức độ)
 window.QUIZ_HOA = [
-  // ===== NHẬN BIẾT =====
-  { lv: 'NB', q: 'Công thức của ethyl acetate là', o: ['CH₃COOCH₃', 'CH₃COOC₂H₅', 'HCOOCH₃', 'HCOOC₂H₅'], a: 'B' },
-  { lv: 'NB', q: 'Tên gọi của ester CH₃COOCH₃ là', o: ['methyl formate', 'methyl acetate', 'ethyl acetate', 'ethyl formate'], a: 'B' },
-  { lv: 'NB', q: 'Chất nào sau đây thuộc loại ester?', o: ['CH₃COOH', 'CH₃COOCH₃', 'C₂H₅OH', 'CH₃CHO'], a: 'B' },
-  { lv: 'NB', q: 'Công thức chung của ester đơn chức là', o: ['RCOOH', 'RCOOR′', 'RCHO', 'ROR′'], a: 'B' },
-  { lv: 'NB', q: 'Nhóm chức đặc trưng của ester là', o: ['–OH', '–CHO', '–COO–', '–COOH'], a: 'C' },
-  { lv: 'NB', q: 'Ester no, đơn chức, mạch hở có công thức phân tử dạng', o: ['CₙH₂ₙO', 'CₙH₂ₙO₂', 'CₙH₂ₙ₋₂O₂', 'CₙH₂ₙ₊₂O₂'], a: 'B' },
-  { lv: 'NB', q: 'Chất nào sau đây là chất béo?', o: ['(C₁₇H₃₅COO)₃C₃H₅', 'CH₃COOH', 'C₂H₅OH', 'CH₃COOCH₃'], a: 'A' },
-  { lv: 'NB', q: 'Xà phòng là muối natri hoặc kali của', o: ['acid vô cơ', 'acid béo', 'alcohol', 'amino acid'], a: 'B' },
-  { lv: 'NB', q: 'Công thức chung của chất béo là', o: ['RCOOR′', '(RCOO)₃C₃H₅', '(RCOO)₂C₂H₄', 'R(COOR′)₃'], a: 'B' },
-  { lv: 'NB', q: 'Acid béo là carboxylic acid đơn chức, hầu hết có số nguyên tử carbon', o: ['lẻ', 'chẵn', 'bất kì', 'bằng 1'], a: 'B' },
-  { lv: 'NB', q: 'Chất béo là triester của glycerol với', o: ['acid vô cơ', 'acid béo', 'alcohol', 'phenol'], a: 'B' },
-  { lv: 'NB', q: 'Ester nào sau đây có mùi chuối chín?', o: ['isoamyl acetate', 'ethyl butyrate', 'ethyl formate', 'methyl acetate'], a: 'A' },
-  { lv: 'NB', q: 'Phản ứng thủy phân ester trong môi trường kiềm gọi là', o: ['ester hóa', 'xà phòng hóa', 'trùng hợp', 'hydrogen hóa'], a: 'B' },
-  { lv: 'NB', q: 'Xúc tác thường dùng trong phản ứng ester hóa là', o: ['NaOH', 'H₂SO₄ đặc', 'Ni', 'HCl loãng'], a: 'B' },
-  { lv: 'NB', q: 'Trong phân tử xà phòng, phần "đuôi" có đặc tính', o: ['ưa nước', 'kị nước', 'trung tính', 'phân cực mạnh'], a: 'B' },
-  { lv: 'NB', q: 'Ester nào sau đây có mùi dứa chín?', o: ['ethyl butyrate', 'isoamyl acetate', 'ethyl formate', 'methyl acetate'], a: 'A' },
-  { lv: 'NB', q: 'Methyl methacrylate được dùng để sản xuất', o: ['xà phòng', 'thủy tinh hữu cơ', 'dầu ăn', 'phân bón'], a: 'B' },
-  { lv: 'NB', q: 'Chất giặt rửa tự nhiên có trong quả bồ kết, bồ hòn là', o: ['saponin', 'alkaloid', 'glucose', 'protein'], a: 'A' },
-  { lv: 'NB', q: '1 gam chất béo cung cấp khoảng bao nhiêu năng lượng?', o: ['4 kcal', '9 kcal', '2 kcal', '20 kcal'], a: 'B' },
-
-  // ===== THÔNG HIỂU =====
-  { lv: 'TH', q: 'Tên gọi của ester HCOOC₂H₅ là', o: ['ethyl formate', 'ethyl acetate', 'methyl formate', 'propyl formate'], a: 'A' },
-  { lv: 'TH', q: 'Số đồng phân ester ứng với công thức phân tử C₃H₆O₂ là', o: ['1', '2', '3', '4'], a: 'B' },
-  { lv: 'TH', q: 'Số đồng phân ester ứng với công thức phân tử C₄H₈O₂ là', o: ['2', '3', '4', '5'], a: 'C' },
-  { lv: 'TH', q: 'Ester nào sau đây có nhiệt độ sôi cao nhất?', o: ['CH₃COOCH₃', 'C₂H₅OH', 'CH₃COOH', 'HCOOCH₃'], a: 'C' },
-  { lv: 'TH', q: 'Vì sao ester có nhiệt độ sôi thấp hơn alcohol, acid có cùng phân tử khối?', o: ['Không tạo liên kết hydrogen với nhau', 'Phân tử khối nhỏ hơn', 'Có nhóm –OH', 'Tan tốt trong nước'], a: 'A' },
-  { lv: 'TH', q: 'Đun nóng ester CH₃COOCH₃ với dung dịch NaOH, sản phẩm thu được là', o: ['CH₃COOH + CH₃OH', 'CH₃COONa + CH₃OH', 'HCOONa + C₂H₅OH', 'CH₃COONa + C₂H₅OH'], a: 'B' },
-  { lv: 'TH', q: 'Thủy phân ester trong môi trường acid là phản ứng', o: ['một chiều', 'thuận nghịch', 'trùng hợp', 'oxi hóa khử'], a: 'B' },
-  { lv: 'TH', q: 'Methyl propenoate có công thức cấu tạo thu gọn là', o: ['CH₃COOCH₃', 'CH₂=CHCOOCH₃', 'HCOOCH₃', 'C₂H₅COOCH₃'], a: 'B' },
-  { lv: 'TH', q: 'Công thức cấu tạo của triolein (glycerol + oleic acid) là', o: ['(C₁₇H₃₃COO)₃C₃H₅', '(C₁₇H₃₅COO)₃C₃H₅', '(C₁₇H₃₁COO)₃C₃H₅', '(C₁₅H₃₁COO)₃C₃H₅'], a: 'A' },
-  { lv: 'TH', q: 'Acid béo nào sau đây là acid béo không no?', o: ['acid stearic', 'acid palmitic', 'acid oleic', 'acid lauric'], a: 'C' },
-  { lv: 'TH', q: 'Chất béo lỏng chứa chủ yếu gốc acid béo', o: ['no', 'không no', 'thơm', 'vô cơ'], a: 'B' },
-  { lv: 'TH', q: 'Sản phẩm của phản ứng thủy phân chất béo trong môi trường kiềm là', o: ['acid béo + glycerol', 'xà phòng + glycerol', 'xà phòng + nước', 'aldehyde + glycerol'], a: 'B' },
-  { lv: 'TH', q: 'Phản ứng chuyển chất béo lỏng thành chất béo rắn là', o: ['thủy phân', 'hydrogen hóa', 'oxi hóa', 'trùng hợp'], a: 'B' },
-  { lv: 'TH', q: 'Hiện tượng dầu mỡ bị ôi là do', o: ['thủy phân', 'hydrogen hóa', 'oxi hóa bởi oxygen không khí', 'đông đặc'], a: 'C' },
-  { lv: 'TH', q: 'Ester nào sau đây có phản ứng tráng gương?', o: ['CH₃COOCH₃', 'HCOOC₂H₅', 'CH₃COOC₂H₅', 'C₂H₅COOCH₃'], a: 'B' },
-  { lv: 'TH', q: 'Vì sao không nên dùng xà phòng với nước cứng?', o: ['tạo kết tủa với Ca²⁺, Mg²⁺', 'tạo bọt quá nhiều', 'không tan trong nước', 'bay hơi nhanh'], a: 'A' },
-  { lv: 'TH', q: 'Nguyên liệu chính để sản xuất chất giặt rửa tổng hợp là', o: ['dầu mỏ', 'mỡ động vật', 'tinh bột', 'muối ăn'], a: 'A' },
-  { lv: 'TH', q: 'Ester X có CTPT C₄H₈O₂, thủy phân trong acid thu được propionic acid và chất Y. Y là', o: ['CH₃OH', 'C₂H₅OH', 'C₃H₇OH', 'HCOOH'], a: 'A' },
-  { lv: 'TH', q: 'Đun este phenyl acetate (CH₃COOC₆H₅) với NaOH dư, sản phẩm hữu cơ thu được là', o: ['1 alcohol', '1 acid', '2 muối', '1 aldehyde'], a: 'C' },
-  { lv: 'TH', q: 'Cho các chất: CH₃COOH, HCOOC₂H₅, CH₃COOCH₃, C₂H₅OH. Số chất thủy phân trong kiềm là', o: ['1', '2', '3', '4'], a: 'B' },
-  { lv: 'TH', q: 'Methyl salicylate được dùng làm', o: ['thuốc xoa bóp giảm đau', 'chất tẩy rửa', 'phân bón', 'nhiên liệu'], a: 'A' },
-  { lv: 'TH', q: 'Dung môi dùng để tách caffeine khỏi cà phê là', o: ['ethyl acetate', 'benzen', 'nước', 'ethanol'], a: 'A' },
-  { lv: 'TH', q: 'Phản ứng hydrogen hóa chất béo lỏng được ứng dụng để sản xuất', o: ['bơ nhân tạo', 'xà phòng', 'nước hoa', 'thuốc nổ'], a: 'A' },
-  { lv: 'TH', q: 'Vì sao ester được dùng nhiều làm hương liệu, mĩ phẩm?', o: ['có mùi thơm, an toàn', 'độc hại', 'không tan trong nước', 'có vị chua'], a: 'A' },
-  { lv: 'TH', q: 'Sản phẩm phụ thu được khi xà phòng hóa chất béo, có ứng dụng trong mĩ phẩm và dược phẩm là', o: ['ethanol', 'glycerol', 'acid béo', 'aldehyde'], a: 'B' },
-  { lv: 'TH', q: 'Hai loại chất giặt rửa tự nhiên được dùng phổ biến ở Việt Nam là', o: ['bồ kết, bồ hòn', 'xà phòng, bột giặt', 'dầu gội, sữa tắm', 'nước Javen, cồn'], a: 'A' },
-
-  // ===== VẬN DỤNG =====
-  { lv: 'VD', q: 'Cho 8,8 gam ethyl acetate (M=88) tác dụng hết với NaOH dư, cô cạn thu được m gam muối. Giá trị m là', o: ['4,1 g', '6,8 g', '8,2 g', '9,6 g'], a: 'C' },
-  { lv: 'VD', q: 'Xà phòng hóa hoàn toàn 8,9 gam tristearin (M=890) bằng NaOH vừa đủ. Khối lượng muối thu được là', o: ['9,18 g', '8,9 g', '18,36 g', '3,06 g'], a: 'A' },
-  { lv: 'VD', q: 'Xà phòng hóa 17,8 g chất béo cần vừa đủ 0,06 mol NaOH, thu được 1,84 g glycerol. Khối lượng xà phòng thu được là', o: ['17,8 g', '18,36 g', '16,0 g', '19,0 g'], a: 'B' },
-  { lv: 'VD', q: 'Đun nóng ester X có CTPT C₄H₈O₂ với NaOH thu được CH₃COONa. Tên gọi của X là', o: ['methyl propionate', 'ethyl formate', 'ethyl acetate', 'propyl formate'], a: 'C' },
-  { lv: 'VD', q: 'Ester Y có CTPT C₄H₈O₂, thủy phân trong acid thu được acid và alcohol Z không hòa tan Cu(OH)₂. Y là', o: ['ethyl acetate', 'methyl propionate', 'propyl formate', 'isopropyl formate'], a: 'A' },
-  { lv: 'VD', q: 'Thủy phân hoàn toàn 1,1 gam ester đơn chức X bằng NaOH vừa đủ, thu được 1,02 g muối và 0,58 g alcohol. X là', o: ['HCOOC₂H₅', 'CH₃COOC₂H₅', 'CH₃COOCH₃', 'HCOOCH₃'], a: 'B' },
-  { lv: 'VD', q: 'Khối lượng glycerol thu được khi xà phòng hóa hoàn toàn 89 g chất béo bằng NaOH, thu được 9,2 g glycerol là', o: ['9,2 g', '4,6 g', '18,4 g', '2,3 g'], a: 'A' },
-  { lv: 'VD', q: 'Cho 17,4 gam ester X đơn chức phản ứng hết với KOH, thu được 19,6 gam muối và 1 alcohol. CTPT của X là (K=39)', o: ['C₃H₆O₂', 'C₅H₁₀O₂', 'C₄H₆O₂', 'C₆H₁₂O₂'], a: 'A' },
-  { lv: 'VD', q: 'Đun 60 g CH₃COOH với C₂H₅OH vừa đủ (H₂SO₄ đặc) thu được 44 g ethyl acetate. Hiệu suất phản ứng là', o: ['40%', '50%', '60%', '80%'], a: 'B' },
-  { lv: 'VD', q: 'Đốt cháy hoàn toàn một ester no, đơn chức, mạch hở thu được 0,3 mol CO₂. Số mol H₂O thu được là', o: ['0,15 mol', '0,3 mol', '0,45 mol', '0,6 mol'], a: 'B' },
-  { lv: 'VD', q: 'Xà phòng hóa hoàn toàn 4,42 g triglyceride X bằng NaOH dư thu được 0,46 g glycerol. Số mol NaOH đã phản ứng là', o: ['0,005 mol', '0,015 mol', '0,01 mol', '0,03 mol'], a: 'B' },
-  { lv: 'VD', q: 'Một chất béo chứa 89% tristearin. Khối lượng chất béo cần để sản xuất 1 tấn xà phòng chứa 72% natri stearat là (xấp xỉ, kg)', o: ['789 kg', '702 kg', '890 kg', '500 kg'], a: 'A' },
-
-  // ===== VẬN DỤNG CAO =====
-  { lv: 'VDC', q: 'Ester X có CTPT C₈H₈O₂. Cho X tác dụng NaOH thu được sản phẩm có 2 muối. Số CTCT của X thỏa mãn là', o: ['1', '2', '3', '4'], a: 'C' },
-  { lv: 'VDC', q: 'Cho các ester: ethyl formate, vinyl acetate, triolein, methyl acrylate, phenyl acetate. Số chất khi thủy phân trong NaOH (dư, t°) sinh ra alcohol là', o: ['2', '3', '4', '5'], a: 'A' },
-  { lv: 'VDC', q: 'Ester hóa giữa HOCH₂CH₂OH với hỗn hợp CH₃COOH và C₂H₅COOH thu được tối đa bao nhiêu ester hai chức?', o: ['2', '3', '4', '1'], a: 'B' },
-  { lv: 'VDC', q: 'Để trung hòa acid béo tự do trong 14 g chất béo cần 15 ml dung dịch KOH 0,1M. Chỉ số acid của chất béo là', o: ['4', '6', '8', '10'], a: 'B' },
-  { lv: 'VDC', q: 'Thủy phân hoàn toàn 2,145 kg chất béo cần 0,3 kg NaOH, thu được 0,092 kg glycerol và m gam muối. Giá trị m (kg) là', o: ['2,353', '2,145', '2,500', '2,000'], a: 'A' },
-  { lv: 'VDC', q: 'Số gam iot có thể cộng vào 100 gam chất béo gọi là', o: ['chỉ số acid', 'chỉ số xà phòng', 'chỉ số iot', 'chỉ số este'], a: 'C' },
-  { lv: 'VDC', q: 'Một loại mỡ chứa 70% triolein và 30% tristearin. Xà phòng hóa hoàn toàn 100 kg mỡ này bằng NaOH thu được khối lượng glycerol là (M triolein=884, tristearin=890, glycerol=92)', o: ['8,3 kg', '10,4 kg', '9,2 kg', '11,5 kg'], a: 'A' },
-  { lv: 'VDC', q: 'Cần bao nhiêu kg triolein để điều chế 5,88 kg glycerol (hiệu suất 85%)? (M triolein=884; M glycerol=92)', o: ['60,0 kg', '56,4 kg', '66,4 kg', '70,0 kg'], a: 'C' },
-  { lv: 'VDC', q: 'Este đơn chức X tác dụng với NaOH thu được 2 muối và nước. X thuộc loại', o: ['este của alcohol', 'este của phenol', 'ester vòng', 'este đa chức'], a: 'B' },
-  { lv: 'VDC', q: 'Cho 0,1 mol triglixerit X phản ứng vừa đủ với 0,3 mol NaOH. Khối lượng glycerol thu được là', o: ['4,6 g', '9,2 g', '13,8 g', '18,4 g'], a: 'B' },
-
-  // ===== LÝ THUYẾT & NHẬN BIẾT (bổ sung) =====
-  { lv: 'NB', q: 'Ester là hợp chất hữu cơ được tạo thành khi thay nhóm –OH trong nhóm carboxyl của carboxylic acid bằng nhóm', o: ['–NH₂', '–OH', '–OR′', '–NO₂'], a: 'C' },
-  { lv: 'NB', q: 'Công thức cấu tạo thu gọn của ethyl acetate là', o: ['HCOOCH₃', 'CH₃COOCH₃', 'CH₃COOC₂H₅', 'C₂H₅COOH'], a: 'C' },
-  { lv: 'NB', q: 'Tên gọi của HCOOCH₃ là', o: ['methyl formate', 'ethyl formate', 'methyl acetate', 'propyl formate'], a: 'A' },
-  { lv: 'NB', q: 'Nhóm chức đặc trưng của ester là', o: ['–OH', '–CHO', '–COO–', '–COOH'], a: 'C' },
-  { lv: 'NB', q: 'Công thức của triolein (tạo bởi glycerol và oleic acid) là', o: ['(C₁₇H₃₅COO)₃C₃H₅', '(C₁₇H₃₁COO)₃C₃H₅', '(C₁₇H₃₃COO)₃C₃H₅', '(C₁₅H₃₁COO)₃C₃H₅'], a: 'C' },
-  { lv: 'NB', q: 'Chất nào sau đây KHÔNG phải là chất béo?', o: ['(C₁₅H₃₁COO)₃C₃H₅', '(CH₃COO)₃C₃H₅', '(C₁₇H₃₅COO)₃C₃H₅', '(C₁₇H₃₃COO)₃C₃H₅'], a: 'B' },
-  { lv: 'NB', q: 'Số nguyên tử oxygen có trong phân tử triolein là', o: ['3', '4', '6', '2'], a: 'C' },
-  { lv: 'NB', q: 'Ở điều kiện thường, triolein tồn tại ở trạng thái', o: ['rắn', 'lỏng', 'khí', 'keo'], a: 'B' },
-  { lv: 'NB', q: 'Acid nào sau đây là acid béo no?', o: ['acid oleic', 'acid linoleic', 'acid panmitic', 'acid acrylic'], a: 'C' },
-  { lv: 'NB', q: 'Axit linoleic (có trong dầu hướng dương) được xếp vào loại', o: ['acid béo omega-3', 'acid béo omega-6', 'acid béo no', 'acid béo omega-9'], a: 'B' },
-  { lv: 'NB', q: 'Tristearin có công thức phân tử là', o: ['C₅₅H₁₀₆O₆', 'C₅₇H₁₁₀O₆', 'C₅₇H₁₀₄O₆', 'C₅₁H₉₈O₆'], a: 'B' },
-  { lv: 'NB', q: 'Ester nào sau đây có mùi đặc trưng của quả lê?', o: ['isoamyl acetate', 'propyl acetate', 'ethyl formate', 'geranyl acetate'], a: 'B' },
-  { lv: 'NB', q: 'Chất nào sau đây không phải là xà phòng?', o: ['C₁₅H₃₁COONa', 'C₁₇H₃₅COOK', 'CH₃[CH₂]₁₁OSO₃Na', 'C₁₇H₃₃COONa'], a: 'C' },
-  { lv: 'NB', q: 'Chất nào sau đây là chất giặt rửa tổng hợp?', o: ['C₁₅H₃₁COONa', 'C₁₇H₃₅COOK', 'CH₃[CH₂]₁₁C₆H₄SO₃Na', 'C₁₇H₃₃COONa'], a: 'C' },
-  { lv: 'NB', q: 'Dung dịch nào sau đây là chất giặt rửa tự nhiên?', o: ['nước quả cam', 'nước quả chanh', 'nước quả bồ kết', 'nước quả dâu'], a: 'C' },
-  { lv: 'NB', q: 'Trong cơ thể người, lipid có vai trò chính là', o: ['cung cấp và dự trữ năng lượng', 'xúc tác quá trình trao đổi chất', 'xây dựng kháng thể', 'vận chuyển oxygen trong máu'], a: 'A' },
-  { lv: 'NB', q: 'Ester nào sau đây có công thức CH₃COOCH=CH₂?', o: ['vinyl acetate', 'methyl acrylate', 'ethyl acetate', 'phenyl acetate'], a: 'A' },
-  { lv: 'NB', q: 'Tên gọi của CH₂=C(CH₃)COOCH₃ là', o: ['methyl acrylate', 'methyl methacrylate', 'methyl metacrylic', 'methyl propionate'], a: 'B' },
-  { lv: 'NB', q: 'Tên gọi của CH₃COOCH₂C₆H₅ là', o: ['methyl benzoate', 'phenyl acetate', 'benzyl acetate', 'phenyl acetic'], a: 'C' },
-  { lv: 'NB', q: 'Tên gọi của CH₃COOC₆H₅ là', o: ['benzyl acetate', 'phenyl acetate', 'methyl benzoate', 'phenyl acetic'], a: 'B' },
-  { lv: 'NB', q: 'Benzyl acetate có mùi thơm của', o: ['chuối chín', 'hoa nhài', 'quả dứa', 'quả đào'], a: 'B' },
-  { lv: 'NB', q: 'Isoamyl acetate có công thức cấu tạo là', o: ['CH₃COOCH₂CH₂CH(CH₃)₂', 'CH₃COOCH(CH₃)CH(CH₃)₂', 'CH₃COOCH₂C(CH₃)₂CH₃', 'CH₃COOC(CH₃)₂CH₂CH₃'], a: 'A' },
-
-  // ===== LÝ THUYẾT – THÔNG HIỂU (bổ sung) =====
-  { lv: 'TH', q: 'Phát biểu nào sau đây SAI?', o: ['Ester có nhiệt độ sôi thấp hơn acid cùng phân tử khối', 'Phản ứng ester hóa là phản ứng thuận nghịch', 'Phản ứng xà phòng hóa là phản ứng thuận nghịch', 'Ở điều kiện thường ester là chất lỏng hoặc rắn'], a: 'C' },
-  { lv: 'TH', q: 'Số liên kết π trong phân tử ester no, đơn chức, mạch hở là', o: ['0', '1', '2', '3'], a: 'B' },
-  { lv: 'TH', q: 'Đặc điểm của phản ứng thủy phân ester no, đơn chức trong môi trường ACID là', o: ['một chiều', 'thuận nghịch', 'luôn tạo muối carboxylate', 'xảy ra nhanh ở nhiệt độ thường'], a: 'B' },
-  { lv: 'TH', q: 'Đặc điểm của phản ứng thủy phân ester no, đơn chức trong môi trường BASE là', o: ['một chiều', 'thuận nghịch', 'luôn tạo carboxylic acid', 'không cần đun nóng'], a: 'A' },
-  { lv: 'TH', q: 'Phát biểu nào sau đây KHÔNG đúng về chất béo?', o: ['Chất béo là triester của glycerol với acid béo', 'Chất béo nhẹ hơn nước', 'Chất béo tan nhiều trong nước', 'Chất béo bị thủy phân trong môi trường kiềm khi đun nóng'], a: 'C' },
-  { lv: 'TH', q: 'Phát biểu nào sau đây ĐÚNG về tính chất vật lí của nhiều ester?', o: ['Đều là chất rắn ở điều kiện thường', 'Đều tan vô hạn trong nước', 'Thường có mùi thơm, ít tan trong nước', 'Đều có nhiệt độ sôi cao hơn acid tương ứng'], a: 'C' },
-  { lv: 'TH', q: 'Số đồng phân ester ứng với công thức phân tử C₅H₁₀O₂ là', o: ['7', '8', '9', '10'], a: 'C' },
-  { lv: 'TH', q: 'Số đồng phân ester ứng với công thức phân tử C₄H₆O₂ (mạch hở) là', o: ['2', '3', '4', '5'], a: 'D' },
-  { lv: 'TH', q: 'Ester X (C₄H₆O₂) khi thủy phân trong kiềm tạo muối và aldehyde. Công thức của X là', o: ['HCOOCH₂−CH=CH₂', 'CH₃COOCH=CH₂', 'CH₂=CH−COOCH₃', 'C₂H₅COOCH₃'], a: 'B' },
-  { lv: 'TH', q: 'Este nào sau đây khi thủy phân trong kiềm dư tạo ra 2 muối?', o: ['CH₃COOCH₃', 'HCOOC₆H₅', 'CH₃COOC₂H₅', 'CH₃COOCH=CH₂'], a: 'B' },
-  { lv: 'TH', q: 'Cặp chất nào sau đây đều là ester?', o: ['CH₃COOH và HCOOCH₃', 'HCOOCH₃ và CH₃COOC₂H₅', 'C₂H₅OH và CH₃CHO', 'CH₃COOCH₃ và C₂H₅OH'], a: 'B' },
-  { lv: 'TH', q: 'Để chuyển chất béo lỏng (dầu) thành chất béo rắn (bơ nhân tạo), người ta dùng phản ứng', o: ['oxi hóa', 'xà phòng hóa', 'hydrogen hóa (cộng H₂)', 'thủy phân'], a: 'C' },
-  { lv: 'TH', q: 'Phản ứng thủy phân chất béo trong môi trường acid là phản ứng', o: ['một chiều', 'thuận nghịch', 'trùng hợp', 'oxi hóa – khử'], a: 'B' },
-  { lv: 'TH', q: 'Dầu mỡ để lâu bị ôi là do', o: ['thủy phân bởi hơi nước', 'vi khuẩn phân hủy', 'nối đôi C=C ở gốc acid không no bị oxi hóa bởi O₂', 'gốc glycerol bị oxi hóa'], a: 'C' },
-  { lv: 'TH', q: 'Phản ứng nào sau đây dùng để điều chế xà phòng?', o: ['đun acid béo với dung dịch kiềm', 'đun glycerol với acid béo', 'đun chất béo với dung dịch kiềm', 'Cả A và C đúng'], a: 'D' },
-  { lv: 'TH', q: 'Đặc điểm nào sau đây KHÔNG đúng với xà phòng?', o: ['Có đuôi kị nước là gốc hydrocarbon của acid béo', 'Có đầu ưa nước là –COONa hoặc –COOK', 'Bị giảm tác dụng khi dùng với nước cứng', 'Dùng tốt với nước cứng hơn chất giặt rửa tổng hợp'], a: 'D' },
-  { lv: 'TH', q: 'Nhận xét nào sau đây KHÔNG đúng?', o: ['Chất béo là ester của glycerol và acid béo', 'Dầu mỡ bị ôi do nối đôi C=C bị oxi hóa chậm', 'Chất béo nhẹ hơn nước và không tan trong nước', 'Hydrogen hóa triolein hoặc trilinolein đều thu được tristearin'], a: 'D' },
-  { lv: 'TH', q: 'Phát biểu nào sau đây ĐÚNG về ester và lipid?', o: ['Tất cả ester đều tan vô hạn trong nước', 'Chất béo là ester đơn chức', 'Chất béo là triester của glycerol với acid béo', 'Phản ứng xà phòng hóa ester luôn tạo carboxylic acid'], a: 'C' },
-  { lv: 'TH', q: 'Khi thủy phân bất kì một chất béo nào thì luôn thu được', o: ['acid oleic', 'glycerol', 'acid stearic', 'acid panmitic'], a: 'B' },
-  { lv: 'TH', q: 'Ứng dụng nào sau đây KHÔNG phải của ester?', o: ['làm dung môi', 'tạo hương liệu thực phẩm', 'sản xuất chất dẻo', 'làm phân bón đạm'], a: 'D' },
-  { lv: 'TH', q: 'Chất nào sau đây dùng để phân biệt acid axetic, glycerol và triolein?', o: ['quỳ tím và nước Br₂', 'NaCl', 'nước cất', 'dung dịch HCl'], a: 'A' },
-  { lv: 'TH', q: 'Ở ruột non cơ thể người, nhờ xúc tác của enzyme, chất béo bị thủy phân thành', o: ['glycerol và acid béo', 'glycerol và muối', 'ethane và acid béo', 'aldehyde và glycerol'], a: 'A' },
-
-  // ===== BỔ SUNG NGUỒN NGOÀI (đề thi thật) =====
-  { lv: 'NB', q: 'Hoá chất chủ đạo trong ngành công nghiệp sản xuất xà phòng là', o: ['K₂SO₄', 'NaCl', 'Mg(NO₃)₂', 'NaOH'], a: 'D' },
-  { lv: 'NB', q: 'Thành phần chính của xà phòng là', o: ['muối natri hoặc kali của carboxylic acid bất kì', 'muối natri hoặc kali của acid béo', 'glycerol', 'muối natri của acid vô cơ'], a: 'B' },
-  { lv: 'NB', q: 'Ester butyl acetate được dùng để pha sơn tổng hợp có cấu tạo là', o: ['HCOOCH₂CH₂CH₃', 'CH₃COOCH₂CH₃', 'CH₃COOCH₂CH₂CH₂CH₃', 'CH₃CH₂CH₂COOCH₃'], a: 'C' },
-  { lv: 'NB', q: 'Ester nào sau đây là sản phẩm của phản ứng ester hóa giữa benzoic acid và methyl alcohol?', o: ['CH₃COOCH₂C₆H₅', 'C₆H₅CH₂COOCH₃', 'C₆H₅COOCH₃', 'CH₃COOC₆H₅'], a: 'C' },
-  { lv: 'NB', q: '"Đầu" ưa nước trong phân tử xà phòng là nhóm', o: ['carboxylate (–COONa)', 'sulfate', 'gốc hydrocarbon mạch dài', 'sulfonate'], a: 'A' },
-  { lv: 'NB', q: 'Chỉ số iot của chất béo là số gam iot có thể cộng vào bao nhiêu gam chất béo?', o: ['1 g', '10 g', '100 g', '1000 g'], a: 'C' },
-  { lv: 'NB', q: 'Dung dịch nào sau đây là chất giặt rửa tự nhiên?', o: ['nước quả cam', 'nước quả chanh', 'nước quả bồ kết', 'nước quả dâu'], a: 'C' },
-  { lv: 'NB', q: 'Trong công nghiệp, để chuyển chất béo lỏng thành chất béo rắn, người ta dùng phản ứng', o: ['ester hóa', 'hydrogen hóa', 'oxi hóa', 'xà phòng hóa'], a: 'B' },
-  { lv: 'NB', q: 'Chất nào sau đây là thành phần chính của xà phòng?', o: ['CH₃[CH₂]₃COONa', 'CH₃[CH₂]₁₁OSO₃Na', 'CH₃[CH₂]₁₄COONa', 'CH₃[CH₂]₁₆COOH'], a: 'C' },
-  { lv: 'TH', q: 'Phản ứng hóa học nào sau đây xảy ra thuận nghịch?', o: ['Đun ethyl acetate với H₂SO₄ loãng', 'Đun ethyl acetate với NaOH', 'Hydrogen hóa chất béo không no', 'Đun chất béo với NaOH'], a: 'A' },
-  { lv: 'TH', q: 'Cho các phát biểu: (1) ester có mùi thơm dùng làm hương liệu; (2) chất béo là triester của glycerol với acid béo; (3) chất béo tan tốt trong nước; (4) mỡ/dầu dùng sản xuất xà phòng; (5) thủy phân ester trong acid luôn một chiều. Số phát biểu đúng là', o: ['2', '3', '4', '5'], a: 'B' },
-  { lv: 'TH', q: 'Nhận xét nào sau đây KHÔNG đúng khi nói về xà phòng?', o: ['Có đuôi kị nước là gốc hydrocarbon của acid béo', 'Có đầu ưa nước là –COONa hoặc –COOK', 'Nước quả bồ kết, bồ hòn không có tác dụng giặt rửa', 'Hoạt động giặt rửa giống chất giặt rửa tổng hợp'], a: 'C' },
-  { lv: 'TH', q: 'Phát biểu nào sau đây ĐÚNG? (trong các phát biểu về ester)', o: ['Chất béo nhẹ hơn nước và tan nhiều trong nước', 'Xà phòng hóa ester là phản ứng thuận nghịch', 'Một số ester có mùi thơm được dùng làm hương liệu', 'Tristearin là chất béo không no, ở thể lỏng'], a: 'C' },
-  { lv: 'TH', q: 'Trong công nghiệp, để tạo hương dứa cho bánh kẹo, người ta dùng ester có công thức CH₃CH₂COOC₂H₅. Tên gọi của X là', o: ['ethyl propionate', 'ethyl acetate', 'methyl propionate', 'propyl formate'], a: 'A' },
-  { lv: 'TH', q: '"Sự ôi mỡ" (dầu mỡ bị hôi) là do', o: ['chất béo lỏng chuyển thành rắn', 'gốc hydrocarbon không no bị oxi hóa bởi oxygen trong không khí', 'chất béo thủy phân trong acid', 'chất béo thủy phân trong kiềm'], a: 'B' },
-  { lv: 'TH', q: 'Chất X tác dụng với NaOH vừa đủ thu được hai chất Y và Z. Cho Z tác dụng với AgNO₃/NH₃ thu được T, cho T tác dụng NaOH lại thu được Y. Chất X là', o: ['CH₃COOCH=CH₂', 'HCOOCH₂CH₃', 'CH₃COOCH₃', 'HCOOCH₃'], a: 'A' },
-  { lv: 'TH', q: 'Hai chất nào sau đây đều có thể tham gia phản ứng cộng H₂?', o: ['tripalmitin và triolein', 'tristearin và triolein', 'triolein và trilinolein', 'trilinolein và tripalmitin'], a: 'C' },
-  { lv: 'TH', q: 'Có bao nhiêu ester được điều chế trực tiếp từ carboxylic acid và alcohol (xt H₂SO₄ đặc) trong dãy: vinyl acetate, vinyl benzoate, ethyl acetate, isoamyl acetate, phenyl acetate, allyl acetate?', o: ['2', '3', '4', '5'], a: 'B' },
-  { lv: 'VD', q: 'Xà phòng hóa hoàn toàn 178 gam tristearin (M=890) trong dung dịch KOH, thu được m gam potassium stearat (M=322). Giá trị của m là', o: ['193,2 g', '189,6 g', '64,4 g', '321,6 g'], a: 'A' },
-  { lv: 'VD', q: 'Một loại chất béo chứa 80% tristearin. Thủy phân hoàn toàn m kg chất béo trong NaOH dư thu được 100 kg xà phòng chứa 73,44% natri stearat. Giá trị của m là', o: ['89 kg', '71,2 kg', '80 kg', '100 kg'], a: 'A' },
-  { lv: 'VD', q: 'Một chất béo chứa 3,55% stearic acid và 89% tristearin (còn lại là tạp chất trơ) về khối lượng. Chỉ số xà phòng hóa của chất béo này là', o: ['175', '166,3', '198', '200'], a: 'A' },
-  { lv: 'VDC', q: 'Đốt cháy hoàn toàn 1 mol DEP (diethyl phthalate) cần tối thiểu bao nhiêu mol O₂? (DEP: C₆H₄(COOC₂H₅)₂)', o: ['10,5', '12', '13,5', '15'], a: 'C' },
-  { lv: 'VDC', q: 'Chỉ số xà phòng hóa của một loại chất béo chứa 23% triolein (M=884) và 65% tristearin (M=890) là', o: ['166,3', '175', '192', '200'], a: 'A' },
-  { lv: 'VDC', q: 'Khi thủy phân benzyl acetate (mùi hoa nhài) thì nguyên liệu ban đầu để tổng hợp là', o: ['benzyl alcohol và acetic acid', 'phenol và acetic acid', 'benzyl alcohol và formic acid', 'benzoic acid và methyl alcohol'], a: 'A' },
+ {
+  "lv": "NB",
+  "q": "Công thức của ethyl acetate là",
+  "o": [
+   "CH₃COOCH₃",
+   "CH₃COOC₂H₅",
+   "HCOOCH₃",
+   "HCOOC₂H₅"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Tên gọi của ester CH₃COOCH₃ là",
+  "o": [
+   "methyl formate",
+   "methyl acetate",
+   "ethyl acetate",
+   "ethyl formate"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất nào sau đây thuộc loại ester?",
+  "o": [
+   "CH₃COOH",
+   "CH₃COOCH₃",
+   "C₂H₅OH",
+   "CH₃CHO"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Công thức chung của ester đơn chức là",
+  "o": [
+   "RCOOH",
+   "RCOOR′",
+   "RCHO",
+   "ROR′"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Nhóm chức đặc trưng của ester là",
+  "o": [
+   "–OH",
+   "–CHO",
+   "–COO–",
+   "–COOH"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester no, đơn chức, mạch hở có công thức phân tử dạng",
+  "o": [
+   "CₙH₂ₙO",
+   "CₙH₂ₙO₂",
+   "CₙH₂ₙ₋₂O₂",
+   "CₙH₂ₙ₊₂O₂"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất nào sau đây là chất béo?",
+  "o": [
+   "(C₁₇H₃₅COO)₃C₃H₅",
+   "CH₃COOH",
+   "C₂H₅OH",
+   "CH₃COOCH₃"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Xà phòng là muối natri hoặc kali của",
+  "o": [
+   "acid vô cơ",
+   "acid béo",
+   "alcohol",
+   "amino acid"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Công thức chung của chất béo là",
+  "o": [
+   "RCOOR′",
+   "(RCOO)₃C₃H₅",
+   "(RCOO)₂C₂H₄",
+   "R(COOR′)₃"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Acid béo là carboxylic acid đơn chức, hầu hết có số nguyên tử carbon",
+  "o": [
+   "lẻ",
+   "chẵn",
+   "bất kì",
+   "bằng 1"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất béo là triester của glycerol với",
+  "o": [
+   "acid vô cơ",
+   "acid béo",
+   "alcohol",
+   "phenol"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester nào sau đây có mùi chuối chín?",
+  "o": [
+   "isoamyl acetate",
+   "ethyl butyrate",
+   "ethyl formate",
+   "methyl acetate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Phản ứng thủy phân ester trong môi trường kiềm gọi là",
+  "o": [
+   "ester hóa",
+   "xà phòng hóa",
+   "trùng hợp",
+   "hydrogen hóa"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Xúc tác thường dùng trong phản ứng ester hóa là",
+  "o": [
+   "NaOH",
+   "H₂SO₄ đặc",
+   "Ni",
+   "HCl loãng"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Trong phân tử xà phòng, phần \"đuôi\" có đặc tính",
+  "o": [
+   "ưa nước",
+   "kị nước",
+   "trung tính",
+   "phân cực mạnh"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester nào sau đây có mùi dứa chín?",
+  "o": [
+   "ethyl butyrate",
+   "isoamyl acetate",
+   "ethyl formate",
+   "methyl acetate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Methyl methacrylate được dùng để sản xuất",
+  "o": [
+   "xà phòng",
+   "thủy tinh hữu cơ",
+   "dầu ăn",
+   "phân bón"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất giặt rửa tự nhiên có trong quả bồ kết, bồ hòn là",
+  "o": [
+   "saponin",
+   "alkaloid",
+   "glucose",
+   "protein"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "1 gam chất béo cung cấp khoảng bao nhiêu năng lượng?",
+  "o": [
+   "4 kcal",
+   "9 kcal",
+   "2 kcal",
+   "20 kcal"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Tên gọi của ester HCOOC₂H₅ là",
+  "o": [
+   "ethyl formate",
+   "ethyl acetate",
+   "methyl formate",
+   "propyl formate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Số đồng phân ester ứng với công thức phân tử C₃H₆O₂ là",
+  "o": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Số đồng phân ester ứng với công thức phân tử C₄H₈O₂ là",
+  "o": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Ester nào sau đây có nhiệt độ sôi cao nhất?",
+  "o": [
+   "CH₃COOCH₃",
+   "C₂H₅OH",
+   "CH₃COOH",
+   "HCOOCH₃"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Vì sao ester có nhiệt độ sôi thấp hơn alcohol, acid có cùng phân tử khối?",
+  "o": [
+   "Không tạo liên kết hydrogen với nhau",
+   "Phân tử khối nhỏ hơn",
+   "Có nhóm –OH",
+   "Tan tốt trong nước"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Đun nóng ester CH₃COOCH₃ với dung dịch NaOH, sản phẩm thu được là",
+  "o": [
+   "CH₃COOH + CH₃OH",
+   "CH₃COONa + CH₃OH",
+   "HCOONa + C₂H₅OH",
+   "CH₃COONa + C₂H₅OH"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Thủy phân ester trong môi trường acid là phản ứng",
+  "o": [
+   "một chiều",
+   "thuận nghịch",
+   "trùng hợp",
+   "oxi hóa khử"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Methyl propenoate có công thức cấu tạo thu gọn là",
+  "o": [
+   "CH₃COOCH₃",
+   "CH₂=CHCOOCH₃",
+   "HCOOCH₃",
+   "C₂H₅COOCH₃"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Công thức cấu tạo của triolein (glycerol + oleic acid) là",
+  "o": [
+   "(C₁₇H₃₃COO)₃C₃H₅",
+   "(C₁₇H₃₅COO)₃C₃H₅",
+   "(C₁₇H₃₁COO)₃C₃H₅",
+   "(C₁₅H₃₁COO)₃C₃H₅"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Acid béo nào sau đây là acid béo không no?",
+  "o": [
+   "acid stearic",
+   "acid palmitic",
+   "acid oleic",
+   "acid lauric"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Chất béo lỏng chứa chủ yếu gốc acid béo",
+  "o": [
+   "no",
+   "không no",
+   "thơm",
+   "vô cơ"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Sản phẩm của phản ứng thủy phân chất béo trong môi trường kiềm là",
+  "o": [
+   "acid béo + glycerol",
+   "xà phòng + glycerol",
+   "xà phòng + nước",
+   "aldehyde + glycerol"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Phản ứng chuyển chất béo lỏng thành chất béo rắn là",
+  "o": [
+   "thủy phân",
+   "hydrogen hóa",
+   "oxi hóa",
+   "trùng hợp"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Hiện tượng dầu mỡ bị ôi là do",
+  "o": [
+   "thủy phân",
+   "hydrogen hóa",
+   "oxi hóa bởi oxygen không khí",
+   "đông đặc"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Ester nào sau đây có phản ứng tráng gương?",
+  "o": [
+   "CH₃COOCH₃",
+   "HCOOC₂H₅",
+   "CH₃COOC₂H₅",
+   "C₂H₅COOCH₃"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Vì sao không nên dùng xà phòng với nước cứng?",
+  "o": [
+   "tạo kết tủa với Ca²⁺, Mg²⁺",
+   "tạo bọt quá nhiều",
+   "không tan trong nước",
+   "bay hơi nhanh"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Nguyên liệu chính để sản xuất chất giặt rửa tổng hợp là",
+  "o": [
+   "dầu mỏ",
+   "mỡ động vật",
+   "tinh bột",
+   "muối ăn"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Ester X có CTPT C₄H₈O₂, thủy phân trong acid thu được propionic acid và chất Y. Y là",
+  "o": [
+   "CH₃OH",
+   "C₂H₅OH",
+   "C₃H₇OH",
+   "HCOOH"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Đun este phenyl acetate (CH₃COOC₆H₅) với NaOH dư, sản phẩm hữu cơ thu được là",
+  "o": [
+   "1 alcohol",
+   "1 acid",
+   "2 muối",
+   "1 aldehyde"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Cho các chất: CH₃COOH, HCOOC₂H₅, CH₃COOCH₃, C₂H₅OH. Số chất thủy phân trong kiềm là",
+  "o": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Methyl salicylate được dùng làm",
+  "o": [
+   "thuốc xoa bóp giảm đau",
+   "chất tẩy rửa",
+   "phân bón",
+   "nhiên liệu"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Dung môi dùng để tách caffeine khỏi cà phê là",
+  "o": [
+   "ethyl acetate",
+   "benzen",
+   "nước",
+   "ethanol"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Phản ứng hydrogen hóa chất béo lỏng được ứng dụng để sản xuất",
+  "o": [
+   "bơ nhân tạo",
+   "xà phòng",
+   "nước hoa",
+   "thuốc nổ"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Vì sao ester được dùng nhiều làm hương liệu, mĩ phẩm?",
+  "o": [
+   "có mùi thơm, an toàn",
+   "độc hại",
+   "không tan trong nước",
+   "có vị chua"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Sản phẩm phụ thu được khi xà phòng hóa chất béo, có ứng dụng trong mĩ phẩm và dược phẩm là",
+  "o": [
+   "ethanol",
+   "glycerol",
+   "acid béo",
+   "aldehyde"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Hai loại chất giặt rửa tự nhiên được dùng phổ biến ở Việt Nam là",
+  "o": [
+   "bồ kết, bồ hòn",
+   "xà phòng, bột giặt",
+   "dầu gội, sữa tắm",
+   "nước Javen, cồn"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Cho 8,8 gam ethyl acetate (M=88) tác dụng hết với NaOH dư, cô cạn thu được m gam muối. Giá trị m là",
+  "o": [
+   "4,1 g",
+   "6,8 g",
+   "8,2 g",
+   "9,6 g"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "VD",
+  "q": "Xà phòng hóa hoàn toàn 8,9 gam tristearin (M=890) bằng NaOH vừa đủ. Khối lượng muối thu được là",
+  "o": [
+   "9,18 g",
+   "8,9 g",
+   "18,36 g",
+   "3,06 g"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Xà phòng hóa 17,8 g chất béo cần vừa đủ 0,06 mol NaOH, thu được 1,84 g glycerol. Khối lượng xà phòng thu được là",
+  "o": [
+   "17,8 g",
+   "18,36 g",
+   "16,0 g",
+   "19,0 g"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VD",
+  "q": "Đun nóng ester X có CTPT C₄H₈O₂ với NaOH thu được CH₃COONa. Tên gọi của X là",
+  "o": [
+   "methyl propionate",
+   "ethyl formate",
+   "ethyl acetate",
+   "propyl formate"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "VD",
+  "q": "Ester Y có CTPT C₄H₈O₂, thủy phân trong acid thu được acid và alcohol Z không hòa tan Cu(OH)₂. Y là",
+  "o": [
+   "ethyl acetate",
+   "methyl propionate",
+   "propyl formate",
+   "isopropyl formate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Thủy phân hoàn toàn 1,1 gam ester đơn chức X bằng NaOH vừa đủ, thu được 1,02 g muối và 0,58 g alcohol. X là",
+  "o": [
+   "HCOOC₂H₅",
+   "CH₃COOC₂H₅",
+   "CH₃COOCH₃",
+   "HCOOCH₃"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VD",
+  "q": "Khối lượng glycerol thu được khi xà phòng hóa hoàn toàn 89 g chất béo bằng NaOH, thu được 9,2 g glycerol là",
+  "o": [
+   "9,2 g",
+   "4,6 g",
+   "18,4 g",
+   "2,3 g"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Cho 17,4 gam ester X đơn chức phản ứng hết với KOH, thu được 19,6 gam muối và 1 alcohol. CTPT của X là (K=39)",
+  "o": [
+   "C₃H₆O₂",
+   "C₅H₁₀O₂",
+   "C₄H₆O₂",
+   "C₆H₁₂O₂"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Đun 60 g CH₃COOH với C₂H₅OH vừa đủ (H₂SO₄ đặc) thu được 44 g ethyl acetate. Hiệu suất phản ứng là",
+  "o": [
+   "40%",
+   "50%",
+   "60%",
+   "80%"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VD",
+  "q": "Đốt cháy hoàn toàn một ester no, đơn chức, mạch hở thu được 0,3 mol CO₂. Số mol H₂O thu được là",
+  "o": [
+   "0,15 mol",
+   "0,3 mol",
+   "0,45 mol",
+   "0,6 mol"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VD",
+  "q": "Xà phòng hóa hoàn toàn 4,42 g triglyceride X bằng NaOH dư thu được 0,46 g glycerol. Số mol NaOH đã phản ứng là",
+  "o": [
+   "0,005 mol",
+   "0,015 mol",
+   "0,01 mol",
+   "0,03 mol"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VD",
+  "q": "Một chất béo chứa 89% tristearin. Khối lượng chất béo cần để sản xuất 1 tấn xà phòng chứa 72% natri stearat là (xấp xỉ, kg)",
+  "o": [
+   "789 kg",
+   "702 kg",
+   "890 kg",
+   "500 kg"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VDC",
+  "q": "Ester X có CTPT C₈H₈O₂. Cho X tác dụng NaOH thu được sản phẩm có 2 muối. Số CTCT của X thỏa mãn là",
+  "o": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "VDC",
+  "q": "Cho các ester: ethyl formate, vinyl acetate, triolein, methyl acrylate, phenyl acetate. Số chất khi thủy phân trong NaOH (dư, t°) sinh ra alcohol là",
+  "o": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VDC",
+  "q": "Ester hóa giữa HOCH₂CH₂OH với hỗn hợp CH₃COOH và C₂H₅COOH thu được tối đa bao nhiêu ester hai chức?",
+  "o": [
+   "2",
+   "3",
+   "4",
+   "1"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VDC",
+  "q": "Để trung hòa acid béo tự do trong 14 g chất béo cần 15 ml dung dịch KOH 0,1M. Chỉ số acid của chất béo là",
+  "o": [
+   "4",
+   "6",
+   "8",
+   "10"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VDC",
+  "q": "Thủy phân hoàn toàn 2,145 kg chất béo cần 0,3 kg NaOH, thu được 0,092 kg glycerol và m gam muối. Giá trị m (kg) là",
+  "o": [
+   "2,353",
+   "2,145",
+   "2,500",
+   "2,000"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VDC",
+  "q": "Số gam iot có thể cộng vào 100 gam chất béo gọi là",
+  "o": [
+   "chỉ số acid",
+   "chỉ số xà phòng",
+   "chỉ số iot",
+   "chỉ số este"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "VDC",
+  "q": "Một loại mỡ chứa 70% triolein và 30% tristearin. Xà phòng hóa hoàn toàn 100 kg mỡ này bằng NaOH thu được khối lượng glycerol là (M triolein=884, tristearin=890, glycerol=92)",
+  "o": [
+   "8,3 kg",
+   "10,4 kg",
+   "9,2 kg",
+   "11,5 kg"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VDC",
+  "q": "Cần bao nhiêu kg triolein để điều chế 5,88 kg glycerol (hiệu suất 85%)? (M triolein=884; M glycerol=92)",
+  "o": [
+   "60,0 kg",
+   "56,4 kg",
+   "66,4 kg",
+   "70,0 kg"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "VDC",
+  "q": "Este đơn chức X tác dụng với NaOH thu được 2 muối và nước. X thuộc loại",
+  "o": [
+   "este của alcohol",
+   "este của phenol",
+   "ester vòng",
+   "este đa chức"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VDC",
+  "q": "Cho 0,1 mol triglixerit X phản ứng vừa đủ với 0,3 mol NaOH. Khối lượng glycerol thu được là",
+  "o": [
+   "4,6 g",
+   "9,2 g",
+   "13,8 g",
+   "18,4 g"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester là hợp chất hữu cơ được tạo thành khi thay nhóm –OH trong nhóm carboxyl của carboxylic acid bằng nhóm",
+  "o": [
+   "–NH₂",
+   "–OH",
+   "–OR′",
+   "–NO₂"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Công thức cấu tạo thu gọn của ethyl acetate là",
+  "o": [
+   "HCOOCH₃",
+   "CH₃COOCH₃",
+   "CH₃COOC₂H₅",
+   "C₂H₅COOH"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Tên gọi của HCOOCH₃ là",
+  "o": [
+   "methyl formate",
+   "ethyl formate",
+   "methyl acetate",
+   "propyl formate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Nhóm chức đặc trưng của ester là",
+  "o": [
+   "–OH",
+   "–CHO",
+   "–COO–",
+   "–COOH"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Công thức của triolein (tạo bởi glycerol và oleic acid) là",
+  "o": [
+   "(C₁₇H₃₅COO)₃C₃H₅",
+   "(C₁₇H₃₁COO)₃C₃H₅",
+   "(C₁₇H₃₃COO)₃C₃H₅",
+   "(C₁₅H₃₁COO)₃C₃H₅"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất nào sau đây KHÔNG phải là chất béo?",
+  "o": [
+   "(C₁₅H₃₁COO)₃C₃H₅",
+   "(CH₃COO)₃C₃H₅",
+   "(C₁₇H₃₅COO)₃C₃H₅",
+   "(C₁₇H₃₃COO)₃C₃H₅"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Số nguyên tử oxygen có trong phân tử triolein là",
+  "o": [
+   "3",
+   "4",
+   "6",
+   "2"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Ở điều kiện thường, triolein tồn tại ở trạng thái",
+  "o": [
+   "rắn",
+   "lỏng",
+   "khí",
+   "keo"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Acid nào sau đây là acid béo no?",
+  "o": [
+   "acid oleic",
+   "acid linoleic",
+   "acid panmitic",
+   "acid acrylic"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Axit linoleic (có trong dầu hướng dương) được xếp vào loại",
+  "o": [
+   "acid béo omega-3",
+   "acid béo omega-6",
+   "acid béo no",
+   "acid béo omega-9"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Tristearin có công thức phân tử là",
+  "o": [
+   "C₅₅H₁₀₆O₆",
+   "C₅₇H₁₁₀O₆",
+   "C₅₇H₁₀₄O₆",
+   "C₅₁H₉₈O₆"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester nào sau đây có mùi đặc trưng của quả lê?",
+  "o": [
+   "isoamyl acetate",
+   "propyl acetate",
+   "ethyl formate",
+   "geranyl acetate"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất nào sau đây không phải là xà phòng?",
+  "o": [
+   "C₁₅H₃₁COONa",
+   "C₁₇H₃₅COOK",
+   "CH₃[CH₂]₁₁OSO₃Na",
+   "C₁₇H₃₃COONa"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất nào sau đây là chất giặt rửa tổng hợp?",
+  "o": [
+   "C₁₅H₃₁COONa",
+   "C₁₇H₃₅COOK",
+   "CH₃[CH₂]₁₁C₆H₄SO₃Na",
+   "C₁₇H₃₃COONa"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Dung dịch nào sau đây là chất giặt rửa tự nhiên?",
+  "o": [
+   "nước quả cam",
+   "nước quả chanh",
+   "nước quả bồ kết",
+   "nước quả dâu"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Trong cơ thể người, lipid có vai trò chính là",
+  "o": [
+   "cung cấp và dự trữ năng lượng",
+   "xúc tác quá trình trao đổi chất",
+   "xây dựng kháng thể",
+   "vận chuyển oxygen trong máu"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester nào sau đây có công thức CH₃COOCH=CH₂?",
+  "o": [
+   "vinyl acetate",
+   "methyl acrylate",
+   "ethyl acetate",
+   "phenyl acetate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Tên gọi của CH₂=C(CH₃)COOCH₃ là",
+  "o": [
+   "methyl acrylate",
+   "methyl methacrylate",
+   "methyl metacrylic",
+   "methyl propionate"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Tên gọi của CH₃COOCH₂C₆H₅ là",
+  "o": [
+   "methyl benzoate",
+   "phenyl acetate",
+   "benzyl acetate",
+   "phenyl acetic"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Tên gọi của CH₃COOC₆H₅ là",
+  "o": [
+   "benzyl acetate",
+   "phenyl acetate",
+   "methyl benzoate",
+   "phenyl acetic"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Benzyl acetate có mùi thơm của",
+  "o": [
+   "chuối chín",
+   "hoa nhài",
+   "quả dứa",
+   "quả đào"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Isoamyl acetate có công thức cấu tạo là",
+  "o": [
+   "CH₃COOCH₂CH₂CH(CH₃)₂",
+   "CH₃COOCH(CH₃)CH(CH₃)₂",
+   "CH₃COOCH₂C(CH₃)₂CH₃",
+   "CH₃COOC(CH₃)₂CH₂CH₃"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Phát biểu nào sau đây SAI?",
+  "o": [
+   "Ester có nhiệt độ sôi thấp hơn acid cùng phân tử khối",
+   "Phản ứng ester hóa là phản ứng thuận nghịch",
+   "Phản ứng xà phòng hóa là phản ứng thuận nghịch",
+   "Ở điều kiện thường ester là chất lỏng hoặc rắn"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Số liên kết π trong phân tử ester no, đơn chức, mạch hở là",
+  "o": [
+   "0",
+   "1",
+   "2",
+   "3"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Đặc điểm của phản ứng thủy phân ester no, đơn chức trong môi trường ACID là",
+  "o": [
+   "một chiều",
+   "thuận nghịch",
+   "luôn tạo muối carboxylate",
+   "xảy ra nhanh ở nhiệt độ thường"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Đặc điểm của phản ứng thủy phân ester no, đơn chức trong môi trường BASE là",
+  "o": [
+   "một chiều",
+   "thuận nghịch",
+   "luôn tạo carboxylic acid",
+   "không cần đun nóng"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Phát biểu nào sau đây KHÔNG đúng về chất béo?",
+  "o": [
+   "Chất béo là triester của glycerol với acid béo",
+   "Chất béo nhẹ hơn nước",
+   "Chất béo tan nhiều trong nước",
+   "Chất béo bị thủy phân trong môi trường kiềm khi đun nóng"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Phát biểu nào sau đây ĐÚNG về tính chất vật lí của nhiều ester?",
+  "o": [
+   "Đều là chất rắn ở điều kiện thường",
+   "Đều tan vô hạn trong nước",
+   "Thường có mùi thơm, ít tan trong nước",
+   "Đều có nhiệt độ sôi cao hơn acid tương ứng"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Số đồng phân ester ứng với công thức phân tử C₅H₁₀O₂ là",
+  "o": [
+   "7",
+   "8",
+   "9",
+   "10"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Số đồng phân ester ứng với công thức phân tử C₄H₆O₂ (mạch hở) là",
+  "o": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "a": "D"
+ },
+ {
+  "lv": "TH",
+  "q": "Ester X (C₄H₆O₂) khi thủy phân trong kiềm tạo muối và aldehyde. Công thức của X là",
+  "o": [
+   "HCOOCH₂−CH=CH₂",
+   "CH₃COOCH=CH₂",
+   "CH₂=CH−COOCH₃",
+   "C₂H₅COOCH₃"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Este nào sau đây khi thủy phân trong kiềm dư tạo ra 2 muối?",
+  "o": [
+   "CH₃COOCH₃",
+   "HCOOC₆H₅",
+   "CH₃COOC₂H₅",
+   "CH₃COOCH=CH₂"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Cặp chất nào sau đây đều là ester?",
+  "o": [
+   "CH₃COOH và HCOOCH₃",
+   "HCOOCH₃ và CH₃COOC₂H₅",
+   "C₂H₅OH và CH₃CHO",
+   "CH₃COOCH₃ và C₂H₅OH"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Để chuyển chất béo lỏng (dầu) thành chất béo rắn (bơ nhân tạo), người ta dùng phản ứng",
+  "o": [
+   "oxi hóa",
+   "xà phòng hóa",
+   "hydrogen hóa (cộng H₂)",
+   "thủy phân"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Phản ứng thủy phân chất béo trong môi trường acid là phản ứng",
+  "o": [
+   "một chiều",
+   "thuận nghịch",
+   "trùng hợp",
+   "oxi hóa – khử"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Dầu mỡ để lâu bị ôi là do",
+  "o": [
+   "thủy phân bởi hơi nước",
+   "vi khuẩn phân hủy",
+   "nối đôi C=C ở gốc acid không no bị oxi hóa bởi O₂",
+   "gốc glycerol bị oxi hóa"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Phản ứng nào sau đây dùng để điều chế xà phòng?",
+  "o": [
+   "đun acid béo với dung dịch kiềm",
+   "đun glycerol với acid béo",
+   "đun chất béo với dung dịch kiềm",
+   "Cả A và C đúng"
+  ],
+  "a": "D"
+ },
+ {
+  "lv": "TH",
+  "q": "Đặc điểm nào sau đây KHÔNG đúng với xà phòng?",
+  "o": [
+   "Có đuôi kị nước là gốc hydrocarbon của acid béo",
+   "Có đầu ưa nước là –COONa hoặc –COOK",
+   "Bị giảm tác dụng khi dùng với nước cứng",
+   "Dùng tốt với nước cứng hơn chất giặt rửa tổng hợp"
+  ],
+  "a": "D"
+ },
+ {
+  "lv": "TH",
+  "q": "Nhận xét nào sau đây KHÔNG đúng?",
+  "o": [
+   "Chất béo là ester của glycerol và acid béo",
+   "Dầu mỡ bị ôi do nối đôi C=C bị oxi hóa chậm",
+   "Chất béo nhẹ hơn nước và không tan trong nước",
+   "Hydrogen hóa triolein hoặc trilinolein đều thu được tristearin"
+  ],
+  "a": "D"
+ },
+ {
+  "lv": "TH",
+  "q": "Phát biểu nào sau đây ĐÚNG về ester và lipid?",
+  "o": [
+   "Tất cả ester đều tan vô hạn trong nước",
+   "Chất béo là ester đơn chức",
+   "Chất béo là triester của glycerol với acid béo",
+   "Phản ứng xà phòng hóa ester luôn tạo carboxylic acid"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Khi thủy phân bất kì một chất béo nào thì luôn thu được",
+  "o": [
+   "acid oleic",
+   "glycerol",
+   "acid stearic",
+   "acid panmitic"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Ứng dụng nào sau đây KHÔNG phải của ester?",
+  "o": [
+   "làm dung môi",
+   "tạo hương liệu thực phẩm",
+   "sản xuất chất dẻo",
+   "làm phân bón đạm"
+  ],
+  "a": "D"
+ },
+ {
+  "lv": "TH",
+  "q": "Chất nào sau đây dùng để phân biệt acid axetic, glycerol và triolein?",
+  "o": [
+   "quỳ tím và nước Br₂",
+   "NaCl",
+   "nước cất",
+   "dung dịch HCl"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Ở ruột non cơ thể người, nhờ xúc tác của enzyme, chất béo bị thủy phân thành",
+  "o": [
+   "glycerol và acid béo",
+   "glycerol và muối",
+   "ethane và acid béo",
+   "aldehyde và glycerol"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Hoá chất chủ đạo trong ngành công nghiệp sản xuất xà phòng là",
+  "o": [
+   "K₂SO₄",
+   "NaCl",
+   "Mg(NO₃)₂",
+   "NaOH"
+  ],
+  "a": "D"
+ },
+ {
+  "lv": "NB",
+  "q": "Thành phần chính của xà phòng là",
+  "o": [
+   "muối natri hoặc kali của carboxylic acid bất kì",
+   "muối natri hoặc kali của acid béo",
+   "glycerol",
+   "muối natri của acid vô cơ"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester butyl acetate được dùng để pha sơn tổng hợp có cấu tạo là",
+  "o": [
+   "HCOOCH₂CH₂CH₃",
+   "CH₃COOCH₂CH₃",
+   "CH₃COOCH₂CH₂CH₂CH₃",
+   "CH₃CH₂CH₂COOCH₃"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Ester nào sau đây là sản phẩm của phản ứng ester hóa giữa benzoic acid và methyl alcohol?",
+  "o": [
+   "CH₃COOCH₂C₆H₅",
+   "C₆H₅CH₂COOCH₃",
+   "C₆H₅COOCH₃",
+   "CH₃COOC₆H₅"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "\"Đầu\" ưa nước trong phân tử xà phòng là nhóm",
+  "o": [
+   "carboxylate (–COONa)",
+   "sulfate",
+   "gốc hydrocarbon mạch dài",
+   "sulfonate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Chỉ số iot của chất béo là số gam iot có thể cộng vào bao nhiêu gam chất béo?",
+  "o": [
+   "1 g",
+   "10 g",
+   "100 g",
+   "1000 g"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Dung dịch nào sau đây là chất giặt rửa tự nhiên?",
+  "o": [
+   "nước quả cam",
+   "nước quả chanh",
+   "nước quả bồ kết",
+   "nước quả dâu"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "NB",
+  "q": "Trong công nghiệp, để chuyển chất béo lỏng thành chất béo rắn, người ta dùng phản ứng",
+  "o": [
+   "ester hóa",
+   "hydrogen hóa",
+   "oxi hóa",
+   "xà phòng hóa"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất nào sau đây là thành phần chính của xà phòng?",
+  "o": [
+   "CH₃[CH₂]₃COONa",
+   "CH₃[CH₂]₁₁OSO₃Na",
+   "CH₃[CH₂]₁₄COONa",
+   "CH₃[CH₂]₁₆COOH"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Phản ứng hóa học nào sau đây xảy ra thuận nghịch?",
+  "o": [
+   "Đun ethyl acetate với H₂SO₄ loãng",
+   "Đun ethyl acetate với NaOH",
+   "Hydrogen hóa chất béo không no",
+   "Đun chất béo với NaOH"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Cho các phát biểu: (1) ester có mùi thơm dùng làm hương liệu; (2) chất béo là triester của glycerol với acid béo; (3) chất béo tan tốt trong nước; (4) mỡ/dầu dùng sản xuất xà phòng; (5) thủy phân ester trong acid luôn một chiều. Số phát biểu đúng là",
+  "o": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Nhận xét nào sau đây KHÔNG đúng khi nói về xà phòng?",
+  "o": [
+   "Có đuôi kị nước là gốc hydrocarbon của acid béo",
+   "Có đầu ưa nước là –COONa hoặc –COOK",
+   "Nước quả bồ kết, bồ hòn không có tác dụng giặt rửa",
+   "Hoạt động giặt rửa giống chất giặt rửa tổng hợp"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Phát biểu nào sau đây ĐÚNG? (trong các phát biểu về ester)",
+  "o": [
+   "Chất béo nhẹ hơn nước và tan nhiều trong nước",
+   "Xà phòng hóa ester là phản ứng thuận nghịch",
+   "Một số ester có mùi thơm được dùng làm hương liệu",
+   "Tristearin là chất béo không no, ở thể lỏng"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Trong công nghiệp, để tạo hương dứa cho bánh kẹo, người ta dùng ester có công thức CH₃CH₂COOC₂H₅. Tên gọi của X là",
+  "o": [
+   "ethyl propionate",
+   "ethyl acetate",
+   "methyl propionate",
+   "propyl formate"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "\"Sự ôi mỡ\" (dầu mỡ bị hôi) là do",
+  "o": [
+   "chất béo lỏng chuyển thành rắn",
+   "gốc hydrocarbon không no bị oxi hóa bởi oxygen trong không khí",
+   "chất béo thủy phân trong acid",
+   "chất béo thủy phân trong kiềm"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Chất X tác dụng với NaOH vừa đủ thu được hai chất Y và Z. Cho Z tác dụng với AgNO₃/NH₃ thu được T, cho T tác dụng NaOH lại thu được Y. Chất X là",
+  "o": [
+   "CH₃COOCH=CH₂",
+   "HCOOCH₂CH₃",
+   "CH₃COOCH₃",
+   "HCOOCH₃"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Hai chất nào sau đây đều có thể tham gia phản ứng cộng H₂?",
+  "o": [
+   "tripalmitin và triolein",
+   "tristearin và triolein",
+   "triolein và trilinolein",
+   "trilinolein và tripalmitin"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "TH",
+  "q": "Có bao nhiêu ester được điều chế trực tiếp từ carboxylic acid và alcohol (xt H₂SO₄ đặc) trong dãy: vinyl acetate, vinyl benzoate, ethyl acetate, isoamyl acetate, phenyl acetate, allyl acetate?",
+  "o": [
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VD",
+  "q": "Xà phòng hóa hoàn toàn 178 gam tristearin (M=890) trong dung dịch KOH, thu được m gam potassium stearat (M=322). Giá trị của m là",
+  "o": [
+   "193,2 g",
+   "189,6 g",
+   "64,4 g",
+   "321,6 g"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Một loại chất béo chứa 80% tristearin. Thủy phân hoàn toàn m kg chất béo trong NaOH dư thu được 100 kg xà phòng chứa 73,44% natri stearat. Giá trị của m là",
+  "o": [
+   "89 kg",
+   "71,2 kg",
+   "80 kg",
+   "100 kg"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Một chất béo chứa 3,55% stearic acid và 89% tristearin (còn lại là tạp chất trơ) về khối lượng. Chỉ số xà phòng hóa của chất béo này là",
+  "o": [
+   "175",
+   "166,3",
+   "198",
+   "200"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VDC",
+  "q": "Đốt cháy hoàn toàn 1 mol DEP (diethyl phthalate) cần tối thiểu bao nhiêu mol O₂? (DEP: C₆H₄(COOC₂H₅)₂)",
+  "o": [
+   "10,5",
+   "12",
+   "13,5",
+   "15"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "VDC",
+  "q": "Chỉ số xà phòng hóa của một loại chất béo chứa 23% triolein (M=884) và 65% tristearin (M=890) là",
+  "o": [
+   "166,3",
+   "175",
+   "192",
+   "200"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VDC",
+  "q": "Khi thủy phân benzyl acetate (mùi hoa nhài) thì nguyên liệu ban đầu để tổng hợp là",
+  "o": [
+   "benzyl alcohol và acetic acid",
+   "phenol và acetic acid",
+   "benzyl alcohol và formic acid",
+   "benzoic acid và methyl alcohol"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "Triolein là chất béo không no, ở trạng thái lỏng. Công thức hóa học của triolein là",
+  "o": [
+   "(C₁₇H₃₃COO)₃C₃H₅",
+   "(C₁₇H₃₅COO)₃C₃H₅",
+   "(C₁₅H₃₁COO)₃C₃H₅",
+   "(C₁₇H₃₁COO)₃C₃H₅"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "NB",
+  "q": "NaOH là hoá chất chủ đạo trong công nghiệp sản xuất xà phòng. Công thức phân tử của NaOH là",
+  "o": [
+   "Na₂O",
+   "NaOH",
+   "Na₂CO₃",
+   "NaCl"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Một loại chất béo chứa 1 gốc panmitic và 2 gốc panmitoleic (mỗi gốc có 1 liên kết C=C). Số mol H₂ cần để hydrogen hóa hoàn toàn 1 mol chất béo này là",
+  "o": [
+   "1",
+   "2",
+   "3",
+   "4"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Xà phòng hoá hoàn toàn ethyl acetate thu được sodium acetate và chất hữu cơ nào?",
+  "o": [
+   "methanol",
+   "ethanol",
+   "acetic acid",
+   "methanal"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Khi xà phòng hóa chất béo trong nước cứng (chứa Ca²⁺, Mg²⁺), hiện tượng gì xảy ra?",
+  "o": [
+   "Tạo kết tủa, giảm tác dụng giặt rửa",
+   "Tạo nhiều bọt hơn",
+   "Không có hiện tượng",
+   "Xà phòng tan tốt hơn"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Aspirin có công thức phân tử là",
+  "o": [
+   "C₇H₆O₃",
+   "C₉H₈O₄",
+   "C₈H₈O₃",
+   "C₆H₅COOH"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Salicylic acid có công thức cấu tạo thu gọn là",
+  "o": [
+   "C₆H₄(COOH)₂",
+   "HO–C₆H₄–COOH",
+   "CH₃COO–C₆H₄–COOH",
+   "C₆H₅COOH"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Aspirin tác dụng với dung dịch NaOH theo tỉ lệ số mol là",
+  "o": [
+   "1 : 1",
+   "1 : 2",
+   "1 : 3",
+   "2 : 1"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "NB",
+  "q": "Chất nào sau đây là ester?",
+  "o": [
+   "CH₃COOH",
+   "CH₃CHO",
+   "CH₃COOCH₃",
+   "CH₃COCH₃"
+  ],
+  "a": "C"
+ },
+ {
+  "lv": "VD",
+  "q": "Xà phòng hóa hoàn toàn 8,9 gam tristearin (M=890) với hiệu suất 80%, thu được m gam muối sodium stearate (M=306). Giá trị m là",
+  "o": [
+   "7,344 g",
+   "9,18 g",
+   "4,59 g",
+   "11,48 g"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "VD",
+  "q": "Đốt cháy hoàn toàn một triglyceride X (chứa 3 liên kết C=C ngoài 3 nhóm –COO–) thu được a mol CO₂ và b mol H₂O. Mối quan hệ đúng là",
+  "o": [
+   "a = b",
+   "a − b = 3n(X)",
+   "a − b = 6n(X)",
+   "b − a = 3n(X)"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "VDC",
+  "q": "Một loại chất béo chứa 89% tristearin (M=890) về khối lượng. Xà phòng hóa bằng NaOH, hiệu suất 80%, thu được xà phòng chứa 67,32% sodium stearate. Để sản xuất 100000 bánh xà phòng (100 g/bánh) cần bao nhiêu kg chất béo?",
+  "o": [
+   "~4690 kg",
+   "~3980 kg",
+   "~5850 kg",
+   "~3000 kg"
+  ],
+  "a": "A"
+ },
+ {
+  "lv": "TH",
+  "q": "Cho các chất: cellulose, saccharose, aniline, albumin, tristearin, Gly-Ala-Val. Số chất bị thủy phân trong môi trường acid (điều kiện thích hợp) là",
+  "o": [
+   "3",
+   "4",
+   "5",
+   "2"
+  ],
+  "a": "B"
+ },
+ {
+  "lv": "TH",
+  "q": "Chất béo no (tristearin, tripanmitin) có đặc điểm nào sau đây?",
+  "o": [
+   "Làm mất màu dung dịch Br₂",
+   "Không làm mất màu dung dịch Br₂",
+   "Thể lỏng ở điều kiện thường",
+   "Cộng được H₂"
+  ],
+  "a": "B"
+ }
 ];
-

@@ -125,6 +125,20 @@
   .formula-box{background:#f0fff4;border:1px solid #9ae6b4;border-radius:8px;padding:12px 16px}
   .formula-box p{margin:6px 0;font-size:14px}
   .formula-box b{color:var(--red)}
+  /* Gallery ảnh lý thuyết */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:10px}
+  .gallery figure{margin:0;border:1px solid var(--border);border-radius:8px;padding:6px;background:#fff;text-align:center}
+  .gallery img{width:100%;height:130px;object-fit:contain;cursor:zoom-in;border-radius:4px;background:#fafafa}
+  .gallery figcaption{font-size:12px;color:var(--muted);margin-top:4px}
+  /* Lightbox */
+  .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;overflow:hidden;cursor:grab}
+  .lightbox.show{display:block}
+  .lightbox.grabbing{cursor:grabbing}
+  .lb-img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:none;user-select:none;transform-origin:center;transition:transform .05s}
+  .lb-close{position:absolute;top:14px;right:22px;color:#fff;font-size:40px;font-weight:bold;cursor:pointer;z-index:2;line-height:1}
+  .lb-rotate{position:absolute;top:18px;left:22px;color:#fff;font-size:26px;cursor:pointer;z-index:2}
+  .lb-reset{position:absolute;top:22px;left:70px;color:#fff;font-size:14px;cursor:pointer;z-index:2;background:rgba(255,255,255,.15);padding:4px 12px;border-radius:12px}
+  .lb-tip{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);color:#ccc;font-size:13px;z-index:2}
   .foot{text-align:center;color:var(--muted);font-size:12.5px;margin-top:30px;padding-top:12px;border-top:1px solid #ddd}
   @media(max-width:600px){header.topbar h1{font-size:19px}.res .score{font-size:34px}}
 </style>
@@ -149,6 +163,32 @@
     <div class="note">Mỗi mục lý thuyết đi kèm <b>ví dụ mẫu (lời giải chi tiết)</b> và <b>bài tập tự luyện (có đáp án ẩn/hiện)</b>. Chọn bài ở dưới.</div>
     <div class="lesson-tabs" id="lesson-tabs"></div>
     <div id="theory-container"></div>
+
+    <!-- Ảnh lý thuyết SGK + zoom -->
+    <div class="block">
+      <h2>📷 HÌNH ẢNH LÝ THUYẾT SGK (bấm để phóng to)</h2>
+      <div class="part">
+        <p style="font-size:14px;color:#718096">Hình minh họa công thức / sơ đồ phản ứng. Bấm vào ảnh để <b>xem lớn và zoom tự do</b> (lăn chuột để phóng to–thu nhỏ, kéo để di chuyển, nút ⟲ để xoay).</p>
+        <div class="gallery">
+          <figure><img src="images/lt-4.png" alt="Hình lý thuyết 1" class="zoomable"><figcaption>Hình minh họa 1</figcaption></figure>
+          <figure><img src="images/lt-5.png" alt="Hình lý thuyết 2" class="zoomable"><figcaption>Hình minh họa 2</figcaption></figure>
+          <figure><img src="images/lt-6.png" alt="Hình lý thuyết 3" class="zoomable"><figcaption>Hình minh họa 3</figcaption></figure>
+          <figure><img src="images/lt-7.png" alt="Hình lý thuyết 4" class="zoomable"><figcaption>Hình minh họa 4</figcaption></figure>
+          <figure><img src="images/lt-1.png" alt="Hình lý thuyết 5" class="zoomable"><figcaption>Hình minh họa 5</figcaption></figure>
+          <figure><img src="images/lt-2.png" alt="Hình lý thuyết 6" class="zoomable"><figcaption>Hình minh họa 6</figcaption></figure>
+          <figure><img src="images/lt-3.png" alt="Hình lý thuyết 7" class="zoomable"><figcaption>Hình minh họa 7</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox zoom ảnh -->
+  <div id="lightbox" class="lightbox">
+    <span class="lb-close" id="lb-close">&times;</span>
+    <span class="lb-rotate" id="lb-rotate">⟲</span>
+    <span class="lb-reset" id="lb-reset">⟳ 100%</span>
+    <img id="lb-img" class="lb-img" src="" alt="phóng to">
+    <div class="lb-tip">Lăn chuột để zoom · Kéo để di chuyển · Esc để đóng</div>
   </div>
 
   <!-- ===== TAB MẸO ===== -->

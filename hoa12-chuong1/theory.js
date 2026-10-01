@@ -205,6 +205,48 @@ window.THEORY_HOA = [
             "a": "B"
           }
         ]
+      },
+      {
+        "h": "9. Phương pháp xác định công thức (phổ MS, phân tích nguyên tố)",
+        "memo": "Nhớ: peak ion phân tử m/z = M của ester; dùng %C, %H, %O để tìm CTPT.",
+        "theory": "<ul>\n    <li><b>Phổ khối lượng (MS):</b> peak có giá trị m/z lớn nhất (peak ion phân tử [M⁺]) = <b>phân tử khối M</b> của ester.</li>\n    <li><b>Phân tích nguyên tố:</b> từ %C, %H, %O → lập tỉ lệ → CTPT, rồi xác định giá trị n.</li>\n    <li>Ester no, đơn, hở CₙH₂ₙO₂: <b>M = 14n + 32</b>.</li>\n    <li>Ví dụ: ester có M = 88 → 14n + 32 = 88 → n = 4 → <b>C₄H₈O₂</b> (C₂H₅OH + CH₃COOH → CH₃COOC₂H₅).</li>\n    <li>Ester từ lên men tinh bột (thành phần xăng E5) = <b>ethyl acetate</b> (M = 88).</li>\n  </ul>",
+        "examples": [
+          {
+            "q": "Ester X có phổ MS peak ion phân tử m/z = 88, được điều chế từ lên men tinh bột (thành phần xăng E5). Tìm X.",
+            "sol": "M = 88 → 14n + 32 = 88 → n = 4 → C₄H₈O₂. Điều chế từ lên men tinh bột → <b>ethyl acetate (CH₃COOC₂H₅)</b>."
+          }
+        ],
+        "practice": [
+          {
+            "q": "Ester no, đơn, hở M = 74. CTPT là? (A) C₂H₄O₂  (B) C₃H₆O₂  (C) C₄H₈O₂  (D) C₅H₁₀O₂",
+            "a": "B"
+          },
+          {
+            "q": "Peak ion phân tử trên phổ MS cho biết gì của ester? (A) Số nguyên tử C  (B) Phân tử khối  (C) Nhiệt độ sôi  (D) Số nhóm chức",
+            "a": "B"
+          }
+        ]
+      },
+      {
+        "h": "10. Ester của phenol & ứng dụng dược phẩm",
+        "memo": "Nhớ \"phenol → 2 muối\": RCOOC₆H₅ + 2NaOH → RCOONa + C₆H₅ONa + H₂O.",
+        "theory": "<ul>\n    <li><b>Ester của phenol (RCOOC₆H₅):</b> thủy phân trong kiềm dư tạo <b>2 muối</b>:\n      <br>RCOOC₆H₅ + 2NaOH → RCOONa + C₆H₅ONa + H₂O.</li>\n    <li><b>Aspirin</b> (acid acetylsalicylic, C₉H₈O₄): CH₃COO–C₆H₄–COOH (vị trí <b>ortho</b>).</li>\n    <li><b>Salicylic acid</b> (C₇H₆O₃): HO–C₆H₄–COOH; thủy phân aspirin trong cơ thể tạo salicylic acid.</li>\n    <li>Aspirin tác dụng với NaOH theo tỉ lệ <b>1 : 2</b> (do có 1 nhóm –COOH + 1 nhóm –COO– phenol).</li>\n    <li><b>Methyl salicylate</b> (HO–C₆H₄–COOCH₃): dầu cao xoa bóp giảm đau.</li>\n  </ul>",
+        "examples": [
+          {
+            "q": "Aspirin (CH₃COO–C₆H₄–COOH) tác dụng với NaOH theo tỉ lệ mol nào?",
+            "sol": "Aspirin có 1 nhóm –COOH (trung hòa) + 1 nhóm –COO– gắn vòng phenol (xà phòng hóa) → cần <b>2 NaOH</b>: tỉ lệ 1 : 2."
+          }
+        ],
+        "practice": [
+          {
+            "q": "Aspirin có công thức phân tử là? (A) C₇H₆O₃  (B) C₉H₈O₄  (C) C₈H₈O₃  (D) C₆H₅COOH",
+            "a": "B"
+          },
+          {
+            "q": "Ester của phenol thủy phân trong kiềm dư cho? (A) 1 muối  (B) 2 muối  (C) 1 alcohol  (D) 1 acid",
+            "a": "B"
+          }
+        ]
       }
     ]
   },
@@ -365,6 +407,35 @@ window.THEORY_HOA = [
             "a": "B"
           }
         ]
+      },
+      {
+        "h": "8. Chất béo không no: phản ứng cộng H₂, Br₂",
+        "memo": "Nhớ: chất béo không no + H₂ → no (rắn); làm mất màu Br₂. n(H₂) = n(Br₂) = số liên kết C=C ngoài gốc.",
+        "theory": "<ul>\n    <li><b>Hydrogen hóa:</b> chất béo lỏng (không no) + H₂ (Ni, t°, p) → chất béo rắn (no).</li>\n    <li>Ví dụ: (C₁₇H₃₃COO)₃C₃H₅ + 3H₂ → (C₁₇H₃₅COO)₃C₃H₅ (triolein → tristearin).</li>\n    <li><b>Cộng Br₂:</b> chất béo không no làm <b>mất màu dung dịch Br₂</b> → dùng nhận biết chất béo không no.</li>\n    <li>Chất béo no (tristearin, tripanmitin) <b>không</b> làm mất màu Br₂.</li>\n    <li><b>Đốt cháy:</b> nếu chất béo chứa k liên kết π (ngoài 3 nhóm –COO–): <b>n(CO₂) − n(H₂O) = (k − 3)·n(béo)</b>.</li>\n    <li>Muối acid béo no kết tinh khi gặp nước cứng (Ca²⁺, Mg²⁺) → giảm tác dụng giặt rửa.</li>\n  </ul>",
+        "examples": [
+          {
+            "q": "Viết PTHH hydrogen hóa triolein (xúc tác Ni, t°).",
+            "sol": "(C₁₇H₃₃COO)₃C₃H₅ + 3H₂ →(Ni,t°) (C₁₇H₃₅COO)₃C₃H₅."
+          },
+          {
+            "q": "Chất béo X chứa 1 gốc panmitic (no) và 2 gốc không no. Cần bao nhiêu mol H₂ để hydrogen hóa hoàn toàn 1 mol X?",
+            "sol": "Mỗi gốc không no có 1 C=C → 2 gốc không no cần <b>2 mol H₂</b>."
+          }
+        ],
+        "practice": [
+          {
+            "q": "Chất béo lỏng + H₂ (Ni, t°) thu được? (A) rắn  (B) lỏng  (C) khí  (D) không đổi",
+            "a": "A"
+          },
+          {
+            "q": "Chất nào làm mất màu dung dịch Br₂? (A) tristearin  (B) tripanmitin  (C) triolein  (D) mỡ bò",
+            "a": "C"
+          },
+          {
+            "q": "Để hydrogen hóa hoàn toàn 1 mol triolein cần bao nhiêu mol H₂? (A) 1  (B) 2  (C) 3  (D) 4",
+            "a": "C"
+          }
+        ]
       }
     ]
   },
@@ -493,6 +564,27 @@ window.THEORY_HOA = [
           },
           {
             "q": "Tác dụng của xà phòng với sức căng bề mặt nước? (A) tăng  (B) giảm  (C) không đổi  (D) triệt tiêu",
+            "a": "B"
+          }
+        ]
+      },
+      {
+        "h": "7. Bài toán hiệu suất sản xuất xà phòng (lý thuyết nhỏ)",
+        "memo": "Nhớ chuỗi: chất béo → (xà phòng hóa, H%) → muối acid béo (xà phòng) + glycerol.",
+        "theory": "<ul>\n    <li>Công thức xà phòng hóa: (RCOO)₃C₃H₅ + 3NaOH → 3RCOONa + C₃H₅(OH)₃.</li>\n    <li><b>BTKL:</b> m(chất béo) + m(NaOH) = m(xà phòng) + m(glycerol).</li>\n    <li><b>Hiệu suất:</b> m(thực tế) = m(lý thuyết) × H%.</li>\n    <li>Xà phòng thu được thường có độ tinh khiết (% muối acid béo) → tính m xà phòng thực tế.</li>\n    <li>Quy cách đóng bánh: số bánh = tổng m xà phòng / khối lượng mỗi bánh.</li>\n  </ul>\n  <p><b>Các ion trong nước cứng (Ca²⁺, Mg²⁺)</b> kết tủa với RCOO⁻ thành muối không tan → giảm tác dụng, bám cặn lên vải.</p>",
+        "examples": [
+          {
+            "q": "Xà phòng hóa 8,9 g tristearin (M=890), hiệu suất 80%. Tính khối lượng muối sodium stearate (M=306) thu được.",
+            "sol": "n(tristearin) = 8,9/890 = 0,01 mol → n(muối lí thuyết) = 0,03 mol.<br>m lí thuyết = 0,03 × 306 = 9,18 g. m thực tế = 9,18 × 80% = <b>7,344 g</b>."
+          }
+        ],
+        "practice": [
+          {
+            "q": "Xà phòng hóa 1 tấn chất béo (giả sử tristearin), hiệu suất 90%. Khối lượng muối acid béo thu được gần nhất? (A) ~1,0 tấn  (B) ~0,9 tấn  (C) ~0,5 tấn  (D) ~1,5 tấn",
+            "a": "B"
+          },
+          {
+            "q": "Trong nước cứng, ion nào làm xà phòng mất tác dụng? (A) Na⁺, K⁺  (B) Ca²⁺, Mg²⁺  (C) Cl⁻  (D) H⁺",
             "a": "B"
           }
         ]

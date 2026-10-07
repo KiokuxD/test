@@ -1,0 +1,25 @@
+{
+  "name": "V-ACT English — Ôn thi Tiếng Anh",
+  "short_name": "V-ACT English",
+  "description": "Ngân hàng 1.200 câu hỏi thật từ 40 đề ĐGNL V-ACT. Luyện đề, ôn nhanh theo dạng bài, lưu tiến trình.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

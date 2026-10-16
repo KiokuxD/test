@@ -14,22 +14,21 @@ Tổng: **30 câu trắc nghiệm + 15 câu Đúng/Sai (60 ý)**.
 
 ### 🎯 Mẹo ôn nhanh (phân tích từ chính 3 đề)
 
-Toàn bộ tỷ lệ được tính bằng máy trên 3 đề gốc — không phải mẹo đoán:
+Toàn bộ tỷ lệ được tính bằng máy trên 3 đề gốc — không phải mẹo đoán.
+Mỗi mẹo đều có mục **🔍 Cách nhận ra** để biết khi nào mẹo sai (ngoại lệ) và vì sao:
 
-| Mẹo | Số liệu |
-|-----|---------|
-| Đáp án **không bao giờ là D** | D = 0/30 · B nhiều nhất 15/30 (50%) |
-| Chọn **câu dài nhất** | 22/30 (73%), tính đồng hạng 24/30 (80%) |
-| Loại phương án có **từ cực đoan** | 15/18 lần là SAI (83%) |
-| Đúng/Sai: **mặc định ĐÚNG** | 44/60 (73%) |
-| Mỗi câu Đ/S có **3 ĐÚNG – 1 SAI** | 14/15 câu |
-| Vị trí ý a / b / c / d | 87% Đ · 47% Đ · 67% Đ · **93% Đ** |
+| Mẹo | Số liệu | Kèm phần dạy nhận biết |
+|-----|---------|------------------------|
+| Chọn **câu dài nhất** | 22/30 (73%), tính đồng hạng 24/30 (80%) | 6 câu ngoại lệ: từ khóa + vì sao đáp án đúng + bẫy |
+| Loại phương án có **từ cực đoan** | 15/18 lần là SAI (83%) | 3 ngoại lệ vẫn đúng + quy tắc phân biệt |
+| Đúng/Sai: **mặc định ĐÚNG** | 44/60 (73%) | 6 **dạng bẫy** để tìm ra ý SAI |
+| Mỗi câu Đ/S có **3 ĐÚNG – 1 SAI** | 14/15 câu | Bảng tra **toàn bộ 16 ý SAI** kèm vì sao sai |
 
-⚠️ **Khác bộ Lần 1:** ở bộ này ý "d" **hay ĐÚNG** (14/15), còn bộ Lần 1 thì ý "d" hay SAI. Đừng bê nguyên mẹo cũ.
+Không dùng mẹo dựa vào **vị trí** đáp án (A/B/C/D hay ý a/b/c/d) vì đề có thể đảo thứ tự.
 
-Tài liệu có liệt kê riêng các câu "phá mẹo" cần học kỹ: 6 câu đáp án không phải câu dài nhất
-(Bài 4 câu 2, 3, 9 · Bài 5 câu 2, 5, 8), 1 câu Đ/S không theo mẫu 3–1 (Bài 4 câu 11, mẫu `TFTF`),
-và 3 câu có từ cực đoan mà vẫn đúng (Bài 4 câu 10, Bài 5 câu 4, Bài 6 câu 8).
+Tài liệu liệt kê rõ các câu "phá mẹo" và dạy cách nhận ra: 6 câu đáp án không phải câu dài nhất
+(Bài 4 câu 2, 3, 9 · Bài 5 câu 2, 5, 8), 3 câu có từ cực đoan mà vẫn đúng
+(Bài 4 câu 10, Bài 5 câu 4, Bài 6 câu 8), và 1 câu Đ/S không theo mẫu 3–1 (Bài 4 câu 11, mẫu `TFTF`).
 
 ### 📝 Làm bài thực hành
 

@@ -76,10 +76,10 @@ Truy cập: `https://kiokuxd.github.io/test/lichsu12/`
 
 Trang `tin12-bai456/` gồm 2 phần trong cùng 1 file:
 
-- 🎯 **Mẹo ôn nhanh** — thống kê tính tự động trên chính 3 đề: đáp án không bao giờ là **D** (0/30) · chọn **câu dài nhất** (22/30) · loại phương án có **từ cực đoan** (15/18 lần sai) · Đúng/Sai **mặc định ĐÚNG** (44/60) · mỗi câu Đ/S có **3 ĐÚNG – 1 SAI** (14/15 câu).
+- 🎯 **Mẹo ôn nhanh** — thống kê tính tự động trên chính 3 đề, **mỗi mẹo đều kèm phần “Cách nhận ra” ngoại lệ**: chọn **câu dài nhất** (22/30, đồng hạng 24/30 — kèm cách nhận ra 6 câu ngoại lệ) · loại phương án có **từ cực đoan** (15/18 lần sai — kèm 3 ngoại lệ vẫn đúng và quy tắc phân biệt) · Đúng/Sai **mặc định ĐÚNG** (44/60 — kèm 6 dạng bẫy để tìm ra ý SAI) · mỗi câu Đ/S có **3 ĐÚNG – 1 SAI** (14/15 câu — kèm bảng tra toàn bộ 16 ý SAI).
 - 📝 **45 câu thực hành** (30 trắc nghiệm + 15 Đúng/Sai) của Bài 4 — Giao thức mạng, Bài 5 — Thực hành chia sẻ tài nguyên trên mạng, Bài 6 — Giao tiếp và ứng xử trong không gian mạng. Chọn bài · 2 chế độ Luyện tập / Kiểm tra · chấm điểm thang 10.
 
-⚠️ Riêng ý **"d"** trong câu Đúng/Sai: bộ này **hay ĐÚNG** (14/15) — **ngược** với bộ Lần 1 ở trang gốc.
+Không dùng mẹo dựa vào **vị trí** đáp án (A/B/C/D hay ý a/b/c/d) vì đề có thể đảo thứ tự — chỉ giữ mẹo dựa vào **nội dung**, kèm hướng dẫn nhận biết ngoại lệ dựa trên chính lời giải của đề.
 
 Truy cập: `https://kiokuxd.github.io/test/tin12-bai456/`
 

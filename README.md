@@ -54,6 +54,7 @@ Rồi truy cập `http://localhost:8000`.
 ├── lichsu12/         # Trang quiz Lịch sử 12 (Bài 1, 2, 3)
 │   ├── index.html    # UI + logic chọn bài, chấm điểm
 │   └── data.js       # Ngân hàng 114 câu trắc nghiệm Lịch sử
+├── tin12-bai456/     # Tài liệu ôn Tin học 12 Bài 4, 5, 6 (mẹo phân tích + 45 câu thực hành)
 └── README.md
 ```
 
@@ -70,6 +71,17 @@ Trang `lichsu12/` là bộ **114 câu trắc nghiệm** Lịch sử 12 (Kết n�
 **Tính năng:** chọn bài để ôn · chọn đáp án A–D · nộp bài chấm điểm thang 10 · hiện/ẩn đáp án · có phần câu hỏi riêng về **mốc thời gian**.
 
 Truy cập: `https://kiokuxd.github.io/test/lichsu12/`
+
+## Ôn tập Tin học 12 — Bài 4, 5, 6 (mẹo nhận biết nhanh + thực hành)
+
+Trang `tin12-bai456/` gồm 2 phần trong cùng 1 file:
+
+- 🎯 **Mẹo ôn nhanh** — thống kê tính tự động trên chính 3 đề: đáp án không bao giờ là **D** (0/30) · chọn **câu dài nhất** (22/30) · loại phương án có **từ cực đoan** (15/18 lần sai) · Đúng/Sai **mặc định ĐÚNG** (44/60) · mỗi câu Đ/S có **3 ĐÚNG – 1 SAI** (14/15 câu).
+- 📝 **45 câu thực hành** (30 trắc nghiệm + 15 Đúng/Sai) của Bài 4 — Giao thức mạng, Bài 5 — Thực hành chia sẻ tài nguyên trên mạng, Bài 6 — Giao tiếp và ứng xử trong không gian mạng. Chọn bài · 2 chế độ Luyện tập / Kiểm tra · chấm điểm thang 10.
+
+⚠️ Riêng ý **"d"** trong câu Đúng/Sai: bộ này **hay ĐÚNG** (14/15) — **ngược** với bộ Lần 1 ở trang gốc.
+
+Truy cập: `https://kiokuxd.github.io/test/tin12-bai456/`
 
 ## Ghi chú
 

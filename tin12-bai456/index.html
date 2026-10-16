@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ôn tập Tin học 12 — Bài 4, 5, 6 (mẹo + làm bài)</title>
+<style>
+  :root{
+    --blue:#2b6cb0; --blue-dark:#1a365d; --green:#1a7f37; --red:#c53030;
+    --amber:#d69e2e; --amber-dark:#744210; --bg:#f7fafc; --border:#e2e8f0; --muted:#718096;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Times New Roman',Times,'Segoe UI',serif;background:var(--bg);color:#1a202c;margin:0;line-height:1.5;}
+  .wrap{max-width:960px;margin:0 auto;padding:0 16px 90px;}
+
+  header.doc-cover{background:#fff;border-bottom:2px solid var(--blue-dark);padding:26px 20px 20px;text-align:center;}
+  header.doc-cover .school{font-size:14px;color:#222;}
+  header.doc-cover .school b{color:var(--blue-dark);}
+  header.doc-cover h1{font-size:24px;color:var(--blue-dark);margin:12px 0 4px;text-transform:uppercase;letter-spacing:.3px;}
+  header.doc-cover .sub{font-size:15px;font-style:italic;color:var(--blue);margin:0 0 8px;}
+  header.doc-cover .meta{font-size:13px;color:#555;margin-top:8px;}
+
+  .info-box{background:#f5f8fc;border:1px solid #cdd9e5;border-radius:6px;padding:12px 16px;margin:20px 0;font-size:14px;color:#33475b;}
+  .info-box b{color:var(--blue-dark);}
+
+  /* ===== Mẹo ôn nhanh ===== */
+  .tips-banner{background:linear-gradient(135deg,#fef3c7 0%,#fde68a 100%);border:2px solid var(--amber);border-radius:12px;padding:18px 20px;margin:22px 0 24px;}
+  .tips-banner h2{margin:0 0 6px;font-size:20px;color:var(--amber-dark);display:flex;align-items:center;gap:8px;}
+  .tips-banner p{margin:0 0 12px;color:#7b341e;font-size:14px;}
+  .tips-toggle{background:var(--amber);color:#fff;border:none;padding:8px 16px;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit;}
+  .tips-toggle:hover{background:#b7791f;}
+  .tips-body{display:none;margin-top:16px;}
+  .tips-body.show{display:block;}
+  .tip-card{background:#fff;border:1px solid #e2c97e;border-radius:10px;padding:13px 16px;margin-bottom:11px;}
+  .tip-card .tip-title{font-weight:800;color:var(--amber-dark);font-size:15px;margin-bottom:5px;}
+  .tip-card .tip-desc{font-size:14px;color:#2d3748;}
+  .tip-power{display:inline-block;background:#c6f6d5;color:#22543d;padding:1px 8px;border-radius:5px;font-size:12px;font-weight:700;margin-left:6px;}
+  .tip-power.med{background:#fefcbf;color:var(--amber-dark);}
+  .tip-card ul{margin:6px 0 0 18px;padding:0;font-size:14px;}
+  .tip-card li{margin-bottom:3px;}
+  .tip-warn{background:#fff5f5;border:1px solid #fc8181;border-radius:10px;padding:13px 16px;margin-bottom:11px;}
+  .tip-warn .tip-title{color:var(--red);font-weight:800;margin-bottom:5px;}
+  .tips-table{width:100%;border-collapse:collapse;margin:8px 0;font-size:14px;}
+  .tips-table th,.tips-table td{border:1px solid #e2c97e;padding:6px 10px;}
+  .tips-table th{background:#fef3c7;font-weight:700;text-align:left;}
+  .tips-table td.c{text-align:center;}
+  .tips-cta{margin-top:12px;font-size:13.5px;color:var(--amber-dark);font-style:italic;}
+  code{background:#edf2f7;padding:1px 5px;border-radius:4px;font-size:13px;}
+
+  /* ===== Thanh điều khiển ===== */
+  .sticky-bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:10px;padding:11px 16px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+  .bar-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between;}
+  .bar-row+.bar-row{margin-top:9px;}
+  .tabs,.actions,.modes{display:flex;gap:8px;flex-wrap:wrap;}
+  .btn{padding:8px 15px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;background:#fff;color:#2d3748;transition:all .15s;}
+  .btn:hover{border-color:var(--blue);color:var(--blue);}
+  .btn.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+  .btn-primary{background:var(--green);border-color:var(--green);color:#fff;}
+  .btn-primary:hover{background:#166534;color:#fff;}
+  .progress-wrap{flex:1;min-width:160px;}
+  .progress-label{font-size:13px;color:var(--muted);margin-bottom:5px;}
+  .progress-track{height:8px;background:#e2e8f0;border-radius:5px;overflow:hidden;}
+  .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#2b6cb0,#48bb78);transition:width .3s;}
+  .result-display{font-weight:700;font-size:15px;color:var(--blue-dark);}
+
+  /* ===== Câu hỏi ===== */
+  .bai-head{margin:30px 0 14px;padding:12px 16px;background:#ebf4ff;border-left:5px solid var(--blue);border-radius:6px;}
+  .bai-head h3{margin:0;font-size:18px;color:var(--blue-dark);text-transform:uppercase;}
+  .bai-head .t{font-size:14px;color:var(--blue);font-style:italic;}
+  .sec-title{margin:22px 0 10px;font-weight:800;font-size:15px;color:var(--blue-dark);text-transform:uppercase;letter-spacing:.4px;}
+  .q-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:14px;}
+  .q-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px;}
+  .badge{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:20px;background:#edf2f7;color:#4a5568;}
+  .badge.lv{background:#e9d8fd;color:#553c9a;}
+  .q-title{font-weight:700;margin-bottom:10px;color:#1a202c;}
+  .opt{display:block;border:1px solid var(--border);border-radius:8px;padding:8px 12px;margin-bottom:7px;cursor:pointer;font-size:15px;}
+  .opt:hover{border-color:var(--blue);background:#f7fbff;}
+  .opt input{margin-right:8px;}
+  .opt.ok{border-color:#48bb78;background:#f0fff4;}
+  .opt.no{border-color:#fc8181;background:#fff5f5;}
+  .opt.reveal{border-color:#48bb78;background:#f0fff4;}
+  .tf-table{width:100%;border-collapse:collapse;font-size:14.5px;}
+  .tf-table th{background:#f7fafc;border:1px solid var(--border);padding:6px 8px;font-size:13px;}
+  .tf-table td{border:1px solid var(--border);padding:7px 9px;vertical-align:top;}
+  .tf-table td.stt{width:34px;text-align:center;font-weight:700;}
+  .tf-table td.sel{width:150px;white-space:nowrap;}
+  .tf-table tr.ok{background:#f0fff4;}
+  .tf-table tr.no{background:#fff5f5;}
+  .fb{font-weight:700;margin-left:8px;}
+  .q-explain{margin-top:9px;font-size:13.5px;color:#276749;}
+  .note-doc{background:#fffaf0;border:1px solid #f6ad55;border-radius:8px;padding:12px 16px;font-size:14px;margin:18px 0;}
+  .footer-note{text-align:center;color:var(--muted);font-size:13px;margin-top:34px;padding-top:12px;border-top:1px solid #ddd;}
+  @media (max-width:620px){header.doc-cover h1{font-size:19px;} .wrap{padding:0 10px 70px;}}
+</style>
+</head>
+<body>
+<header class="doc-cover">
+  <div class="school">SỞ GD&amp;ĐT CÀ MAU · <b>TRƯỜNG THPT CHUYÊN BẠC LIÊU</b> · TỔ TỔNG HỢP — BỘ MÔN TIN HỌC</div>
+  <h1>Ôn tập Tin học 12 — Bài 4 · 5 · 6</h1>
+  <div class="sub">Mẹo nhận biết nhanh + 45 câu thực hành (30 trắc nghiệm + 15 Đúng/Sai)</div>
+  <div class="meta">SGK Tin học 12 — Kết nối tri thức với cuộc sống · Năm học 2026 – 2027</div>
+</header>
+
+<div class="wrap">
+  <div class="info-box">
+    <b>Cách dùng nhanh:</b> mở mục <b>🎯 MẸO ÔN NHANH</b> đọc trước (2 phút) → chuyển sang phần <b>làm bài</b> bên dưới,
+    chọn bài muốn luyện → chọn chế độ <b>📖 Luyện tập</b> (biết đáp án ngay) hoặc <b>📝 Kiểm tra</b> (nộp bài mới chấm).
+    <br>Chấm điểm theo chuẩn Bộ GD&amp;ĐT: 10 câu trắc nghiệm × 0.5đ + 5 câu Đúng/Sai phân hóa (1 ý = 0.1đ, 2 ý = 0.25đ, 3 ý = 0.5đ, 4 ý = 1.0đ).
+  </div>
+
+
+  <div class="tips-banner">
+    <h2>🎯 MẸO ÔN NHANH (phân tích từ chính 3 đề Bài 4 – 5 – 6)</h2>
+    <p>Tất cả tỷ lệ dưới đây tính bằng máy từ <b>30 câu trắc nghiệm + 15 câu Đúng/Sai (60 ý)</b> của đúng 3 đề này.
+       Dùng để ôn nhanh / chống trượt — nhưng <b>hiểu kiến thức vẫn bền hơn</b>.</p>
+    <button class="tips-toggle" id="btn-tips">Xem mẹo ▾</button>
+
+    <div class="tips-body" id="tips-body">
+
+      <div class="tip-card">
+        <div class="tip-title">1. Đáp án KHÔNG BAO GIỜ là D <span class="tip-power">Cực mạnh · 0/30</span></div>
+        <div class="tip-desc">
+          Đáp án nằm ở <b>B nhiều nhất (15/30 = 50%)</b>. Nếu bí, khoanh <b>B</b>.
+          Tuyệt đối <b>đừng chọn D</b> — cả 3 đề <b>không có câu nào</b> đáp án là D.
+          <table class="tips-table">
+            <tr><th>Vị trí</th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+            <tr><td>Số lần là đáp án</td><td class="c">8</td><td class="c"><b>15</b></td>
+                <td class="c">7</td><td class="c"><b>0</b></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">2. Chọn câu DÀI NHẤT <span class="tip-power">Rất mạnh · 22/30</span></div>
+        <div class="tip-desc">
+          <b>22/30 câu (73%)</b> có đáp án là phương án <b>dài nhất / diễn giải đầy đủ nhất</b>.
+          Nếu tính cả trường hợp dài nhất <i>đồng hạng</i> thì lên <b>24/30 (80%)</b>.
+          → Phân vân thì cứ chọn câu dài nhất.
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">3. Loại phương án có từ CỰC ĐOAN <span class="tip-power">Mạnh · 15/18</span></div>
+        <div class="tip-desc">
+          Phương án chứa <i>“hoàn toàn”, “tuyệt đối”, “không bao giờ”, “duy nhất”, “100%”, “tất cả”, “bắt buộc”, “chỉ có”, “mọi trường hợp”</i>
+          → <b>15/18 lần là SAI</b> (83%), loại ngay.
+          Ngược lại, đáp án thường là câu nêu <b>lợi ích / cách làm đúng</b>: hỗ trợ, giúp, an toàn, hiệu quả, kiểm chứng,
+          chia sẻ, bảo mật, tôn trọng.
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">4. Câu Đúng/Sai: mặc định đánh ĐÚNG <span class="tip-power">Mạnh · 73%</span></div>
+        <div class="tip-desc">
+          <b>44/60 ý là ĐÚNG</b>, chỉ 16/60 là SAI. Nếu bí → đánh <b>ĐÚNG</b> cho tất cả.
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">5. Mỗi câu Đúng/Sai thường có 3 ý ĐÚNG – 1 ý SAI <span class="tip-power">Cực mạnh</span></div>
+        <div class="tip-desc">
+          <b>14/15 câu</b> có mẫu 3 ĐÚNG + 1 SAI (chỉ 1/15 câu có 2–2).
+          <b>Không bao giờ</b> có câu “cả 4 ý đều ĐÚNG” hay “cả 4 ý đều SAI” (cả hai đều <b>0/15 câu</b>).
+          → Nếu bạn đánh SAI cả 4 ý của một câu là gần như chắc chắn sai.
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">6. Vị trí ý trong câu Đúng/Sai <span class="tip-power due">⚠️ Khác lần trước</span></div>
+        <div class="tip-desc">
+          <table class="tips-table">
+            <tr><th>Ý</th><th>ĐÚNG</th><th>SAI</th><th>% ĐÚNG</th></tr>
+            <tr><td>Ý <b>a</b></td><td class="c">13</td><td class="c">2</td><td class="c">87%</td></tr><tr><td>Ý <b>b</b></td><td class="c">7</td><td class="c">8</td><td class="c">47%</td></tr><tr><td>Ý <b>c</b></td><td class="c">10</td><td class="c">5</td><td class="c">67%</td></tr><tr><td>Ý <b>d</b></td><td class="c">14</td><td class="c">1</td><td class="c">93%</td></tr>
+          </table>
+          Ý <b>a</b> và ý <b>d</b> hầu như luôn <b>ĐÚNG</b> (đánh ĐÚNG là ăn chắc).
+          Riêng ý <b>b</b> gần như chia đôi (7 Đ / 8 S) — <b>đây là chỗ dễ mất điểm nhất, phải đọc kỹ</b>.
+          <br><i>Lưu ý: đề Lần 1 ngày trước thì ý “d” hay SAI — <b>đề lần này ngược lại</b>, ý “d” hay ĐÚNG. Đừng bê nguyên mẹo cũ.</i>
+        </div>
+      </div>
+
+      <div class="tip-warn">
+        <div class="tip-title">⚠️ Các câu “phá mẹo” — phải học kỹ, không đoán được</div>
+        <div class="tip-desc">
+          <ul>
+            <li><b>Đáp án KHÔNG phải câu dài nhất</b> (6 câu): Bài 4 câu 2; Bài 4 câu 3; Bài 4 câu 9; Bài 5 câu 2; Bài 5 câu 5; Bài 5 câu 8</li>
+            <li><b>Câu Đúng/Sai không theo mẫu 3–1</b> (1 câu): Bài 4 câu 11 (<code>TFTF</code>)</li>
+            <li><b>Từ cực đoan nhưng vẫn là đáp án ĐÚNG</b> (3 câu): Bài 4 câu 10 (“duy nhất”); Bài 5 câu 4 (“bắt buộc”); Bài 6 câu 8 (“tuyệt đối”)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tip-card">
+        <div class="tip-title">📋 Bảng ăn điểm nhanh</div>
+        <div class="tip-desc">
+          <table class="tips-table">
+            <tr><th>Tình huống</th><th>Hành động</th></tr>
+            <tr><td>Trắc nghiệm, phân vân</td><td>Chọn <b>câu DÀI NHẤT</b></td></tr>
+            <tr><td>Trắc nghiệm, bí hẳn</td><td>Khoanh <b>B</b> (50%) — tuyệt đối <b>đừng chọn D</b></td></tr>
+            <tr><td>Thấy “hoàn toàn / tuyệt đối / duy nhất / bắt buộc”</td><td><b>Loại</b> phương án đó (đúng 83% trường hợp)</td></tr>
+            <tr><td>Câu Đúng/Sai, bí</td><td>Mặc định <b>ĐÚNG</b></td></tr>
+            <tr><td>Ý a và ý d</td><td>Gần như luôn <b>ĐÚNG</b></td></tr>
+            <tr><td>Ý b</td><td>Đọc kỹ — dễ sai nhất</td></tr>
+            <tr><td>Đếm được 3–4 ý SAI trong 1 câu</td><td><b>Xem lại</b> — gần như chắc chắn sai</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="tips-cta">
+        Với các mẹo này, người chưa học kỹ vẫn có thể đạt ~7–8 điểm. Nhưng để chắc chắn 10 điểm, hãy học kỹ
+        6 câu “đáp án không phải câu dài nhất”, câu Đúng/Sai Bài 4 câu 11 (<code>TFTF</code>) và 3 câu có từ cực đoan mà vẫn đúng.
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-bar">
+    <div class="bar-row">
+      <div class="tabs">
+        <button class="btn" data-bai="4">Bài 4</button>
+        <button class="btn" data-bai="5">Bài 5</button>
+        <button class="btn" data-bai="6">Bài 6</button>
+        <button class="btn active" data-bai="all">Cả 3 bài</button>
+      </div>
+      <div class="modes">
+        <button class="btn active" data-mode="practice">📖 Luyện tập</button>
+        <button class="btn" data-mode="exam">📝 Kiểm tra</button>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div class="progress-wrap">
+        <div class="progress-label" id="progress-label">Đã trả lời 0 / 45 câu</div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" id="btn-grade">Nộp bài &amp; chấm điểm</button>
+        <button class="btn" id="btn-reveal">Hiện / Ẩn đáp án</button>
+        <button class="btn" id="btn-reset">Làm lại</button>
+      </div>
+    </div>
+    <div class="bar-row">
+      <div id="mode-hint" style="font-size:13px;color:#718096">Chế độ Luyện tập: chọn là biết đúng/sai ngay.</div>
+      <div class="result-display" id="result-badge" style="display:none">
+        Kết quả: <span id="score-text" style="color:#c53030">0.0 / 10.0</span>
+        <div id="detail-text" style="font-size:12.5px;font-weight:400;color:#4a5568"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="exam"></div>
+
+  <div class="note-doc">
+    <b>Lưu ý:</b> nội dung 45 câu được bóc nguyên văn từ 3 đề kiểm tra của trường (Bài 4 — Giao thức mạng,
+    Bài 5 — Thực hành chia sẻ tài nguyên trên mạng, Bài 6 — Giao tiếp và ứng xử trong không gian mạng).
+    Phần “Mẹo ôn nhanh” là thống kê tự động trên chính 3 đề này, chỉ dùng để ôn nhanh — <b>hiểu bài vẫn chắc điểm hơn</b>.
+  </div>
+
+  <div class="footer-note">Tự học — ôn tập Tin học 12 · Bài 4 · 5 · 6</div>
+</div>
+
+<script>
+const DATA = /*DATA-START*/[
+ {
+  "bai": 4,
+  "title": "BÀI 4: GIAO THỨC MẠNG",
+  "source": "test12.4.html",
+  "mcq": [
+   {
+    "n": 1,
+    "level": "Nhận biết",
+    "q": "Câu 1: Giao thức mạng (Network Protocol) trong truyền thông máy tính được định nghĩa là gì?",
+    "options": {
+     "A": "Một phần mềm ứng dụng dùng để quét và diệt virus cho hệ thống mạng máy tính.",
+     "B": "Tập hợp các quy tắc, quy ước chuẩn hóa mà các thiết bị tham gia mạng phải tuân thủ để có thể kết nối và trao đổi thông tin chính xác với nhau.",
+     "C": "Thiết bị phần cứng đóng vai trò chuyển mạch các cổng kết nối trong mạng cục bộ LAN.",
+     "D": "Một loại cáp quang tốc độ cao chuyên dùng để truyền tải tín hiệu Internet xuyên lục địa."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 2,
+    "level": "Nhận biết",
+    "q": "Câu 2: Bộ giao thức nào sau đây đóng vai trò nền tảng kiến trúc cốt lõi cho sự hình thành và vận hành của mạng Internet toàn cầu?",
+    "options": {
+     "A": "TCP/IP (Transmission Control Protocol / Internet Protocol).",
+     "B": "IPX/SPX (Internetwork Packet Exchange / Sequenced Packet Exchange).",
+     "C": "NetBIOS / NetBEUI.",
+     "D": "AppleTalk của hãng Apple."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 3,
+    "level": "Thông hiểu",
+    "q": "Câu 3: Mô hình kiến trúc của bộ giao thức TCP/IP được phân thành mấy tầng chức năng?",
+    "options": {
+     "A": "3 tầng (Ứng dụng, Mạng, Vật lý).",
+     "B": "4 tầng (Ứng dụng, Giao vận, Mạng/Internet, Truy nhập mạng).",
+     "C": "5 tầng (Ứng dụng, Phiên, Giao vận, Mạng, Liên kết dữ liệu).",
+     "D": "7 tầng (Ứng dụng, Trình diễn, Phiên, Giao vận, Mạng, Liên kết dữ liệu, Vật lý)."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 4,
+    "level": "Thông hiểu",
+    "q": "Câu 4: Chức năng cốt lõi của giao thức IP (Internet Protocol) ở Tầng Mạng/Internet là gì?",
+    "options": {
+     "A": "Chia nhỏ tệp dữ liệu, đánh số thứ tự gói tin và kiểm tra sửa lỗi đường truyền.",
+     "B": "Cung cấp giao diện đồ họa tương tác trực tiếp với người dùng khi duyệt web.",
+     "C": "Định địa chỉ logic cho các thiết bị mạng và định tuyến (Routing) tìm đường đi tối ưu cho các gói tin qua các mạng liên kết.",
+     "D": "Chuyển đổi tín hiệu số thành tín hiệu tương tự (analog) truyền trên cáp đồng."
+    },
+    "answer": "C"
+   },
+   {
+    "n": 5,
+    "level": "Thông hiểu",
+    "q": "Câu 5: Chức năng cốt lõi của giao thức TCP (Transmission Control Protocol) ở Tầng Giao vận là gì?",
+    "options": {
+     "A": "Phân chia dữ liệu thành các gói tin (Packets), đánh số thứ tự, kiểm soát lỗi, gửi lại gói tin bị mất và đảm bảo truyền dữ liệu tin cậy từ đầu cuối đến đầu cuối.",
+     "B": "Tạo ra các sóng vô tuyến Wi-Fi để phát tín hiệu trong không gian phòng học.",
+     "C": "Phân giải tên miền dạng chữ (domain name) sang địa chỉ số IP tương ứng.",
+     "D": "Cấp phát tự động địa chỉ IP động cho các máy trạm mới tham gia vào mạng LAN."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 6,
+    "level": "Thông hiểu",
+    "q": "Câu 6: Cơ chế truyền gói tin (Packet Switching) trên mạng Internet diễn ra như thế nào?",
+    "options": {
+     "A": "Toàn bộ tệp tin được truyền nguyên khối trên một đường truyền vật lý duy nhất được cố định từ đầu đến cuối.",
+     "B": "Dữ liệu được chia thành các gói tin độc lập; mỗi gói tin có thể đi theo các tuyến đường khác nhau qua các router và được máy nhận ráp lại theo đúng thứ tự ban đầu.",
+     "C": "Dữ liệu chỉ được truyền vào ban đêm khi lưu lượng đường truyền trên thế giới giảm xuống mức thấp nhất.",
+     "D": "Tất cả các gói tin bắt buộc phải đi qua một máy chủ trung tâm đặt tại trụ sở Liên Hợp Quốc để kiểm duyệt trước khi đến máy nhận."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 7,
+    "level": "Nhận biết",
+    "q": "Câu 7: Các giao thức nào sau đây cùng thuộc Tầng Ứng dụng (Application Layer) trong mô hình TCP/IP?",
+    "options": {
+     "A": "IP, ICMP, ARP.",
+     "B": "TCP, UDP.",
+     "C": "HTTP, HTTPS, FTP, SMTP, DNS.",
+     "D": "Ethernet, Wi-Fi, Token Ring."
+    },
+    "answer": "C"
+   },
+   {
+    "n": 8,
+    "level": "Vận dụng",
+    "q": "Câu 8: Trong cửa sổ dòng lệnh Command Prompt, câu lệnh 'ping 8.8.8.8' chủ yếu được người quản trị mạng sử dụng để làm gì?",
+    "options": {
+     "A": "Kiểm tra tính kết nối mạng tới máy chủ đích, đo độ trễ phản hồi (latency) và tỷ lệ mất gói tin (packet loss).",
+     "B": "Cài đặt lại toàn bộ hệ điều hành Windows trên máy chủ có địa chỉ 8.8.8.8.",
+     "C": "Tải về toàn bộ cơ sở dữ liệu tìm kiếm của Google về máy tính cá nhân.",
+     "D": "Tự động tắt nguồn máy tính từ xa qua mạng Internet."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 9,
+    "level": "Vận dụng",
+    "q": "Câu 9: Để theo dõi đường đi của gói tin qua từng trạm Router (hops) từ máy tính của mình đến máy chủ web google.com, ta sử dụng câu lệnh nào?",
+    "options": {
+     "A": "ipconfig /all",
+     "B": "tracert google.com",
+     "C": "netstat -an",
+     "D": "nslookup google.com"
+    },
+    "answer": "B"
+   },
+   {
+    "n": 10,
+    "level": "Vận dụng cao",
+    "q": "Câu 10: Trong các hệ thống phân tán và mạng lưới tác nhân thông minh AI (Multi-Agent Systems), giao thức truyền gói tin mạng đóng vai trò then chốt như thế nào?",
+    "options": {
+     "A": "Chỉ có tác dụng cấp nguồn điện cho các cảm biến của robot hoạt động.",
+     "B": "Cho phép các tác nhân AI trao đổi thông điệp trạng thái (State), niềm tin (Belief) và phối hợp hành động thời gian thực mà không phụ thuộc vào một máy chủ kiểm soát tập trung duy nhất.",
+     "C": "Làm chậm quá trình tính toán của mô hình học máy để tránh quá tải vi xử lý.",
+     "D": "Ngăn chặn các robot thông minh giao tiếp với nhau để bảo đảm an toàn tuyệt đối."
+    },
+    "answer": "B"
+   }
+  ],
+  "tf": [
+   {
+    "n": 11,
+    "level": "Thông hiểu",
+    "q": "Câu 11: Khi tìm hiểu về khái niệm giao thức mạng và mô hình 4 tầng TCP/IP, mỗi nhận định sau đây là Đúng hay Sai?",
+    "items": [
+     {
+      "key": "a",
+      "text": "Giao thức mạng là bộ quy tắc chuẩn hóa để các thiết bị máy tính có cấu hình, phần cứng và hệ điều hành khác nhau có thể truyền thông được với nhau.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Mô hình TCP/IP gồm 4 tầng, trong đó Tầng Ứng dụng (Application) nằm ở vị trí thấp nhất tiếp xúc trực tiếp với dây cáp mạng.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Tầng Giao vận (Transport Layer) có nhiệm vụ thiết lập kết nối logic giữa hai tiến trình ứng dụng và đảm bảo dữ liệu truyền từ đầu cuối đến đầu cuối (End-to-End).",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Nếu không có giao thức mạng chuẩn hóa quốc tế, các máy tính của các nhà sản xuất khác nhau (như Apple, Dell, IBM) vẫn có thể tự động giao tiếp dễ dàng mà không cần bất kỳ quy ước nào.",
+      "answer": "F"
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "level": "Thông hiểu",
+    "q": "Câu 12: Về vai trò và sự phối hợp chức năng giữa hai giao thức cốt lõi TCP và IP trong bộ giao thức TCP/IP:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Giao thức IP chịu trách nhiệm chính trong việc gán địa chỉ IP và định tuyến (Routing) các gói tin qua các thiết bị mạng trung gian.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Giao thức IP có cơ chế bắt tay 3 bước và đảm bảo chắc chắn rằng 100% gói tin gửi đi không bao giờ bị mất mát trên đường truyền.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Giao thức TCP chịu trách nhiệm phân nhỏ dòng dữ liệu thành các gói tin (Packets), đánh số thứ tự để máy nhận có thể ghép nối lại chính xác.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Khi một gói tin bị thất lạc hoặc lỗi do đường truyền mạng, giao thức TCP sẽ phát hiện và tự động yêu cầu bên gửi truyền lại gói tin đó.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "level": "Vận dụng",
+    "q": "Câu 13: Về cơ chế đóng gói (Encapsulation), phân mảnh và truyền tải gói tin trên mạng Internet:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Tại máy gửi, dữ liệu đi từ tầng trên xuống tầng dưới sẽ được gắn thêm các thông tin điều khiển (gọi là tiêu đề - Header) của từng tầng tương ứng.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Mọi gói tin của một tệp văn bản bắt buộc phải đi cùng trên một tuyến đường duy nhất từ máy gửi đến máy nhận.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Nhờ vào thông tin số thứ tự được ghi trong tiêu đề gói tin TCP, máy nhận có thể khôi phục lại nguyên vẹn dữ liệu gốc ngay cả khi các gói tin đến đích không theo đúng thứ tự thời gian.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Kỹ thuật chia nhỏ dữ liệu thành gói tin giúp tối ưu hóa băng thông mạng và ngăn ngừa tình trạng một tệp tin dung lượng lớn chiếm giữ độc quyền đường truyền liên tục.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "level": "Vận dụng",
+    "q": "Câu 14: Khi thực hiện các thao tác kiểm tra, chẩn đoán sự cố mạng bằng câu lệnh trên hệ điều hành Windows:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Câu lệnh ping chỉ có thể kiểm tra kết nối tới các máy tính trong cùng mạng LAN, không thể kiểm tra tới các máy chủ trên toàn cầu như google.com.",
+      "answer": "F"
+     },
+     {
+      "key": "b",
+      "text": "Thông số 'time=15ms' trong kết quả trả về của lệnh ping biểu thị thời gian gói tin đi từ máy gửi đến máy đích và quay trở về là 15 mili giây.",
+      "answer": "T"
+     },
+     {
+      "key": "c",
+      "text": "Nếu kết quả lệnh ping trả về thông báo 'Request timed out' hoặc 'Packets: Lost = 4 (100% loss)', điều đó chứng tỏ kết nối giữa hai máy đang bị gián đoạn hoặc bị tường lửa chặn.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Câu lệnh tracert giúp xác định vị trí của Router trung gian đang bị nghẽn mạng hoặc ngừng hoạt động dựa trên độ trễ phản hồi của từng chặng (Hop).",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 15,
+    "level": "Vận dụng cao",
+    "q": "Câu 15: Về vai trò của hạ tầng giao thức mạng đối với các hệ thống Trí tuệ nhân tạo (AI) và Internet vạn vật (IoT):",
+    "items": [
+     {
+      "key": "a",
+      "text": "Hạ tầng mạng băng thông rộng và giao thức truyền thông tin cậy là điều kiện tiên quyết để các hệ thống AI trên đám mây (Cloud AI) tiếp nhận dữ liệu thời gian thực từ cảm biến IoT.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Trong mạng lưới xe tự hành thông minh, độ trễ truyền gói tin mạng không ảnh hưởng gì đến sự an toàn khi phanh xe hay chuyển hướng tự động.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Các thuật toán học máy phân tán (Distributed Machine Learning) yêu cầu mạng tốc độ cao để đồng bộ hóa các tham số trọng số (weights) giữa các máy chủ huấn luyện.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Hệ thống đa tác nhân thông minh AI sử dụng các gói tin mạng để chuyển tải thông điệp ngữ nghĩa và mục tiêu hành động giữa các thực thể số.",
+      "answer": "T"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "bai": 5,
+  "title": "BÀI 5: THỰC HÀNH CHIA SẺ TÀI NGUYÊN TRÊN MẠNG",
+  "source": "test12.5.html",
+  "mcq": [
+   {
+    "n": 1,
+    "level": "Nhận biết",
+    "q": "Câu 1: Mục đích và lợi ích kinh tế chính của việc chia sẻ tài nguyên mạng (như tệp tin, máy in, máy quét) trong mạng cục bộ LAN là gì?",
+    "options": {
+     "A": "Làm tăng gấp đôi tốc độ vi xử lý (CPU) của tất cả các máy trạm trong phòng máy.",
+     "B": "Tiết kiệm chi phí đầu tư mua sắm thiết bị phần cứng, nâng cao hiệu suất làm việc cộng tác và hạn chế lây lan virus qua thiết bị lưu trữ USB.",
+     "C": "Thay thế hoàn toàn sự cần thiết của hệ điều hành Windows trên các máy tính cá nhân.",
+     "D": "Giúp màn hình máy tính hiển thị độ phân giải cao hơn mà không cần nâng cấp card đồ họa."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 2,
+    "level": "Thông hiểu",
+    "q": "Câu 2: Để máy tính của em có thể nhìn thấy và được các máy tính khác nhìn thấy trong cùng một mạng LAN trên Windows, em cần bật tính năng nào trong Advanced sharing settings?",
+    "options": {
+     "A": "Turn off Windows Defender Firewall.",
+     "B": "Turn on network discovery.",
+     "C": "Turn on BitLocker Drive Encryption.",
+     "D": "Turn off Remote Desktop."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 3,
+    "level": "Thông hiểu",
+    "q": "Câu 3: Để cho phép các máy tính khác trong mạng LAN truy cập vào thư mục dùng chung hoặc máy in cắm tại máy mình, tùy chọn nào bắt buộc phải được kích hoạt?",
+    "options": {
+     "A": "Turn on file and printer sharing.",
+     "B": "Turn on Airplane mode.",
+     "C": "Turn off Bluetooth.",
+     "D": "Turn on High Contrast display."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 4,
+    "level": "Thông hiểu",
+    "q": "Câu 4: Trong hộp thoại Advanced sharing settings, tùy chọn 'Turn on password protected sharing' có ý nghĩa gì?",
+    "options": {
+     "A": "Tất cả các tệp tin trong máy tính sẽ tự động bị xóa nếu không nhập mật khẩu trong vòng 5 phút.",
+     "B": "Người dùng từ các máy khác trong mạng muốn truy cập vào tài nguyên chia sẻ bắt buộc phải có tài khoản người dùng và mật khẩu hợp lệ trên máy tính chia sẻ.",
+     "C": "Không cho phép bất kỳ ai kết nối vào mạng Wi-Fi của cơ quan.",
+     "D": "Tự động khóa bàn phím và chuột khi có người khác truy cập qua mạng."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 5,
+    "level": "Vận dụng",
+    "q": "Câu 5: Trong cửa sổ Command Prompt (cmd), câu lệnh nào giúp người dùng tra cứu nhanh địa chỉ IPv4 của máy tính đang sử dụng?",
+    "options": {
+     "A": "getmac",
+     "B": "ipconfig",
+     "C": "systeminfo",
+     "D": "hostname"
+    },
+    "answer": "B"
+   },
+   {
+    "n": 6,
+    "level": "Thông hiểu",
+    "q": "Câu 6: Khi chia sẻ một thư mục trên Windows, nếu chỉ cấp quyền 'Read' (Chỉ đọc) cho nhóm người dùng Everyone, người truy cập qua mạng sẽ được phép làm gì?",
+    "options": {
+     "A": "Được mở xem nội dung và sao chép tệp về máy mình, nhưng không được chỉnh sửa nội dung, không được tạo tệp mới hay xóa tệp trong thư mục.",
+     "B": "Được tùy ý xóa toàn bộ thư mục và cài đặt lại hệ điều hành của máy chủ.",
+     "C": "Được chỉnh sửa nội dung và đổi tên thư mục nhưng không được mở xem.",
+     "D": "Toàn quyền kiểm soát và có thể cấp quyền truy cập cho những người dùng khác."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 7,
+    "level": "Thông hiểu",
+    "q": "Câu 7: Để người dùng qua mạng có thể vừa đọc dữ liệu, vừa tạo thêm tệp mới, sửa đổi nội dung và xóa tệp trong thư mục chia sẻ, ta cần cấp quyền nào?",
+    "options": {
+     "A": "Quyền Read.",
+     "B": "Quyền Change (hoặc Modify/Write).",
+     "C": "Quyền Deny All.",
+     "D": "Quyền View Only."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 8,
+    "level": "Vận dụng",
+    "q": "Câu 8: Đường dẫn mạng chuẩn UNC (Universal Naming Convention) để truy cập vào thư mục dùng chung 'Tai_Lieu' tại máy tính có địa chỉ IP là 192.168.1.50 có định dạng nào sau đây?",
+    "options": {
+     "A": "http://192.168.1.50/Tai_Lieu",
+     "B": "\\\\192.168.1.50\\Tai_Lieu",
+     "C": "D:\\192.168.1.50\\Tai_Lieu",
+     "D": "ftp://192.168.1.50:Tai_Lieu"
+    },
+    "answer": "B"
+   },
+   {
+    "n": 9,
+    "level": "Vận dụng",
+    "q": "Câu 9: Thao tác 'Ánh xạ ổ đĩa mạng' (Map Network Drive) mang lại tiện ích nổi bật nào cho người sử dụng?",
+    "options": {
+     "A": "Biến một thư mục chia sẻ trên mạng thành một ổ đĩa logic (như ổ Z:, Y:) trong This PC, giúp mở và lưu tệp trực tiếp từ các phần mềm ứng dụng như đang thao tác trên ổ cứng của chính mình.",
+     "B": "Tự động sao lưu toàn bộ ảnh trên mạng về điện thoại cá nhân qua Bluetooth.",
+     "C": "Biến màn hình máy tính thành màn hình cảm ứng điện dung.",
+     "D": "Tăng tốc độ quay của quạt tản nhiệt CPU khi tải dữ liệu nặng."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 10,
+    "level": "Vận dụng cao",
+    "q": "Câu 10: Khi máy khách truy cập vào thư mục chia sẻ trên máy chủ và nhận được thông báo lỗi 'Windows cannot access... Access is denied', nguyên nhân phổ biến nhất là gì?",
+    "options": {
+     "A": "Dây cáp mạng bị đứt hoàn toàn khiến hai máy tính không thể truyền tín hiệu điện.",
+     "B": "Màn hình của máy chủ đang bị tắt đèn nền.",
+     "C": "Máy khách đã kết nối được tới máy chủ nhưng tài khoản đăng nhập chưa được cấp quyền (Permissions) phù hợp hoặc chưa có quyền đọc/ghi trên thư mục đó.",
+     "D": "Máy chủ chưa cài đặt phần mềm Microsoft Word."
+    },
+    "answer": "C"
+   }
+  ],
+  "tf": [
+   {
+    "n": 11,
+    "level": "Thông hiểu",
+    "q": "Câu 11: Về lợi ích và các bước chuẩn bị môi trường mạng để chia sẻ tài nguyên trên hệ điều hành Windows:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Chia sẻ máy in qua mạng LAN giúp một cơ quan có 20 nhân viên có thể dùng chung một máy in chất lượng cao mà không cần mua 20 chiếc máy in riêng lẻ.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Để cấu hình chia sẻ mạng trên Windows, người quản trị mở Network and Sharing Center rồi vào Change advanced sharing settings.",
+      "answer": "T"
+     },
+     {
+      "key": "c",
+      "text": "Tùy chọn 'Turn on network discovery' nên bị tắt đi nếu ta muốn các máy tính khác trong phòng máy dễ dàng tìm thấy máy của mình để trao đổi tài liệu.",
+      "answer": "F"
+     },
+     {
+      "key": "d",
+      "text": "Chia sẻ dữ liệu qua mạng nội bộ LAN giúp giảm thiểu nguy cơ lây lan virus và mã độc tống tiền so với việc cắm rút thiết bị lưu trữ USB qua lại giữa các máy tính.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "level": "Thông hiểu",
+    "q": "Câu 12: Về quy trình thiết lập chia sẻ thư mục và các cấp độ phân quyền (Share Permissions):",
+    "items": [
+     {
+      "key": "a",
+      "text": "Để chia sẻ một thư mục, ta nhấp chuột phải vào thư mục đó, chọn Properties, chuyển sang thẻ Sharing rồi chọn Advanced Sharing.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Nếu phân quyền 'Read' cho nhóm Everyone, một học sinh ở máy bên cạnh có thể tự ý mở thư mục và xóa sạch các tệp dữ liệu bên trong.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Quyền 'Change' cho phép người dùng từ xa có thể tạo tệp mới, chỉnh sửa nội dung tệp và xóa tệp trong thư mục dùng chung.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Quyền 'Full Control' bao gồm tất cả các quyền của Read và Change, đồng thời cho phép người dùng thay đổi cả quyền truy cập (Permissions) của những người khác.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "level": "Vận dụng",
+    "q": "Câu 13: Về cú pháp đường dẫn mạng UNC và thao tác Ánh xạ ổ đĩa mạng (Map Network Drive):",
+    "items": [
+     {
+      "key": "a",
+      "text": "Đường dẫn mạng chuẩn UNC trong Windows sử dụng các dấu gạch chéo xuôi (/) giống như địa chỉ trang web Internet.",
+      "answer": "F"
+     },
+     {
+      "key": "b",
+      "text": "Người dùng có thể mở hộp thoại Run (phím tắt Win + R), gõ '\\\\192.168.1.10' rồi nhấn Enter để mở danh sách tài nguyên chia sẻ của máy có IP 192.168.1.10.",
+      "answer": "T"
+     },
+     {
+      "key": "c",
+      "text": "Khi ánh xạ ổ đĩa mạng, tùy chọn 'Reconnect at sign-in' giúp hệ thống tự động kết nối lại ổ đĩa mạng mỗi khi người dùng đăng nhập lại vào máy tính.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Khi một ổ đĩa mạng Z: đã được ánh xạ thành công, người dùng có thể lưu một tệp Word thẳng vào ổ Z: và tệp đó sẽ xuất hiện trên ổ cứng của máy chủ chia sẻ.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "level": "Vận dụng",
+    "q": "Câu 14: Về quy trình chia sẻ máy in trong mạng LAN và xử lý các lỗi thường gặp:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Một chiếc máy in chỉ có cổng cắm USB đơn thuần vẫn có thể chia sẻ cho cả phòng làm việc dùng chung nếu được cắm vào một máy tính làm máy chủ chia sẻ.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Sau khi máy chủ chia sẻ máy in, máy khách chỉ cần truy cập vào máy chủ qua địa chỉ UNC và nhấp đúp vào biểu tượng máy in để tự động cài đặt driver và kết nối.",
+      "answer": "T"
+     },
+     {
+      "key": "c",
+      "text": "Nếu máy tính cắm trực tiếp với máy in bị tắt nguồn điện, các máy khách trong mạng LAN vẫn có thể in tài liệu bình thường qua máy in đó mà không gặp bất kỳ trở ngại nào.",
+      "answer": "F"
+     },
+     {
+      "key": "d",
+      "text": "Khi máy in báo trạng thái Offline dù máy chủ vẫn bật, việc khởi động lại dịch vụ Print Spooler trong services.msc của máy chủ là một biện pháp kỹ thuật hiệu quả để khắc phục.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 15,
+    "level": "Vận dụng cao",
+    "q": "Câu 15: Về phân tích sự cố mạng và ứng dụng chia sẻ tài nguyên an toàn trong thực tế:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Thông báo lỗi 'The network path was not found' thường xảy ra khi gõ sai địa chỉ IP, dây cáp mạng bị lỏng hoặc máy chủ chưa bật Network discovery.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Để bảo đảm an toàn dữ liệu nhạy cảm của cơ quan, cách tốt nhất là luôn cấp quyền 'Full Control' cho nhóm người dùng 'Everyone'.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Trong dự án huấn luyện AI nhận diện sâu bệnh nông nghiệp, camera hiện trường có thể tự động đẩy ảnh vào thư mục chia sẻ để tác nhân AI quét và huấn luyện mô hình.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Việc phân quyền riêng biệt cho tài khoản tác nhân AI (như chỉ cấp quyền Read đối với kho dữ liệu ảnh mẫu) giúp bảo vệ tính toàn vẹn của dữ liệu gốc, chống bị chỉnh sửa hoặc xóa nhầm.",
+      "answer": "T"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "bai": 6,
+  "title": "BÀI 6: GIAO TIẾP VÀ ỨNG XỬ TRONG KHÔNG GIAN MẠNG",
+  "source": "test12.6.html",
+  "mcq": [
+   {
+    "n": 1,
+    "level": "Nhận biết",
+    "q": "Câu 1: Theo Quyết định số 874/QĐ-BTTTT của Bộ Thông tin và Truyền thông, 'Bộ Quy tắc ứng xử trên mạng xã hội' quy định mấy quy tắc ứng xử chung cho tất cả các đối tượng?",
+    "options": {
+     "A": "2 quy tắc (Tiết kiệm và Hiệu quả).",
+     "B": "3 quy tắc (Bảo mật, Nhanh chóng, Ẩn danh).",
+     "C": "4 quy tắc (Tôn trọng tuân thủ pháp luật, Lành mạnh, An toàn bảo mật thông tin, Trách nhiệm).",
+     "D": "5 quy tắc (Tự do ngôn luận, Sáng tạo không giới hạn, Chia sẻ mọi lúc, Kinh doanh, Giải trí)."
+    },
+    "answer": "C"
+   },
+   {
+    "n": 2,
+    "level": "Nhận biết",
+    "q": "Câu 2: Nội dung nào sau đây phản ánh đúng bản chất của 'Quy tắc Lành mạnh' trong Bộ Quy tắc ứng xử trên mạng xã hội?",
+    "options": {
+     "A": "Hành vi, ứng xử trên mạng xã hội phải phù hợp với các giá trị đạo đức, văn hóa, truyền thống tốt đẹp của dân tộc Việt Nam.",
+     "B": "Mọi người phải thường xuyên tập thể dục trước màn hình máy tính ít nhất 30 phút mỗi ngày.",
+     "C": "Chỉ được phép sử dụng mạng xã hội vào ban ngày, cấm tuyệt đối sử dụng mạng vào ban đêm.",
+     "D": "Chỉ được kết bạn với những người có cùng độ tuổi và học lực tương đương."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 3,
+    "level": "Thông hiểu",
+    "q": "Câu 3: Theo Luật An ninh mạng năm 2018 (Luật số 24/2018/QH14), hành vi nào sau đây bị NGHIÊM CẤM thực hiện trên không gian mạng?",
+    "options": {
+     "A": "Tìm kiếm tài liệu học tập và tham gia các khóa học lập trình trực tuyến miễn phí.",
+     "B": "Đăng tải thông tin xúc phạm nghiêm trọng danh dự, uy tín, nhân phẩm của người khác; bịa đặt, vu khống hoặc xuyên tạc lịch sử.",
+     "C": "Trao đổi bài tập nhóm và chia sẻ kinh nghiệm học tập với bạn bè qua ứng dụng nhắn tin.",
+     "D": "Gửi lời chúc mừng sinh nhật lịch sự tới bạn bè trên trang mạng xã hội cá nhân."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 4,
+    "level": "Thông hiểu",
+    "q": "Câu 4: Theo Điều 101 Nghị định số 15/2020/NĐ-CP (được sửa đổi bởi Nghị định 14/2022/NĐ-CP), hành vi cung cấp, chia sẻ thông tin giả mạo, thông tin sai sự thật trên mạng xã hội bị xử phạt vi phạm hành chính ở mức nào?",
+    "options": {
+     "A": "Phạt cảnh cáo nhắc nhở bằng lời nói, không phạt tiền.",
+     "B": "Phạt tiền từ 10.000.000 đồng đến 20.000.000 đồng đối với tổ chức (cá nhân vi phạm áp dụng bằng 1/2) và buộc gỡ bỏ thông tin sai sự thật.",
+     "C": "Phạt tiền từ 100.000 đồng đến 200.000 đồng.",
+     "D": "Tịch thu vĩnh viễn toàn bộ tài sản và phong tỏa mọi tài khoản ngân hàng."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 5,
+    "level": "Thông hiểu",
+    "q": "Câu 5: Hành vi tự ý chụp ảnh, đăng tải hình ảnh riêng tư hoặc thông tin cá nhân của người khác lên mạng xã hội nhằm mục đích bêu riếu, xúc phạm khi chưa được sự đồng ý của họ là hành vi:",
+    "options": {
+     "A": "Hoàn toàn hợp pháp vì không gian mạng là môi trường hoàn toàn tự do không bị pháp luật điều chỉnh.",
+     "B": "Vi phạm pháp luật về bảo vệ bí mật đời tư, có thể bị xử phạt hành chính từ 20 đến 30 triệu đồng theo Nghị định 15/2020/NĐ-CP hoặc bị truy cứu trách nhiệm hình sự nếu gây hậu quả nghiêm trọng.",
+     "C": "Là hành vi đáng khen ngợi vì giúp người khác trở nên nổi tiếng hơn trên mạng xã hội.",
+     "D": "Chỉ là trò đùa vô hại của lứa tuổi học sinh, nhà trường và pháp luật không được can thiệp."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 6,
+    "level": "Thông hiểu",
+    "q": "Câu 6: Theo Điều 288 Bộ luật Hình sự năm 2015 (sửa đổi, bổ sung năm 2017), người có hành vi đưa lên mạng thông tin sai sự thật, vu khống, gây hoang mang dư luận hoặc gây thiệt hại từ 50 triệu đồng trở lên sẽ bị xử lý như thế nào?",
+    "options": {
+     "A": "Bị truy cứu trách nhiệm hình sự với mức phạt tiền từ 30 triệu đến 200 triệu đồng, hoặc phạt tù từ 6 tháng đến 3 năm (khung tăng nặng có thể lên đến 7 năm tù).",
+     "B": "Chỉ cần viết bản kiểm điểm nộp cho cha mẹ ký là được miễn hoàn toàn trách nhiệm.",
+     "C": "Bị khóa tài khoản mạng xã hội tạm thời trong vòng 24 giờ rồi tự động mở lại.",
+     "D": "Không bị chế tài nào vì quyền tự do ngôn luận được bảo hộ vô điều kiện trên mạng."
+    },
+    "answer": "A"
+   },
+   {
+    "n": 7,
+    "level": "Vận dụng",
+    "q": "Câu 7: Khi tham gia thảo luận trên các diễn đàn học tập trực tuyến, nếu bắt gặp một ý kiến trái ngược với quan điểm của mình, cách ứng xử văn minh và chuẩn mực nhất là gì?",
+    "options": {
+     "A": "Dùng lời lẽ thô tục, chửi bới, lăng mạ người đưa ra ý kiến trái ngược để khẳng định cái tôi.",
+     "B": "Kêu gọi nhóm bạn bè cùng vào thả biểu tượng phẫn nộ, bình luận công kích và đe dọa bạo lực ngoài đời thực.",
+     "C": "Lịch sự, tôn trọng sự khác biệt; bình tĩnh đưa ra các luận cứ, bằng chứng khoa học có kiểm chứng để trao đổi trên tinh thần xây dựng.",
+     "D": "Chụp màn hình tài khoản đối phương đem chia sẻ khắp nơi để cộng đồng mạng tẩy chay."
+    },
+    "answer": "C"
+   },
+   {
+    "n": 8,
+    "level": "Vận dụng",
+    "q": "Câu 8: Trước một thông tin giật gân, ly kỳ về thiên tai hoặc dịch bệnh xuất hiện trên mạng xã hội từ một tài khoản cá nhân chưa rõ danh tính, trách nhiệm công dân số đòi hỏi em phải làm gì?",
+    "options": {
+     "A": "Bấm nút Chia sẻ (Share) ngay lập tức vào tất cả các hội nhóm để cảnh báo cho mọi người biết càng sớm càng tốt.",
+     "B": "Thêm thắt các chi tiết kinh dị hơn rồi đăng tải lại lên trang cá nhân của mình để tăng lượt tương tác (câu like).",
+     "C": "Giữ thái độ cẩn trọng, kiểm chứng tính xác thực từ các nguồn tin chính thống (báo chí nhà nước, cổng thông tin bộ ngành), tuyệt đối không chia sẻ hay bình luận lan truyền tin chưa được xác thực.",
+     "D": "Sao chép bài viết và gửi vào nhóm chat của lớp kèm theo lời khẳng định chắc chắn 100% sự việc đã xảy ra."
+    },
+    "answer": "C"
+   },
+   {
+    "n": 9,
+    "level": "Vận dụng cao",
+    "q": "Câu 9: Công nghệ AI tạo sinh (như Deepfake) đang bị một số đối tượng xấu lợi dụng để làm gì trên không gian mạng?",
+    "options": {
+     "A": "Tự động sửa lỗi chính tả và nâng cao chất lượng bài viết học thuật.",
+     "B": "Giả mạo khuôn mặt, cử chỉ và giọng nói của người khác để tạo các video giả nhằm mục đích lừa đảo tài chính, tống tiền hoặc bôi nhọ danh dự người khác.",
+     "C": "Tăng cường bảo mật hai lớp cho mật khẩu hộp thư điện tử.",
+     "D": "Dọn dẹp rác điện tử và hạ nhiệt độ các trung tâm dữ liệu xanh."
+    },
+    "answer": "B"
+   },
+   {
+    "n": 10,
+    "level": "Vận dụng cao",
+    "q": "Câu 10: Hành vi nào sau đây thể hiện trách nhiệm đạo đức và tính liêm chính học thuật số khi sử dụng các công cụ trợ lý AI (như ChatGPT, Gemini) trong học tập?",
+    "options": {
+     "A": "Sao chép nguyên văn toàn bộ bài viết do AI sinh ra rồi nộp cho giáo viên và tự nhận là bài tự viết 100% của mình.",
+     "B": "Nhờ AI làm hộ tất cả bài kiểm tra trực tuyến để đạt điểm tối đa mà không cần học bài.",
+     "C": "Sử dụng AI như một người trợ lý gợi ý ý tưởng, cấu trúc bài; tự mình đọc hiểu, tra cứu tài liệu kiểm chứng, viết lại bằng ngôn từ tư duy của bản thân và ghi chú nguồn tham khảo rõ ràng.",
+     "D": "Dùng AI để tạo văn bản giả mạo xin phép nghỉ học gửi cho giáo viên chủ nhiệm."
+    },
+    "answer": "C"
+   }
+  ],
+  "tf": [
+   {
+    "n": 11,
+    "level": "Thông hiểu",
+    "q": "Câu 11: Về mục đích, ý nghĩa và các quy tắc ứng xử chung theo Quyết định số 874/QĐ-BTTTT của Bộ Thông tin và Truyền thông:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Bộ Quy tắc ứng xử trên mạng xã hội áp dụng cho 3 nhóm đối tượng: cơ quan nhà nước, cán bộ công chức viên chức, và các tổ chức, cá nhân khác sử dụng mạng xã hội.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Quy tắc Tôn trọng, tuân thủ pháp luật đòi hỏi người dùng phải tuân thủ pháp luật Việt Nam, tôn trọng quyền và lợi ích hợp pháp của các tổ chức, cá nhân.",
+      "answer": "T"
+     },
+     {
+      "key": "c",
+      "text": "Bộ Quy tắc ứng xử trên mạng xã hội là một văn bản luật hình sự có quy định mức án phạt tù trực tiếp đối với người vi phạm.",
+      "answer": "F"
+     },
+     {
+      "key": "d",
+      "text": "Quy tắc Trách nhiệm yêu cầu người sử dụng phải chịu trách nhiệm về các hành vi, ứng xử trên mạng xã hội và chủ động phối hợp với cơ quan chức năng để xử lý thông tin vi phạm.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "level": "Thông hiểu",
+    "q": "Câu 12: Về các hành vi bị nghiêm cấm theo Luật An ninh mạng năm 2018 (Luật số 24/2018/QH14):",
+    "items": [
+     {
+      "key": "a",
+      "text": "Nghiêm cấm hành vi sử dụng không gian mạng để tuyên truyền chống phá Nhà nước CHXHCN Việt Nam, xuyên tạc lịch sử, phủ nhận thành tựu cách mạng.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Nghiêm cấm hành vi phát tán thông tin bịa đặt, sai sự thật nhằm xúc phạm danh dự, nhân phẩm, uy tín của cá nhân hoặc cơ quan, tổ chức khác.",
+      "answer": "T"
+     },
+     {
+      "key": "c",
+      "text": "Luật An ninh mạng chỉ cấm các hành vi vi phạm ở các máy chủ đặt tại nước ngoài, không áp dụng đối với người dùng đang truy cập mạng tại Việt Nam.",
+      "answer": "F"
+     },
+     {
+      "key": "d",
+      "text": "Hành vi tạo lập công cụ tấn công mạng, phát tán mã độc hoặc xâm nhập trái phép vào hệ thống thông tin của người khác đều bị nghiêm cấm và xử lý nghiêm minh.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "level": "Vận dụng",
+    "q": "Câu 13: Về các mức độ xử lý vi phạm pháp luật (hành chính và hình sự) đối với hành vi ứng xử sai trái trên không gian mạng:",
+    "items": [
+     {
+      "key": "a",
+      "text": "Hành vi tung tin sai sự thật, tin đồn nhảm gây hoang mang trong nhân dân nhưng chưa đến mức truy cứu hình sự sẽ bị xử phạt hành chính từ 10 đến 20 triệu đồng theo Nghị định 15/2020/NĐ-CP.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Mọi hành vi vi phạm trên mạng xã hội đều chỉ bị nhắc nhở nhẹ nhàng, tuyệt đối không bao giờ bị xử lý phạt tù theo Bộ luật Hình sự.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Nếu hành vi đưa thông tin xuyên tạc, vu khống trên mạng gây thiệt hại từ 50 triệu đồng trở lên hoặc gây mất an ninh trật tự xã hội nghiêm trọng, người vi phạm có thể bị phạt tù từ 6 tháng đến 7 năm theo Điều 288 BLHS.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Ngoài hình thức phạt tiền, người thực hiện hành vi đăng tin sai sự thật còn bắt buộc phải thực hiện biện pháp khắc phục hậu quả là gỡ bỏ toàn bộ bài đăng vi phạm.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "level": "Vận dụng",
+    "q": "Câu 14: Về văn hóa ứng xử, bảo vệ dữ liệu cá nhân và phòng tránh bạo lực mạng (Cyberbullying):",
+    "items": [
+     {
+      "key": "a",
+      "text": "Việc tham gia vào các hội nhóm mạng xã hội để 'bóc phốt', xúc phạm tập thể một bạn học trong trường là hành vi bạo lực mạng nguy hiểm và vi phạm pháp luật.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Người dùng mạng có toàn quyền đăng tải số điện thoại, địa chỉ nhà riêng và điểm học bạ của bạn bè lên mạng mà không cần xin phép vì thông tin đó không phải là tài sản tiền bạc.",
+      "answer": "F"
+     },
+     {
+      "key": "c",
+      "text": "Khi phát hiện một trang web hoặc tài khoản có hành vi lừa đảo, giả mạo cơ quan nhà nước, người dùng cần báo cáo (Report) cho nền tảng và cơ quan chức năng có thẩm quyền.",
+      "answer": "T"
+     },
+     {
+      "key": "d",
+      "text": "Bảo vệ thông tin cá nhân (như số Căn cước công dân, mật khẩu, mã OTP) là trách nhiệm tự thân của mỗi công dân để phòng ngừa tội phạm mạng lợi dụng đánh cắp danh tính.",
+      "answer": "T"
+     }
+    ]
+   },
+   {
+    "n": 15,
+    "level": "Vận dụng cao",
+    "q": "Câu 15: Về các thách thức an toàn số mới trong kỷ nguyên Trí tuệ nhân tạo (AI):",
+    "items": [
+     {
+      "key": "a",
+      "text": "Kẻ xấu có thể sử dụng AI để tạo ra các video và âm thanh giả mạo Deepfake cực kỳ chân thực nhằm thực hiện các cuộc gọi lừa đảo chuyển tiền khẩn cấp.",
+      "answer": "T"
+     },
+     {
+      "key": "b",
+      "text": "Khi nhận được cuộc gọi video từ người thân nhưng hình ảnh có hiện tượng chập chờn lạ, khẩu hình không khớp tiếng nói và yêu cầu chuyển tiền gấp, ta nên cúp máy và gọi điện thoại thoại thông thường để xác minh lại trực tiếp.",
+      "answer": "T"
+     },
+     {
+      "key": "c",
+      "text": "Vì các văn bản do AI tạo ra luôn luôn đúng 100% về mặt sự thật, học sinh có thể tin tưởng hoàn toàn mà không cần đối chiếu với sách giáo khoa hay tài liệu chính thống.",
+      "answer": "F"
+     },
+     {
+      "key": "d",
+      "text": "Sử dụng công nghệ AI một cách nhân văn, có đạo đức, tôn trọng bản quyền và phục vụ lợi ích chung của cộng đồng là chuẩn mực của một công dân số ưu tú.",
+      "answer": "T"
+     }
+    ]
+   }
+  ]
+ }
+]/*DATA-END*/;
+
+let curBai = 'all';
+let curMode = 'practice';
+let revealed = false;
+const picked = {};           // key -> 'A'|'B'|'C'|'D'|'T'|'F'
+
+const TF_POINT = {0: 0, 1: 0.1, 2: 0.25, 3: 0.5, 4: 1.0};
+const $ = (id) => document.getElementById(id);
+
+function baiList() {
+  return curBai === 'all' ? DATA : DATA.filter(b => String(b.bai) === curBai);
+}
+function mKey(b, n) { return 'm' + b + '-' + n; }
+function tKey(b, n, k) { return 't' + b + '-' + n + '-' + k; }
+
+function render() {
+  const box = $('exam');
+  let html = '';
+  baiList().forEach(b => {
+    html += `<div class="bai-head"><h3>Bài ${b.bai}</h3><div class="t">${b.title}</div></div>`;
+    html += '<div class="sec-title">Phần I — Trắc nghiệm nhiều lựa chọn (10 câu × 0.5đ)</div>';
+    b.mcq.forEach(q => {
+      html += `<div class="q-card" id="card-${mKey(b.bai, q.n)}">
+        <div class="q-badges"><span class="badge">Câu ${q.n}</span><span class="badge lv">${q.level || 'Trắc nghiệm'}</span></div>
+        <div class="q-title">${q.q}</div>`;
+      ['A', 'B', 'C', 'D'].forEach(k => {
+        html += `<label class="opt" id="opt-${mKey(b.bai, q.n)}-${k}">
+          <input type="radio" name="${mKey(b.bai, q.n)}" value="${k}"> <b>${k}.</b> ${q.options[k]}</label>`;
+      });
+      html += `<div class="fb" id="fb-${mKey(b.bai, q.n)}"></div></div>`;
+    });
+    html += '<div class="sec-title">Phần II — Trắc nghiệm Đúng / Sai (5 câu × tối đa 1.0đ)</div>';
+    b.tf.forEach(q => {
+      html += `<div class="q-card" id="card-${tKey(b.bai, q.n, 'x')}">
+        <div class="q-badges"><span class="badge">Câu ${q.n}</span><span class="badge lv">${q.level || 'Đúng/Sai'}</span></div>
+        <div class="q-title">${q.q}</div>
+        <table class="tf-table"><thead><tr><th class="stt">Ý</th><th>Nội dung nhận định</th><th class="sel">Chọn Đúng / Sai</th></tr></thead><tbody>`;
+      q.items.forEach(it => {
+        const k = tKey(b.bai, q.n, it.key);
+        html += `<tr id="row-${k}">
+          <td class="stt">${it.key})</td>
+          <td>${it.text}</td>
+          <td class="sel">
+            <label><input type="radio" name="${k}" value="T"> Đúng</label>
+            <label><input type="radio" name="${k}" value="F"> Sai</label>
+            <span class="fb" id="fb-${k}"></span>
+          </td></tr>`;
+      });
+      html += `</tbody></table>
+        <div class="fb" id="fb-${tKey(b.bai, q.n, 'x')}"></div></div>`;
+    });
+  });
+  box.innerHTML = html;
+  restorePicks();
+  updateProgress();
+}
+
+function setPick(key, val, qKey) {
+  picked[key] = val;
+  if (curMode === 'practice') markInstant(qKey, key, val);
+  updateProgress();
+}
+
+function answerOf(bai, n) {
+  const b = DATA.find(x => x.bai === bai);
+  return b.mcq.find(q => q.n === n).answer;
+}
+function tfAnswerOf(bai, n, k) {
+  const b = DATA.find(x => x.bai === bai);
+  return b.tf.find(q => q.n === n).items.find(i => i.key === k).answer;
+}
+
+function markInstant(qKey, key, val) {
+  if (qKey.startsWith('m')) {
+    const bai = +qKey.slice(1).split('-')[0], n = +qKey.split('-')[1];
+    const correct = answerOf(bai, n);
+    ['A', 'B', 'C', 'D'].forEach(k => $('opt-' + qKey + '-' + k).classList.remove('ok', 'no'));
+    $('opt-' + qKey + '-' + correct).classList.add('ok');
+    if (val !== correct) $('opt-' + qKey + '-' + val).classList.add('no');
+    $('fb-' + qKey).innerHTML = val === correct
+      ? '<span style="color:#276749">✓ Chính xác!</span>'
+      : `<span style="color:#c53030">✗ Chưa đúng — đáp án đúng: ${correct}</span>`;
+  } else {
+    const p = qKey.slice(1).split('-');
+    const bai = +p[0], n = +p[1], k = p[2];
+    const correct = tfAnswerOf(bai, n, k);
+    $('fb-' + qKey).innerHTML = val === correct
+      ? '<span style="color:#276749">✓</span>'
+      : `<span style="color:#c53030">✗ (${correct === 'T' ? 'ĐÚNG' : 'SAI'})</span>`;
+  }
+}
+
+function restorePicks() {
+  Object.keys(picked).forEach(key => {
+    const el = document.querySelector(`input[name="${key}"][value="${picked[key]}"]`);
+    if (el) el.checked = true;
+    if (curMode === 'practice') {
+      const isMcq = key.startsWith('m');
+      const qKey = isMcq ? key.replace('opt-', '') : key;
+      markInstant(isMcq ? key : qKey, key, picked[key]);
+    }
+  });
+  if (revealed) revealAll();
+}
+
+function revealAll() {
+  revealed = true;
+  baiList().forEach(b => {
+    b.mcq.forEach(q => {
+      const qk = mKey(b.bai, q.n);
+      ['A', 'B', 'C', 'D'].forEach(k => $('opt-' + qk + '-' + k).classList.remove('ok', 'no'));
+      $('opt-' + qk + '-' + q.answer).classList.add('reveal');
+      const p = picked[qk];
+      if (p && p !== q.answer) $('opt-' + qk + '-' + p).classList.add('no');
+    });
+    b.tf.forEach(q => q.items.forEach(it => {
+      const k = tKey(b.bai, q.n, it.key);
+      const row = $('row-' + k);
+      row.classList.remove('ok', 'no');
+      row.classList.add(picked[k] && picked[k] !== it.answer ? 'no' : 'ok');
+      $('fb-' + k).textContent = '✓ ' + (it.answer === 'T' ? 'ĐÚNG' : 'SAI');
+      $('fb-' + k).style.color = '#276749';
+    }));
+  });
+}
+
+function hideReveal() {
+  revealed = false;
+  render();
+}
+
+function answeredUnits() {
+  let done = 0, total = 0;
+  baiList().forEach(b => {
+    b.mcq.forEach(q => { total++; if (picked[mKey(b.bai, q.n)]) done++; });
+    b.tf.forEach(q => {
+      total++;
+      if (q.items.every(it => picked[tKey(b.bai, q.n, it.key)])) done++;
+    });
+  });
+  return {done, total};
+}
+
+function updateProgress() {
+  const {done, total} = answeredUnits();
+  $('progress-label').textContent = `Đã trả lời ${done} / ${total} câu`;
+  $('progress-fill').style.width = total ? (done * 100 / total) + '%' : '0%';
+}
+
+function grade() {
+  let raw = 0, mcqOK = 0, mcqN = 0, tfOK = 0, tfN = 0;
+  baiList().forEach(b => {
+    b.mcq.forEach(q => {
+      mcqN++;
+      const qk = mKey(b.bai, q.n);
+      const p = picked[qk];
+      if (p) {
+        if (p === q.answer) {
+          mcqOK++; raw += 0.5;
+          $('opt-' + qk + '-' + q.answer).classList.add('ok');
+        } else {
+          $('opt-' + qk + '-' + p).classList.add('no');
+          $('opt-' + qk + '-' + q.answer).classList.add('reveal');
+        }
+      } else {
+        $('opt-' + qk + '-' + q.answer).classList.add('reveal');
+      }
+    });
+    b.tf.forEach(q => {
+      let c = 0;
+      q.items.forEach(it => {
+        tfN++;
+        const k = tKey(b.bai, q.n, it.key);
+        const p = picked[k];
+        const row = $('row-' + k);
+        row.classList.remove('ok', 'no');
+        if (p === it.answer) { c++; tfOK++; row.classList.add('ok'); }
+        else { row.classList.add('no'); }
+        $('fb-' + k).textContent = '✓ ' + (it.answer === 'T' ? 'ĐÚNG' : 'SAI');
+        $('fb-' + k).style.color = '#276749';
+      });
+      raw += TF_POINT[c];
+    });
+  });
+  const nBai = baiList().length;
+  const score = raw * 10 / (10 * nBai);
+  $('score-text').textContent = score.toFixed(2) + ' / 10.0';
+  $('result-badge').style.display = 'block';
+  $('detail-text').textContent =
+    `Trắc nghiệm: ${mcqOK}/${mcqN} câu đúng · Đúng/Sai: ${tfOK}/${tfN} ý đúng · Điểm thô ${raw.toFixed(2)}`;
+}
+
+function reset() {
+  Object.keys(picked).forEach(k => delete picked[k]);
+  revealed = false;
+  $('result-badge').style.display = 'none';
+  render();
+}
+
+document.addEventListener('change', (e) => {
+  const el = e.target;
+  if (el.type !== 'radio') return;
+  const name = el.name;
+  if (name.startsWith('m')) {
+    picked[name] = el.value;
+    setPick(name, el.value, name);
+  } else {
+    const key = name;
+    picked[key] = el.value;
+    setPick(key, el.value, key);
+  }
+});
+
+$('btn-grade').addEventListener('click', grade);
+$('btn-reveal').addEventListener('click', () => revealed ? hideReveal() : revealAll());
+$('btn-reset').addEventListener('click', reset);
+$('btn-tips').addEventListener('click', () => {
+  const show = $('tips-body').classList.toggle('show');
+  $('btn-tips').textContent = show ? 'Ẩn mẹo ▴' : 'Xem mẹo ▾';
+});
+document.querySelectorAll('[data-bai]').forEach(b => b.addEventListener('click', () => {
+  curBai = b.dataset.bai;
+  document.querySelectorAll('[data-bai]').forEach(x => x.classList.toggle('active', x === b));
+  reset();
+}));
+document.querySelectorAll('[data-mode]').forEach(b => b.addEventListener('click', () => {
+  curMode = b.dataset.mode;
+  document.querySelectorAll('[data-mode]').forEach(x => x.classList.toggle('active', x === b));
+  $('mode-hint').textContent = curMode === 'practice'
+    ? 'Chế độ Luyện tập: chọn là biết đúng/sai ngay.'
+    : 'Chế độ Kiểm tra: làm hết rồi bấm “Nộp bài & chấm điểm”.';
+  reset();
+}));
+
+render();
+</script>
+</body>
+</html>

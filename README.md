@@ -76,7 +76,7 @@ Truy cập: `https://kiokuxd.github.io/test/lichsu12/`
 
 Trang `tin12-bai456/` gồm 2 phần trong cùng 1 file:
 
-- 🎯 **Mẹo ôn nhanh** — thống kê tính tự động trên chính 3 đề, **mỗi mẹo đều kèm phần “Cách nhận ra” ngoại lệ**: chọn **câu dài nhất** (22/30, đồng hạng 24/30 — kèm cách nhận ra 6 câu ngoại lệ) · loại phương án có **từ cực đoan** (15/18 lần sai — kèm 3 ngoại lệ vẫn đúng và quy tắc phân biệt) · Đúng/Sai **mặc định ĐÚNG** (44/60 — kèm 6 dạng bẫy để tìm ra ý SAI) · mỗi câu Đ/S có **3 ĐÚNG – 1 SAI** (14/15 câu — kèm bảng tra toàn bộ 16 ý SAI).
+- 🎯 **Mẹo ôn nhanh** — thống kê tính tự động trên chính 3 đề, mỗi ngoại lệ ghi kèm **câu hỏi nguyên văn + từ khóa** để quét nhanh: chọn **câu dài nhất** (22/30, đồng hạng 24/30 — 6 câu ngoại lệ có câu hỏi + từ khóa) · loại phương án có **từ cực đoan** (15/18 lần sai — 3 ngoại lệ vẫn đúng) · Đúng/Sai **mặc định ĐÚNG** (44/60 — 6 nhóm từ khóa để tìm ý SAI) · mỗi câu Đ/S có **3 ĐÚNG – 1 SAI** (14/15 câu — bảng tra 16 từ khóa của 16 ý SAI).
 - 📝 **45 câu thực hành** (30 trắc nghiệm + 15 Đúng/Sai) của Bài 4 — Giao thức mạng, Bài 5 — Thực hành chia sẻ tài nguyên trên mạng, Bài 6 — Giao tiếp và ứng xử trong không gian mạng. Chọn bài · 2 chế độ Luyện tập / Kiểm tra · chấm điểm thang 10.
 
 Không dùng mẹo dựa vào **vị trí** đáp án (A/B/C/D hay ý a/b/c/d) vì đề có thể đảo thứ tự — chỉ giữ mẹo dựa vào **nội dung**, kèm hướng dẫn nhận biết ngoại lệ dựa trên chính lời giải của đề.

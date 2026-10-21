@@ -93,20 +93,18 @@
   .tips-table td.c{text-align:center;}
   .tips-cta{margin-top:12px;font-size:13.5px;color:var(--amber-dark);font-style:italic;}
 
-  /* ===== Dạy cách nhận biết ngoại lệ ===== */
+  /* ===== Khối từ khóa nhận dạng ===== */
   .teach-head{margin:12px 0 8px;font-weight:800;color:var(--blue-dark);font-size:14px;border-top:1px dashed #e2c97e;padding-top:10px;}
-  .teach-rule{background:#f0fff4;border-left:4px solid var(--green);border-radius:6px;padding:8px 12px;margin:0 0 9px;font-size:13.5px;color:#22543d;}
-  .teach-item{background:#f7fbff;border:1px solid #bee3f8;border-left:4px solid var(--blue);border-radius:8px;padding:9px 12px;margin-bottom:8px;font-size:13.5px;}
-  .teach-key{font-weight:700;color:var(--blue-dark);margin-bottom:4px;}
-  .teach-why{color:#2f855a;margin-bottom:3px;}
-  .teach-trap{color:#c05621;}
-  .trap-item{background:#fffaf0;border:1px solid #f6ad55;border-radius:8px;padding:9px 12px;margin-bottom:8px;font-size:13.5px;}
-  .trap-name{font-weight:800;color:#7b341e;margin-bottom:4px;}
-  .trap-sign{margin-bottom:4px;}
-  .trap-list{color:var(--muted);font-size:12.5px;}
+  .teach-rule{background:#f0fff4;border-left:4px solid var(--green);border-radius:6px;padding:7px 12px;margin:0 0 8px;font-size:13px;color:#22543d;}
+  .teach-item{background:#f7fbff;border:1px solid #bee3f8;border-left:4px solid var(--blue);border-radius:8px;padding:8px 12px;margin-bottom:7px;font-size:13.5px;}
+  .teach-key{font-weight:800;color:var(--blue-dark);margin-bottom:3px;}
+  .teach-q{color:#4a5568;font-size:13px;margin-bottom:3px;}
+  .teach-hint{color:#b7791f;font-weight:700;}
+  .trap-item{background:#fffaf0;border:1px solid #f6ad55;border-radius:8px;padding:7px 12px;margin-bottom:6px;font-size:13.5px;}
+  .trap-name{font-weight:800;color:#7b341e;margin-bottom:2px;}
+  .trap-sign{color:#744210;}
   .wrong-table td{font-size:13px;vertical-align:top;}
-  .wrong-table td.pos{white-space:nowrap;font-weight:700;color:var(--blue-dark);width:150px;}
-  .wrong-table th:nth-child(3){width:42%;}
+  .wrong-table td.pos{white-space:nowrap;font-weight:700;color:var(--blue-dark);width:170px;}
   @media (max-width:620px){.wrong-table td.pos{white-space:normal;width:auto;}}
 </style>
 </head>
@@ -129,7 +127,7 @@
   <div class="tips-banner">
     <h2>🎯 MẸO ÔN NHANH (phân tích từ chính 3 đề Bài 4 – 5 – 6)</h2>
     <p>Tất cả tỷ lệ dưới đây tính bằng máy từ <b>30 câu trắc nghiệm + 15 câu Đúng/Sai (60 ý)</b> của đúng 3 đề này.
-       <b>Mọi mẹo đều kèm cách nhận ra ngoại lệ</b> — học phần “Cách nhận ra” là đủ dùng.
+       Mỗi ngoại lệ ghi kèm <b>câu hỏi nguyên văn + từ khóa</b> để quét nhanh khi làm bài.
        Không dùng mẹo dựa vào <b>vị trí</b> đáp án (A/B/C/D hay ý a/b/c/d) vì đề có thể đảo thứ tự.</p>
     <button class="tips-toggle" id="btn-tips">Xem mẹo ▾</button>
 
@@ -141,36 +139,36 @@
           <b>22/30 câu (73%)</b> có đáp án là phương án <b>dài nhất / diễn giải đầy đủ nhất</b>.
           Nếu tính cả trường hợp dài nhất <i>đồng hạng</i> thì lên <b>24/30 (80%)</b>.
           → Phân vân thì cứ chọn câu dài nhất.
-          <div class="teach-head">🔍 Cách nhận ra 6 câu ngoại lệ (đáp án KHÔNG phải câu dài nhất) — học đủ 6 câu này là an toàn</div>
+          <div class="teach-head">🔍 6 câu ngoại lệ — thấy TỪ KHÓA là nhớ đáp án (không phải câu dài nhất)</div>
           <div class="teach-item">
-          <div class="teach-key">Bài 4 · Câu 2 — đáp án <b>A</b> · từ khóa: “Internet toàn cầu”</div>
-          <div class="teach-why"><b>Vì sao đáp án đúng:</b> TCP/IP là bộ giao thức nền tảng của mạng Internet toàn cầu — SGK Tin học 12 nêu đây là chuẩn truyền thông chính thức cho mọi thiết bị, từ điện thoại đến siêu máy tính.</div>
-          <div class="teach-trap"><b>Bẫy cần tránh:</b> Đáp án B (IPX/SPX) DÀI HƠN vì viết đầy đủ tên tiếng Anh nên trông “xịn” hơn. Đừng chọn theo độ dài — bám từ khóa “Internet”.</div>
+          <div class="teach-key">Bài 4 · Câu 2 → <b>TCP/IP (Transmission Control Protocol / Internet Protocol).</b></div>
+          <div class="teach-q">Bộ giao thức nào sau đây đóng vai trò nền tảng kiến trúc cốt lõi cho sự hình thành và vận hành của mạng Internet toàn cầu?</div>
+          <div class="teach-hint">🔑 nền tảng … mạng Internet toàn cầu</div>
         </div>
 <div class="teach-item">
-          <div class="teach-key">Bài 4 · Câu 3 — đáp án <b>B</b> · từ khóa: “TCP/IP … mấy tầng”</div>
-          <div class="teach-why"><b>Vì sao đáp án đúng:</b> TCP/IP gồm <b>4 tầng</b>: Ứng dụng – Giao vận – Mạng (Internet) – Truy nhập mạng. Mô hình 7 tầng là mô hình tham chiếu OSI, không phải TCP/IP.</div>
-          <div class="teach-trap"><b>Bẫy cần tránh:</b> Đáp án D (7 tầng) dài nhất vì liệt kê đủ tên 7 tầng → rất dễ bị dụ. Nhớ mốc: <b>TCP/IP = 4, OSI = 7</b>.</div>
+          <div class="teach-key">Bài 4 · Câu 3 → <b>4 tầng (Ứng dụng, Giao vận, Mạng/Internet, Truy nhập mạng).</b></div>
+          <div class="teach-q">Mô hình kiến trúc của bộ giao thức TCP/IP được phân thành mấy tầng chức năng?</div>
+          <div class="teach-hint">🔑 TCP/IP … mấy tầng</div>
         </div>
 <div class="teach-item">
-          <div class="teach-key">Bài 4 · Câu 9 — đáp án <b>B</b> · từ khóa: “theo dõi đường đi của gói tin qua từng Router (hops)”</div>
-          <div class="teach-why"><b>Vì sao đáp án đúng:</b> <b>tracert</b> in ra lộ trình từng router trung gian mà gói tin đi qua. ipconfig = xem cấu hình IP · netstat = xem kết nối/port · nslookup = tra tên miền.</div>
-          <div class="teach-trap"><b>Bẫy cần tránh:</b> nslookup dài hơn tracert đúng 1 ký tự. Mẹo nhớ: <b>tra</b>cert = <b>TRA</b>ce + <b>R</b>oute → “đường đi”.</div>
+          <div class="teach-key">Bài 4 · Câu 9 → <b>tracert google.com</b></div>
+          <div class="teach-q">Để theo dõi đường đi của gói tin qua từng trạm Router (hops) từ máy tính của mình đến máy chủ web google.com, ta sử dụng câu lệnh nào?</div>
+          <div class="teach-hint">🔑 theo dõi đường đi … qua từng Router</div>
         </div>
 <div class="teach-item">
-          <div class="teach-key">Bài 5 · Câu 2 — đáp án <b>B</b> · từ khóa: “máy tính khác nhìn thấy / được nhìn thấy trong mạng LAN”</div>
-          <div class="teach-why"><b>Vì sao đáp án đúng:</b> Phải <b>bật “Turn on network discovery”</b> (dò tìm mạng): vừa giúp máy tìm thấy thiết bị khác, vừa công khai sự hiện diện của máy mình cho các máy khác thấy.</div>
-          <div class="teach-trap"><b>Bẫy cần tránh:</b> Hai phương án dài nhất là A (tắt Firewall) và C (BitLocker) — nghe “liên quan đến mạng” nhưng không phải chức năng dò tìm. Khớp từ khóa “nhìn thấy” ↔ <b>discovery</b>.</div>
+          <div class="teach-key">Bài 5 · Câu 2 → <b>Turn on network discovery.</b></div>
+          <div class="teach-q">Để máy tính của em có thể nhìn thấy và được các máy tính khác nhìn thấy trong cùng một mạng LAN trên Windows, em cần bật tính năng nào trong Advanced sharing settings?</div>
+          <div class="teach-hint">🔑 máy khác nhìn thấy máy mình trong LAN</div>
         </div>
 <div class="teach-item">
-          <div class="teach-key">Bài 5 · Câu 5 — đáp án <b>B</b> · từ khóa: “tra cứu nhanh địa chỉ IPv4”</div>
-          <div class="teach-why"><b>Vì sao đáp án đúng:</b> <b>ipconfig</b> hiện cấu hình TCP/IP của máy: IPv4 Address, Subnet Mask, Default Gateway. getmac = địa chỉ MAC · systeminfo = thông tin hệ thống · hostname = tên máy.</div>
-          <div class="teach-trap"><b>Bẫy cần tránh:</b> systeminfo dài nhất nhưng không liên quan tới địa chỉ IP. Nhớ: <b>ip</b>config có chữ “ip” → địa chỉ <b>IP</b>.</div>
+          <div class="teach-key">Bài 5 · Câu 5 → <b>ipconfig</b></div>
+          <div class="teach-q">Trong cửa sổ Command Prompt (cmd), câu lệnh nào giúp người dùng tra cứu nhanh địa chỉ IPv4 của máy tính đang sử dụng?</div>
+          <div class="teach-hint">🔑 tra cứu nhanh địa chỉ IPv4</div>
         </div>
 <div class="teach-item">
-          <div class="teach-key">Bài 5 · Câu 8 — đáp án <b>B</b> · từ khóa: “đường dẫn mạng chuẩn UNC”</div>
-          <div class="teach-why"><b>Vì sao đáp án đúng:</b> UNC trên Windows bắt đầu bằng <b>hai dấu gạch chéo ngược</b>: <code>\\192.168.1.50\Tai_Lieu</code>.</div>
-          <div class="teach-trap"><b>Bẫy cần tránh:</b> <code>http://…</code> dài hơn nhưng là giao thức web. Dấu hiệu chốt: <b>UNC luôn mở đầu bằng <code>\\</code></b>.</div>
+          <div class="teach-key">Bài 5 · Câu 8 → <b>\\192.168.1.50\Tai_Lieu</b></div>
+          <div class="teach-q">Đường dẫn mạng chuẩn UNC (Universal Naming Convention) để truy cập vào thư mục dùng chung 'Tai_Lieu' tại máy tính có địa chỉ IP là 192.168.1.50 có định dạng nào sau đây?</div>
+          <div class="teach-hint">🔑 đường dẫn mạng chuẩn UNC</div>
         </div>
         </div>
       </div>
@@ -182,19 +180,22 @@
           → <b>15/18 lần là SAI (83%)</b>, loại ngay.
           Ngược lại, đáp án thường là câu nêu <b>lợi ích / cách làm đúng</b>: hỗ trợ, giúp, an toàn, hiệu quả, kiểm chứng,
           chia sẻ, bảo mật, tôn trọng.
-          <div class="teach-head">🔍 Cách nhận ra khi nào từ cực đoan vẫn ĐÚNG (3 ngoại lệ)</div>
-          <p class="teach-rule">Từ cực đoan → <b>SAI</b> khi nó dùng để khẳng định quá mức về hiện tượng (“mọi gói tin đều…”, “100% không mất”, “luôn luôn đúng”). Từ cực đoan → <b>vẫn ĐÚNG</b> khi nó nằm trong: (1) vế <b>phủ định điều xấu</b>, (2) <b>điều kiện bảo mật</b> hợp lý, (3) <b>lời khuyên an toàn / tuân thủ pháp luật</b>.</p>
+          <div class="teach-head">🔍 3 câu ngoại lệ — từ cực đoan mà vẫn ĐÚNG</div>
+          <p class="teach-rule">Từ cực đoan → <b>SAI</b> khi khẳng định quá mức (“mọi…”, “100%”, “luôn luôn”). Vẫn <b>ĐÚNG</b> khi thuộc 1 trong 3 dạng: vế phủ định điều xấu · điều kiện bảo mật · lời khuyên an toàn.</p>
           <div class="teach-item">
-          <div class="teach-key">Bài 4 · Câu 10 — từ cực đoan: <b>duy nhất</b></div>
-          <div class="teach-why">Từ “duy nhất” nằm trong vế <b>phủ định</b>: “<b>không</b> phụ thuộc vào một máy chủ kiểm soát tập trung duy nhất”. Bị phủ định nên nghĩa là *không có máy chủ trung tâm* — đúng bản chất hệ thống tác nhân phân tán → vẫn ĐÚNG.</div>
+          <div class="teach-key">Bài 4 · Câu 10 → chọn phương án chứa <b>“duy nhất”</b></div>
+          <div class="teach-q">Trong các hệ thống phân tán và mạng lưới tác nhân thông minh AI (Multi-Agent Systems), giao thức truyền gói tin mạng đóng vai trò then chốt như thế nào?</div>
+          <div class="teach-hint">🔑 nằm trong vế phủ định “không phụ thuộc vào … duy nhất” → vẫn ĐÚNG</div>
         </div>
 <div class="teach-item">
-          <div class="teach-key">Bài 5 · Câu 4 — từ cực đoan: <b>bắt buộc</b></div>
-          <div class="teach-why">“bắt buộc” ở đây mô tả <b>đúng cơ chế bảo mật</b>: muốn truy cập tài nguyên chia sẻ thì bắt buộc phải có tài khoản và mật khẩu hợp lệ trên máy chia sẻ. Từ cực đoan là quy định đúng, không phải khẳng định quá mức → vẫn ĐÚNG.</div>
+          <div class="teach-key">Bài 5 · Câu 4 → chọn phương án chứa <b>“bắt buộc”</b></div>
+          <div class="teach-q">Trong hộp thoại Advanced sharing settings, tùy chọn 'Turn on password protected sharing' có ý nghĩa gì?</div>
+          <div class="teach-hint">🔑 = điều kiện bảo mật (phải có tài khoản + mật khẩu) → vẫn ĐÚNG</div>
         </div>
 <div class="teach-item">
-          <div class="teach-key">Bài 6 · Câu 8 — từ cực đoan: <b>tuyệt đối</b></div>
-          <div class="teach-why">“tuyệt đối không chia sẻ tin chưa xác thực” là <b>lời khuyên an toàn</b> của công dân số. Từ cực đoan nằm trong lời khuyên an toàn / tuân thủ pháp luật → vẫn ĐÚNG.</div>
+          <div class="teach-key">Bài 6 · Câu 8 → chọn phương án chứa <b>“tuyệt đối”</b></div>
+          <div class="teach-q">Trước một thông tin giật gân, ly kỳ về thiên tai hoặc dịch bệnh xuất hiện trên mạng xã hội từ một tài khoản cá nhân chưa rõ danh tính, trách nhiệm công dân số đòi hỏi em phải làm gì?</div>
+          <div class="teach-hint">🔑 = lời khuyên an toàn (không chia sẻ tin chưa xác thực) → vẫn ĐÚNG</div>
         </div>
         </div>
       </div>
@@ -203,37 +204,31 @@
         <div class="tip-title">3. Câu Đúng/Sai: mặc định đánh ĐÚNG <span class="tip-power">Mạnh · 73%</span></div>
         <div class="tip-desc">
           <b>44/60 ý là ĐÚNG</b>, chỉ 16/60 là SAI. Nếu bí → đánh <b>ĐÚNG</b> cho tất cả.
-          Nhưng vì mỗi câu đều có ý SAI, hãy dùng cách dưới đây để <b>tìm ra ý SAI</b> thay vì đoán.
-          <div class="teach-head">🔍 Cách tìm ra ý SAI — 6 dạng bẫy (áp dụng cho cả 15 câu)</div>
+          Nhưng mỗi câu đều có ý SAI, nên chỉ cần <b>bắt đúng từ khóa</b> là biết ý nào SAI.
+          <div class="teach-head">🔍 6 nhóm từ khóa → thấy là đánh SAI (áp dụng cả 15 câu)</div>
           <div class="trap-item">
-          <div class="trap-name">Dạng A — Khẳng định TUYỆT ĐỐI / quá mức · 5 ý</div>
-          <div class="trap-sign"><b>Dấu hiệu nhận ra:</b> Thấy “mọi · bắt buộc · duy nhất · 100% · không bao giờ · luôn luôn · hoàn toàn · tuyệt đối · không ảnh hưởng gì” → gần như chắc chắn SAI.</div>
-          <div class="trap-list">Bài 4 c12 ý b · Bài 4 c13 ý b · Bài 4 c15 ý b · Bài 6 c13 ý b · Bài 6 c15 ý c</div>
+          <div class="trap-name">Dạng A — Khẳng định tuyệt đối · 5 ý</div>
+          <div class="trap-sign">“mọi” · “bắt buộc” · “duy nhất” · “100%” · “không bao giờ” · “luôn luôn” · “hoàn toàn” · “không ảnh hưởng gì”</div>
         </div>
 <div class="trap-item">
-          <div class="trap-name">Dạng B — ĐẢO NGƯỢC vị trí / bật–tắt / phạm vi áp dụng · 3 ý</div>
-          <div class="trap-sign"><b>Dấu hiệu nhận ra:</b> Câu nói ngược với điều mình đã học. Gặp “nằm ở vị trí thấp nhất”, “nên tắt”, “chỉ áp dụng cho…”, “không áp dụng đối với…” → soi lại ngay.</div>
-          <div class="trap-list">Bài 4 c11 ý b · Bài 5 c11 ý c · Bài 6 c12 ý c</div>
+          <div class="trap-name">Dạng B — Đảo ngược vị trí / bật–tắt / phạm vi · 3 ý</div>
+          <div class="trap-sign">“vị trí thấp nhất” · “nên bị tắt đi” · “chỉ … nước ngoài” · “không áp dụng đối với … Việt Nam”</div>
         </div>
 <div class="trap-item">
-          <div class="trap-name">Dạng C — GÁN SAI chức năng / quyền hạn · 2 ý</div>
-          <div class="trap-sign"><b>Dấu hiệu nhận ra:</b> Đối tượng A bị gán chức năng của đối tượng B: quyền <b>Read</b> mà “xóa sạch tệp”; <b>Bộ Quy tắc ứng xử</b> (đạo đức) mà thành “luật hình sự có án phạt tù”.</div>
-          <div class="trap-list">Bài 5 c12 ý b · Bài 6 c11 ý c</div>
+          <div class="trap-name">Dạng C — Gán sai chức năng / quyền · 2 ý</div>
+          <div class="trap-sign">“Read” + “xóa sạch” · “Bộ Quy tắc ứng xử” + “án phạt tù”</div>
         </div>
 <div class="trap-item">
-          <div class="trap-name">Dạng D — PHỦ NHẬN quan hệ / điều kiện cần · 4 ý</div>
-          <div class="trap-sign"><b>Dấu hiệu nhận ra:</b> Dạng “không cần … vẫn làm được”, “chỉ … không thể”, “vẫn … bình thường” → phủ nhận điều kiện tiên quyết nên thường SAI.</div>
-          <div class="trap-list">Bài 4 c11 ý d · Bài 4 c14 ý a · Bài 5 c14 ý c · Bài 6 c14 ý b</div>
+          <div class="trap-name">Dạng D — Phủ nhận điều kiện / quan hệ · 4 ý</div>
+          <div class="trap-sign">“không cần … vẫn được” · “chỉ có thể … không thể” · “tắt nguồn … vẫn in” · “toàn quyền … không cần xin phép”</div>
         </div>
 <div class="trap-item">
-          <div class="trap-name">Dạng E — SAI định dạng / ký hiệu đặc trưng · 1 ý</div>
-          <div class="trap-sign"><b>Dấu hiệu nhận ra:</b> Câu nhắc tới ký hiệu hay cú pháp chuẩn (<code>\\</code>, <code>/</code>, <code>http://</code>, <code>ftp://</code>) → đối chiếu lại ký hiệu gốc. UNC phải là <code>\\</code>, không phải <code>/</code>.</div>
-          <div class="trap-list">Bài 5 c13 ý a</div>
+          <div class="trap-name">Dạng E — Sai ký hiệu đặc trưng · 1 ý</div>
+          <div class="trap-sign">“gạch chéo xuôi (/) giống địa chỉ trang web” — UNC phải là <code>\\</code></div>
         </div>
 <div class="trap-item">
-          <div class="trap-name">Dạng F — Lời khuyên nghe hợp lý nhưng PHẢN BẢO MẬT · 1 ý</div>
-          <div class="trap-sign"><b>Dấu hiệu nhận ra:</b> Dạng “cách tốt nhất là …”, “nên …” mà nội dung lại là mở toang quyền truy cập (cấp <b>Full Control cho Everyone</b>, tắt bảo vệ…) → SAI.</div>
-          <div class="trap-list">Bài 5 c15 ý b</div>
+          <div class="trap-name">Dạng F — Khuyên nghe hợp lý nhưng phản bảo mật · 1 ý</div>
+          <div class="trap-sign">“cách tốt nhất là …” + “Full Control cho Everyone”</div>
         </div>
         </div>
       </div>
@@ -243,27 +238,27 @@
         <div class="tip-desc">
           <b>14/15 câu</b> có mẫu 3 ĐÚNG + 1 SAI (chỉ 1/15 câu có 2–2).
           <b>Không bao giờ</b> có câu “cả 4 ý đều ĐÚNG” hay “cả 4 ý đều SAI” (cả hai đều <b>0/15 câu</b>).
-          → Nếu bạn đánh SAI cả 4 ý của một câu là gần như chắc chắn sai. Bảng dưới đây liệt kê
-          <b>toàn bộ 16 ý SAI của cả 3 đề</b> — học hết là biết mỗi câu sai ở đâu.
-          <div class="teach-head">🔍 Bảng tra 16 ý SAI và vì sao SAI</div>
+          → Nếu bạn đánh SAI cả 4 ý của một câu là gần như chắc chắn sai. Bảng dưới là
+          <b>toàn bộ 16 ý SAI của cả 3 đề</b> — chỉ cần nhớ từ khóa.
+          <div class="teach-head">🔍 Bảng tra 16 ý SAI — từ khóa bắt là biết SAI</div>
           <table class="tips-table wrong-table">
-            <tr><th>Vị trí</th><th>Nhận định (chính là ý SAI)</th><th>Vì sao SAI</th></tr>
-            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 11 · ý b</td><td>Mô hình TCP/IP gồm 4 tầng, trong đó Tầng Ứng dụng (Application) nằm ở vị trí thấp nhất tiếp xúc trực tiếp với dây cáp mạng.</td><td>Sai — Tầng Ứng dụng là tầng trên cùng (Tầng 4), tiếp xúc trực tiếp với người dùng và phần mềm; tầng tiếp xúc trực tiếp với môi trường truyền dẫn vật lý là Tầng Truy nhập mạng (Network Access).</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 11 · ý d</td><td>Nếu không có giao thức mạng chuẩn hóa quốc tế, các máy tính của các nhà sản xuất khác nhau (như Apple, Dell, IBM) vẫn có thể tự động giao tiếp dễ dàng mà không cần bất kỳ quy ước nào.</td><td>Sai — Nếu không có bộ giao thức chuẩn hóa chung, các thiết bị với kiến trúc phần cứng và hệ điều hành khác nhau sẽ không thể hiểu được định dạng dữ liệu của nhau, gây tê liệt việc truyền thông.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 12 · ý b</td><td>Giao thức IP có cơ chế bắt tay 3 bước và đảm bảo chắc chắn rằng 100% gói tin gửi đi không bao giờ bị mất mát trên đường truyền.</td><td>Sai — IP là giao thức truyền thông không hướng liên kết và không tin cậy (Best-effort), việc đảm bảo tin cậy không mất gói là do giao thức TCP ở tầng trên đảm trách.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 13 · ý b</td><td>Mọi gói tin của một tệp văn bản bắt buộc phải đi cùng trên một tuyến đường duy nhất từ máy gửi đến máy nhận.</td><td>Sai — Trong mạng chuyển mạch gói, các Router liên tục cập nhật bảng định tuyến và điều hướng từng gói tin theo các tuyến đường tối ưu khác nhau tùy thuộc vào tình trạng nghẽn mạch.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 14 · ý a</td><td>Câu lệnh ping chỉ có thể kiểm tra kết nối tới các máy tính trong cùng mạng LAN, không thể kiểm tra tới các máy chủ trên toàn cầu như google.com.</td><td>Sai — Lệnh ping kiểm tra được cả địa chỉ IP nội bộ lẫn tên miền/IP máy chủ trên toàn thế giới miễn là có kết nối mạng.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 15 · ý b</td><td>Trong mạng lưới xe tự hành thông minh, độ trễ truyền gói tin mạng không ảnh hưởng gì đến sự an toàn khi phanh xe hay chuyển hướng tự động.</td><td>Sai — Độ trễ mạng (latency) trong xe tự hành là yếu tố sống còn; chỉ cần trễ vài chục mili giây khi gửi tín hiệu cảnh báo vật cản có thể dẫn tới va chạm nghiêm trọng.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 11 · ý c</td><td>Tùy chọn 'Turn on network discovery' nên bị tắt đi nếu ta muốn các máy tính khác trong phòng máy dễ dàng tìm thấy máy của mình để trao đổi tài liệu.</td><td>Sai — Bắt buộc phải BẬT (Turn on network discovery) thì các máy tính khác mới dò tìm và nhìn thấy máy mình trong danh sách Network.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 12 · ý b</td><td>Nếu phân quyền 'Read' cho nhóm Everyone, một học sinh ở máy bên cạnh có thể tự ý mở thư mục và xóa sạch các tệp dữ liệu bên trong.</td><td>Sai — Quyền Read chỉ cho phép đọc và sao chép về, không có quyền xóa hay chỉnh sửa; nếu cố xóa sẽ nhận thông báo 'Access Denied'.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 13 · ý a</td><td>Đường dẫn mạng chuẩn UNC trong Windows sử dụng các dấu gạch chéo xuôi (/) giống như địa chỉ trang web Internet.</td><td>Sai — Cú pháp UNC trên Windows bắt buộc dùng hai dấu gạch chéo ngược (\), ví dụ: \\ComputerName\ShareName.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 14 · ý c</td><td>Nếu máy tính cắm trực tiếp với máy in bị tắt nguồn điện, các máy khách trong mạng LAN vẫn có thể in tài liệu bình thường qua máy in đó mà không gặp bất kỳ trở ngại nào.</td><td>Sai — Vì máy in kết nối qua máy chủ, nên khi máy chủ tắt nguồn, cổng giao tiếp USB của máy in bị ngắt, máy khách không thể gửi lệnh in tới máy in được.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 15 · ý b</td><td>Để bảo đảm an toàn dữ liệu nhạy cảm của cơ quan, cách tốt nhất là luôn cấp quyền 'Full Control' cho nhóm người dùng 'Everyone'.</td><td>Sai — Cấp quyền Full Control cho Everyone là sai lầm bảo mật nghiêm trọng vì bất kỳ ai cũng có thể sửa, xóa sạch dữ liệu hoặc khóa quyền của chủ sở hữu.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 11 · ý c</td><td>Bộ Quy tắc ứng xử trên mạng xã hội là một văn bản luật hình sự có quy định mức án phạt tù trực tiếp đối với người vi phạm.</td><td>Sai — Bộ Quy tắc này là văn bản quy phạm dưới dạng tiêu chí đạo đức, văn hóa hướng dẫn hành vi ứng xử chuẩn mực văn minh; chế tài phạt tù thuộc thẩm quyền của Bộ luật Hình sự.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 12 · ý c</td><td>Luật An ninh mạng chỉ cấm các hành vi vi phạm ở các máy chủ đặt tại nước ngoài, không áp dụng đối với người dùng đang truy cập mạng tại Việt Nam.</td><td>Sai — Luật An ninh mạng áp dụng đối với mọi cơ quan, tổ chức, cá nhân Việt Nam và nước ngoài có hoạt động liên quan đến không gian mạng tại Việt Nam.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 13 · ý b</td><td>Mọi hành vi vi phạm trên mạng xã hội đều chỉ bị nhắc nhở nhẹ nhàng, tuyệt đối không bao giờ bị xử lý phạt tù theo Bộ luật Hình sự.</td><td>Sai — Khi hành vi gây hậu quả nghiêm trọng, cấu thành các tội phạm như Tội đưa trái phép thông tin mạng (Điều 288), Tội làm nhục người khác (Điều 155), Tội vu khống (Điều 156) thì người vi phạm hoàn toàn bị khởi tố và chịu án phạt tù.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 14 · ý b</td><td>Người dùng mạng có toàn quyền đăng tải số điện thoại, địa chỉ nhà riêng và điểm học bạ của bạn bè lên mạng mà không cần xin phép vì thông tin đó không phải là tài sản tiền bạc.</td><td>Sai — Số điện thoại, địa chỉ, kết quả học tập là dữ liệu cá nhân được pháp luật bảo vệ nghiêm ngặt; tự ý công khai khi chưa có sự đồng ý là vi phạm Điều 84 Nghị định 15/2020/NĐ-CP.</td></tr>
-            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 15 · ý c</td><td>Vì các văn bản do AI tạo ra luôn luôn đúng 100% về mặt sự thật, học sinh có thể tin tưởng hoàn toàn mà không cần đối chiếu với sách giáo khoa hay tài liệu chính thống.</td><td>Sai — Các mô hình AI có thể gặp hiện tượng 'ảo giác' (Hallucination) tạo ra thông tin nghe rất thuyết phục nhưng hoàn toàn sai lệch thực tế; người học bắt buộc phải kiểm chứng.</td></tr>
+            <tr><th>Câu · Ý</th><th>Từ khóa trong ý → đánh SAI</th></tr>
+            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 11 · ý b</td><td>“nằm ở vị trí thấp nhất tiếp xúc dây cáp”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 11 · ý d</td><td>“không cần bất kỳ quy ước nào” vẫn giao tiếp được</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 12 · ý b</td><td>“100% gói tin”, “không bao giờ bị mất”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 13 · ý b</td><td>“mọi gói tin”, “bắt buộc”, “duy nhất”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 14 · ý a</td><td>“chỉ có thể … LAN”, “không thể … toàn cầu”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 4 · Câu 15 · ý b</td><td>“không ảnh hưởng gì”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 11 · ý c</td><td>“nên bị tắt đi” (network discovery)</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 12 · ý b</td><td>quyền “Read” mà “xóa sạch các tệp”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 13 · ý a</td><td>“gạch chéo xuôi (/) giống địa chỉ trang web”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 14 · ý c</td><td>“máy in bị tắt nguồn” mà “vẫn in bình thường”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 5 · Câu 15 · ý b</td><td>“cách tốt nhất là … Full Control cho Everyone”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 11 · ý c</td><td>“luật hình sự … án phạt tù” (Bộ Quy tắc ứng xử)</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 12 · ý c</td><td>“chỉ cấm … nước ngoài, không áp dụng … Việt Nam”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 13 · ý b</td><td>“mọi hành vi … tuyệt đối không bao giờ”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 14 · ý b</td><td>“toàn quyền đăng … không cần xin phép”</td></tr>
+            <tr class="wrong-row"><td class="pos">Bài 6 · Câu 15 · ý c</td><td>“luôn luôn đúng 100%”, “tin tưởng hoàn toàn”</td></tr>
           </table>
         </div>
       </div>
@@ -273,9 +268,9 @@
         <div class="tip-desc">
           <ul>
             <li><b>Đáp án KHÔNG phải câu dài nhất</b> (6 câu): Bài 4 câu 2; Bài 4 câu 3; Bài 4 câu 9; Bài 5 câu 2; Bài 5 câu 5; Bài 5 câu 8
-              <br><i>→ Học theo mục 1 (từ khóa + lý do).</i></li>
+              <br><i>→ Nhớ từ khóa ở mục 1.</i></li>
             <li><b>Từ cực đoan nhưng vẫn là đáp án ĐÚNG</b> (3 câu): Bài 4 câu 10; Bài 5 câu 4; Bài 6 câu 8
-              <br><i>→ Học theo mục 2 (khi nào cực đoan vẫn đúng).</i></li>
+              <br><i>→ Nhớ từ khóa ở mục 2.</i></li>
             <li><b>Câu Đúng/Sai không theo mẫu 3–1</b> (1 câu): Bài 4 câu 11 (<code>TFTF</code>)
               <br><i>→ Đừng máy móc đếm 3 ĐÚNG – 1 SAI.</i></li>
           </ul>
@@ -291,17 +286,17 @@
             <tr><td>Trắc nghiệm, thấy “hoàn toàn / tuyệt đối / duy nhất / bắt buộc / 100%”</td>
                 <td><b>Loại</b> phương án đó (đúng 83% trường hợp) — trừ 3 câu ở mục 2</td></tr>
             <tr><td>Câu Đúng/Sai, bí</td><td>Mặc định <b>ĐÚNG</b></td></tr>
-            <tr><td>Câu Đúng/Sai, muốn tìm ý SAI</td><td>Soi 6 dạng bẫy ở mục 3</td></tr>
+            <tr><td>Câu Đúng/Sai, muốn tìm ý SAI</td><td>Quét 6 nhóm từ khóa ở mục 3</td></tr>
             <tr><td>Đếm được 3–4 ý SAI trong 1 câu</td><td><b>Xem lại</b> — gần như chắc chắn bạn sai</td></tr>
-            <tr><td>Tìm mãi không ra ý SAI nào</td><td>Đọc lại bảng 16 ý SAI ở mục 4</td></tr>
+            <tr><td>Tìm mãi không ra ý SAI nào</td><td>Tra bảng 16 từ khóa ở mục 4</td></tr>
           </table>
         </div>
       </div>
 
       <div class="tips-cta">
-        Mẹo giúp người chưa học kỹ đạt ~7–8 điểm; nhưng <b>“Cách nhận ra”</b> ở mục 1–4 mới là phần đưa lên 10 điểm.
-        Học đủ 6 câu ngoại lệ của mẹo “câu dài nhất”, 3 câu ngoại lệ của mẹo “từ cực đoan”,
-        1 câu Đúng/Sai lệch mẫu Bài 4 câu 11 (<code>TFTF</code>) và 16 ý SAI là bạn nắm hết các bẫy của 3 đề này.
+        Mẹo giúp người chưa học kỹ đạt ~7–8 điểm; <b>từ khóa ở mục 1–4</b> là phần đưa lên 10 điểm.
+        Chỉ cần nhớ: 6 từ khóa câu ngoại lệ “dài nhất”, 3 từ khóa “cực đoan vẫn đúng”,
+        16 từ khóa ý SAI, và 1 câu Đ/S lệch mẫu Bài 4 câu 11 (<code>TFTF</code>).
       </div>
     </div>
   </div>

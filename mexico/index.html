@@ -1,0 +1,164 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>MEXICO — layout blueprint</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#17110E; --cream:#FAF3E7; --marigold:#EF7C1A; --magenta:#B8144F;
+           --teal:#0E6E77; --gold:#C8912A; --muted:#7A6A5F; }
+  * { box-sizing:border-box; margin:0; padding:0 }
+  body { background:#332c29; font-family:Poppins,'Segoe UI',sans-serif; padding:24px }
+  .slide { position:relative; width:1920px; height:1080px; overflow:hidden; margin:0 auto 24px;
+            box-shadow:0 10px 44px rgba(0,0,0,.55) }
+  .light { background:var(--cream); color:var(--ink) }
+  .dark  { background:var(--ink); color:var(--cream) }
+  .el { position:absolute }
+  .ovl { background:#000 }
+  .grad { background:linear-gradient(90deg,#17110E 62%,rgba(23,17,14,.35) 88%,rgba(23,17,14,0) 100%) }
+  .slot { border:3px dashed var(--teal); background:rgba(14,110,119,.09); display:flex;
+           flex-direction:column; justify-content:center; align-items:center; gap:8px;
+           font-size:26px; color:var(--teal); text-align:center; padding:12px }
+  .slot b { font-size:34px; letter-spacing:1px }
+  .slot i { font-style:normal; font-size:20px; opacity:.7 }
+
+  .kick { font-size:26px; letter-spacing:5px; font-weight:600; text-transform:uppercase;
+           color:var(--marigold) }
+  .h0 { font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:160px;
+         line-height:.92; letter-spacing:-3px }
+  .h1 { font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:96px; line-height:1.02 }
+  .h1b { font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:96px; line-height:1.02;
+          color:var(--magenta) }
+  .h2 { font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:46px; line-height:1.15 }
+  .sub { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-size:52px; line-height:1.2 }
+  .quote { font-family:'Playfair Display',Georgia,serif; font-style:italic; font-weight:700;
+            font-size:108px; line-height:1.12; letter-spacing:-1px }
+  .lead { font-size:38px; line-height:1.45; font-weight:300 }
+  .body { font-size:32px; line-height:1.55; font-weight:300; max-width:62ch }
+  .cap  { font-size:22px; line-height:1.4; color:var(--muted) }
+  .dark .cap { color:#BDAE9F }
+  .foot { font-size:24px; letter-spacing:.6px; color:var(--muted) }
+  .dark .foot { color:#BDAE9F }
+
+  .numbig { font-family:'Playfair Display',Georgia,serif; font-size:250px; line-height:.88;
+             color:var(--magenta); letter-spacing:-4px }
+  .stat b { display:block; font-family:'Playfair Display',Georgia,serif; font-size:74px; line-height:1 }
+  .stat span { display:block; font-size:24px; color:var(--muted); margin-top:8px; letter-spacing:.5px }
+  .line { font-size:30px; display:flex; align-items:center; gap:16px; border-bottom:1px solid rgba(0,0,0,.13) }
+  .line::before { content:''; width:10px; height:10px; background:var(--gold); border-radius:50%; flex:none }
+  .item { font-size:30px; line-height:1.35; font-weight:300; padding-left:24px;
+           border-left:4px solid var(--marigold); display:flex; align-items:center }
+  .li { font-size:28px; line-height:1.4; display:flex; align-items:center; gap:18px;
+         border-bottom:1px solid rgba(0,0,0,.11) }
+  .li i { font-style:normal; font-family:'Playfair Display',Georgia,serif; font-size:30px;
+           color:var(--magenta); flex:none; width:44px }
+  .trip { font-family:'Playfair Display',Georgia,serif; font-size:38px; display:flex;
+           align-items:flex-start; border-top:4px solid var(--marigold); padding-top:24px }
+  .dl b { display:block; font-family:'Playfair Display',Georgia,serif; font-size:42px; margin-bottom:6px }
+  .dl span { display:block; font-size:26px; line-height:1.45; color:#4A3B32; font-weight:300; max-width:60ch }
+  .menu { display:block; border-bottom:1px solid rgba(0,0,0,.11) }
+  .menu b { display:block; font-family:'Playfair Display',Georgia,serif; font-size:32px; line-height:1.3 }
+  .menu span { display:block; font-size:22px; color:var(--muted); margin:0 }
+  .src p { font-size:20px; line-height:2; color:#9B8C80 }
+  .page { font-size:24px; color:#9B8C80; text-align:right }
+  .tag { position:absolute; left:12px; bottom:8px; font-size:15px; letter-spacing:1px;
+          color:rgba(128,128,128,.45); z-index:99 }
+</style>
+<section class="slide dark" id="p1" data-page="1"><img class="el" src="assets/img/p01-A1.jpg" style="left:0px;top:0px;width:1920px;height:1080px;object-fit:cover;z-index:10;opacity:1"><div class="el ovl" style="left:0px;top:0px;width:1920px;height:1080px;z-index:11;opacity:0.62"></div><div class="el kick" style="left:120px;top:96px;width:900px;height:28px;z-index:12">Unit 2 · Project — Introduce a culture</div><div class="el h0" style="left:112px;top:600px;width:1300px;height:150px;z-index:13">MEXICO</div><div class="el sub" style="left:120px;top:764px;width:1100px;height:56px;z-index:14">The country that celebrates its dead</div><div class="el" style="left:120px;top:860px;width:240px;height:4px;z-index:15;background:#EF7C1A"></div><div class="el foot" style="left:120px;top:908px;width:1200px;height:30px;z-index:16">Group 4 · [names] · Class [..]</div><div class="tag">P01 · Cover</div></section><section class="slide light" id="p2" data-page="2"><div class="el kick" style="left:120px;top:96px;width:600px;height:28px;z-index:10">01 · The country</div><div class="el h1" style="left:112px;top:136px;width:900px;height:100px;z-index:11">Where is Mexico?</div><div class="el lead" style="left:120px;top:268px;width:620px;height:150px;z-index:12">North America, between the United States and Central America. Capital: Mexico City.</div><img class="el" src="assets/img/p02-A1.jpg" style="left:820px;top:136px;width:980px;height:653px;object-fit:cover;z-index:13;opacity:1"><div class="el cap" style="left:820px;top:806px;width:980px;height:30px;z-index:14">Mexico — 1,972,550 km², 32 states</div><div class="el stat" style="left:120px;top:500px;width:300px;height:150px;z-index:15"><b>131 M</b><span>people</span></div><div class="el stat" style="left:460px;top:500px;width:300px;height:150px;z-index:16"><b>32</b><span>states</span></div><div class="el stat" style="left:120px;top:690px;width:320px;height:150px;z-index:17"><b>2</b><span>oceans + 1 gulf</span></div><div class="el stat" style="left:460px;top:690px;width:340px;height:150px;z-index:18"><b>68</b><span>living languages</span></div><div class="tag">P02 · Where is Mexico</div></section><section class="slide light" id="p3" data-page="3"><div class="el kick" style="left:120px;top:96px;width:600px;height:28px;z-index:10">02 · Language</div><div class="el h1" style="left:112px;top:136px;width:1000px;height:100px;z-index:11">One country,</div><div class="el h1b" style="left:112px;top:236px;width:1000px;height:100px;z-index:12">69 languages</div><div class="el numbig" style="left:120px;top:400px;width:420px;height:210px;z-index:13">68</div><div class="el body" style="left:120px;top:640px;width:480px;height:160px;z-index:14">indigenous languages are officially recognised — in 364 variants.</div><img class="el" src="assets/img/p03-A1.jpg" style="left:1060px;top:180px;width:740px;height:505px;object-fit:cover;z-index:15;opacity:1"><div class="el cap" style="left:1060px;top:700px;width:740px;height:30px;z-index:16">Florentine Codex, Book 9 — Nahuatl, written down</div><div class="el line" style="left:1060px;top:800px;width:740px;height:44px;z-index:17">Nahuatl — 1.65 million speakers</div><div class="el line" style="left:1060px;top:856px;width:740px;height:44px;z-index:18">Maya — 775,000 speakers</div><div class="el line" style="left:1060px;top:912px;width:740px;height:44px;z-index:19">Spanish — more than 90% of Mexicans</div><div class="tag">P03 · Languages</div></section><section class="slide dark" id="p4" data-page="4"><img class="el" src="assets/img/p04-A1.jpg" style="left:960px;top:0px;width:960px;height:1080px;object-fit:cover;z-index:10;opacity:1"><div class="el grad" style="left:0px;top:0px;width:1100px;height:1080px;z-index:11"></div><div class="el kick" style="left:120px;top:130px;width:600px;height:28px;z-index:12">03 · The festival</div><div class="el h1" style="left:112px;top:170px;width:820px;height:100px;z-index:13">Día de</div><div class="el h1b" style="left:112px;top:270px;width:820px;height:100px;z-index:14">Muertos</div><div class="el lead" style="left:120px;top:400px;width:720px;height:60px;z-index:15">1 – 2 November</div><div class="el item" style="left:120px;top:520px;width:760px;height:70px;z-index:16">2008 — UNESCO Intangible Cultural Heritage</div><div class="el item" style="left:120px;top:600px;width:760px;height:70px;z-index:17">Older than Spain — the Aztecs held it in August</div><div class="el item" style="left:120px;top:680px;width:760px;height:70px;z-index:18">Not Halloween — here the dead are invited in</div><div class="tag">P04 · Día de Muertos</div></section><section class="slide light" id="p5" data-page="5"><div class="el kick" style="left:120px;top:96px;width:600px;height:28px;z-index:10">04 · The altar</div><div class="el h1" style="left:112px;top:136px;width:800px;height:100px;z-index:11">The ofrenda</div><img class="el" src="assets/img/p05-A1.jpg" style="left:120px;top:280px;width:900px;height:675px;object-fit:cover;z-index:12;opacity:1"><div class="el cap" style="left:120px;top:970px;width:900px;height:30px;z-index:13">An ofrenda in a family home, 2 November</div><div class="el lead" style="left:1100px;top:280px;width:700px;height:44px;z-index:14">Seven objects, seven meanings</div><div class="el li" style="left:1100px;top:350.0px;width:700px;height:70.0px;z-index:15"><i>01</i>Photographs — memory has a face</div><div class="el li" style="left:1100px;top:420.0px;width:700px;height:70.0px;z-index:15"><i>02</i>Candles — one flame for each soul</div><div class="el li" style="left:1100px;top:490.0px;width:700px;height:70.0px;z-index:15"><i>03</i>Water — for the thirsty traveller</div><div class="el li" style="left:1100px;top:560.0px;width:700px;height:70.0px;z-index:15"><i>04</i>Salt — purification, and seasoning</div><div class="el li" style="left:1100px;top:630.0px;width:700px;height:70.0px;z-index:15"><i>05</i>Papel picado — the wind that announces them</div><div class="el li" style="left:1100px;top:700.0px;width:700px;height:70.0px;z-index:15"><i>06</i>Cempasúchil — the scent that guides them home</div><div class="el li" style="left:1100px;top:770.0px;width:700px;height:70.0px;z-index:15"><i>07</i>Favourite food — dinner is served</div><div class="tag">P05 · The ofrenda</div></section><section class="slide light" id="p6" data-page="6"><div class="el kick" style="left:120px;top:96px;width:600px;height:28px;z-index:10">05 · The symbols</div><div class="el h1" style="left:112px;top:136px;width:1300px;height:100px;z-index:11">La Catrina &amp; the alebrijes</div><img class="el" src="assets/img/p06-A1.jpg" style="left:120px;top:300px;width:500px;height:667px;object-fit:cover;z-index:12;opacity:1"><img class="el" src="assets/img/p06-A2.jpg" style="left:660px;top:300px;width:500px;height:500px;object-fit:cover;z-index:13;opacity:1"><div class="el cap" style="left:120px;top:980px;width:500px;height:60px;z-index:14">Posada's etching, 1913 — named by Diego Rivera in 1947</div><div class="el cap" style="left:660px;top:820px;width:500px;height:60px;z-index:15">Alebrijes — invented by Pedro Linares in 1936</div><div class="el h2" style="left:1280px;top:300px;width:520px;height:50px;z-index:16">A skeleton that is<br>not frightening</div><div class="el body" style="left:1280px;top:430px;width:520px;height:300px;z-index:17">Posada drew her to mock the rich: a poor seller of chickpeas dressed like a European lady. Death, he said, takes everyone the same way.</div><div class="el h2" style="left:1280px;top:760px;width:520px;height:50px;z-index:18">Animals from a fever dream</div><div class="el body" style="left:1280px;top:890px;width:520px;height:120px;z-index:19">Linares saw them while ill — part dog, part bird, part dragon.</div><div class="tag">P06 · La Catrina & alebrijes</div></section><section class="slide dark" id="p7" data-page="7"><div class="el" style="left:120px;top:200px;width:96px;height:4px;z-index:10;background:#EF7C1A"></div><div class="el quote" style="left:112px;top:280px;width:1450px;height:240px;z-index:11">Nadie muere mientras<br>alguien lo recuerde.</div><div class="el sub" style="left:120px;top:560px;width:1400px;height:50px;z-index:12">Nobody dies, as long as someone remembers them.</div><div class="el trip" style="left:120.0px;top:740px;width:501.33333333333337px;height:150px;z-index:13">01 · the body stops</div><div class="el trip" style="left:653.3333333333334px;top:740px;width:501.33333333333337px;height:150px;z-index:13">02 · the burial</div><div class="el trip" style="left:1186.6666666666667px;top:740px;width:501.33333333333337px;height:150px;z-index:13">03 · the last memory</div><div class="el foot" style="left:120px;top:930px;width:1300px;height:30px;z-index:14">The Mexican idea Pixar's Coco turns into its final scene</div><div class="tag">P07 · The third death</div></section><section class="slide light" id="p8" data-page="8"><div class="el kick" style="left:120px;top:96px;width:600px;height:28px;z-index:10">06 · Music &amp; dance</div><div class="el h1" style="left:112px;top:136px;width:900px;height:100px;z-index:11">Sound of</div><div class="el h1b" style="left:112px;top:236px;width:900px;height:100px;z-index:12">a celebration</div><img class="el" src="assets/img/p08-A3.jpg" style="left:900px;top:120px;width:900px;height:900px;object-fit:cover;z-index:13;opacity:1"><div class="el cap" style="left:900px;top:1030px;width:900px;height:30px;z-index:14">Danza de los Voladores, Papantla, Veracruz</div><div class="el h2" style="left:120px;top:420px;width:700px;height:44px;z-index:15">Mariachi</div><div class="el body" style="left:120px;top:480px;width:700px;height:110px;z-index:16">Violins, trumpets, guitarrón. From Jalisco — UNESCO heritage since 2011.</div><div class="el h2" style="left:120px;top:640px;width:700px;height:44px;z-index:17">Jarabe Tapatío</div><div class="el body" style="left:120px;top:700px;width:700px;height:110px;z-index:18">The hat dance. A courtship in two minutes, skirts turning like flowers.</div><div class="tag">P08 · Music & dance</div></section><section class="slide light" id="p9" data-page="9"><div class="el kick" style="left:120px;top:96px;width:600px;height:28px;z-index:10">07 · Fashion</div><div class="el h1" style="left:112px;top:136px;width:900px;height:100px;z-index:11">What they wear</div><img class="el" src="assets/img/p09-A3.jpg" style="left:1240px;top:200px;width:540px;height:720px;object-fit:cover;z-index:12;opacity:1"><div class="el cap" style="left:1240px;top:940px;width:540px;height:60px;z-index:13">Calavera make-up — the skull as a joke about equality</div><div class="el dl" style="left:120px;top:300.0px;width:1040px;height:165.0px;z-index:14"><b>Charro suit</b><span>Black wool, silver embroidery, wide sombrero. Worn by mariachi bands.</span></div><div class="el dl" style="left:120px;top:465.0px;width:1040px;height:165.0px;z-index:14"><b>China Poblana</b><span>Embroidered blouse and skirt, rebozo shawl — the national dress.</span></div><div class="el dl" style="left:120px;top:630.0px;width:1040px;height:165.0px;z-index:14"><b>Calavera</b><span>Half-skull face paint: everyone ends the same, so do not take yourself seriously.</span></div><div class="el dl" style="left:120px;top:795.0px;width:1040px;height:165.0px;z-index:14"><b>Rebozo</b><span>A long shawl used to carry children, food, and grief.</span></div><div class="tag">P09 · Fashion</div></section><section class="slide light" id="p10" data-page="10"><div class="el kick" style="left:120px;top:96px;width:600px;height:28px;z-index:10">08 · Cuisine</div><div class="el h1" style="left:112px;top:136px;width:900px;height:100px;z-index:11">What they eat</div><img class="el" src="assets/img/p10-A1.jpg" style="left:120px;top:300px;width:780px;height:585px;object-fit:cover;z-index:12;opacity:1"><div class="el lead" style="left:980px;top:300px;width:820px;height:90px;z-index:13">UNESCO protected Mexican cooking in 2010. Everything starts with corn, beans and chilli.</div><div class="el menu" style="left:980px;top:420.0px;width:820px;height:78.33333333333333px;z-index:14"><b>Tacos</b><span>corn tortilla · meat · onion · coriander</span></div><div class="el menu" style="left:980px;top:498.3333333333333px;width:820px;height:78.33333333333333px;z-index:14"><b>Tamales</b><span>corn dough steamed in a corn husk</span></div><div class="el menu" style="left:980px;top:576.6666666666666px;width:820px;height:78.33333333333333px;z-index:14"><b>Mole poblano</b><span>chilli and chocolate sauce</span></div><div class="el menu" style="left:980px;top:655.0px;width:820px;height:78.33333333333333px;z-index:14"><b>Pozole</b><span>corn soup, lime, oregano</span></div><div class="el menu" style="left:980px;top:733.3333333333333px;width:820px;height:78.33333333333333px;z-index:14"><b>Pan de muerto</b><span>sweet bread for 2 November</span></div><div class="el menu" style="left:980px;top:811.6666666666666px;width:820px;height:78.33333333333333px;z-index:14"><b>Chocolate</b><span>the Aztec drink — xocolātl</span></div><div class="tag">P10 · Cuisine</div></section><section class="slide dark" id="p11" data-page="11"><div class="el" style="left:120px;top:236px;width:96px;height:4px;z-index:10;background:#EF7C1A"></div><div class="el quote" style="left:112px;top:300px;width:1450px;height:210px;z-index:11">Remembering is a form of love.</div><div class="el sub" style="left:120px;top:566px;width:1000px;height:46px;z-index:12">Thank you — ¿Alguna pregunta?</div><div class="el src" style="left:120px;top:830px;width:1300px;height:160px;z-index:13"><p>Data — INEGI 2020/2025 · INALI · UNESCO ICH 2008, 2010, 2011</p><p>Photographs — Wikimedia Commons contributors: Thelmadatter, Larry D. Moore, Daniel Case (CC BY / CC BY-SA)</p><p>Public domain — Florentine Codex (1577) · José Guadalupe Posada (1913)</p><p>Script & design — Group 4</p></div><div class="el page" style="left:1780px;top:990px;width:60px;height:30px;z-index:14">11</div><div class="tag">P11 · Closing</div></section>
+
+<div id="deck-nav">
+  <button id="prev-btn" onclick="prevSlide()">&#8592; Prev</button>
+  <span id="slide-num">1 / 11</span>
+  <button id="next-btn" onclick="nextSlide()">Next &#8594;</button>
+  <button id="fs-btn" onclick="toggleFullScreen()">Fullscreen [F]</button>
+</div>
+<style>
+  html, body {
+    margin: 0; padding: 0; width: 100%; height: 100%;
+    background: #120e0c; overflow: hidden; display: flex;
+    justify-content: center; align-items: center;
+  }
+  #viewport {
+    width: 1920px; height: 1080px; position: absolute;
+    transform-origin: center center;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+  }
+  .slide {
+    display: none !important; margin: 0 !important;
+  }
+  .slide.active {
+    display: block !important;
+  }
+  #deck-nav {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: rgba(23, 17, 14, 0.92); border: 1px solid rgba(239, 124, 26, 0.4);
+    padding: 10px 24px; border-radius: 40px; display: flex; align-items: center;
+    gap: 18px; z-index: 9999; backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    font-family: 'Poppins', sans-serif;
+  }
+  #deck-nav button {
+    background: #EF7C1A; color: #fff; border: none; padding: 8px 18px;
+    font-size: 15px; font-weight: 600; border-radius: 20px; cursor: pointer;
+    transition: 0.2s;
+  }
+  #deck-nav button:hover { background: #ff9138; transform: translateY(-1px); }
+  #deck-nav #slide-num {
+    color: #FAF3E7; font-size: 16px; font-weight: 500; min-width: 60px; text-align: center;
+  }
+  #deck-nav #fs-btn { background: #0E6E77; }
+  #deck-nav #fs-btn:hover { background: #13909c; }
+</style>
+<script>
+  let cur = 1;
+  const total = 11;
+  const slides = document.querySelectorAll('.slide');
+
+  function fitScreen() {
+    const vp = document.getElementById('viewport');
+    const scale = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    vp.style.transform = `scale(${scale})`;
+  }
+  window.addEventListener('resize', fitScreen);
+
+  function showSlide(idx) {
+    if (idx < 1) idx = 1;
+    if (idx > total) idx = total;
+    cur = idx;
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i + 1 === cur);
+    });
+    document.getElementById('slide-num').innerText = `${cur} / ${total}`;
+    location.hash = `p${cur}`;
+  }
+
+  function nextSlide() { showSlide(cur + 1); }
+  function prevSlide() { showSlide(cur - 1); }
+
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') nextSlide();
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+    if (e.key === 'f' || e.key === 'F') toggleFullScreen();
+    if (e.key >= '1' && e.key <= '9') showSlide(parseInt(e.key));
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // wrap slides in viewport
+    const vp = document.createElement('div');
+    vp.id = 'viewport';
+    document.body.prepend(vp);
+    slides.forEach(s => vp.appendChild(s));
+    fitScreen();
+
+    // check hash
+    const m = location.hash.match(/p(\d+)/);
+    showSlide(m ? parseInt(m[1]) : 1);
+  });
+</script>
+
+</html>
